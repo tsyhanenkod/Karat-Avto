@@ -328,9 +328,9 @@
 
 
 /* CAR DESCRIPTION BLOCK */
-.desc{
+.car-desc-block{
     margin-top: 30px;
-    margin-bottom: 50px;
+    padding-bottom: 70px;
 }
 
 .block-description{

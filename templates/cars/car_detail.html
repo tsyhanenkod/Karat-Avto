@@ -1,5 +1,6 @@
 {% extends 'base/main.html' %}
 {% load static %}
+{% load i18n %}
 
 <!--    CONTENT    -->
 {% block content %}
@@ -10,19 +11,19 @@
         <div class="col-7 ">
             <img id="featured" class="car-image" src="{{car.main_image.url}}" alt="{{car.mark}} {{car.model}} img">
             <div class="gallery-slider">
-                <img id="slideLeft" class="slider-arrow" src="{% static 'images/arrow-left.png' %}">
+                <img id="slideLeft" class="slider-arrow" src="{% static 'cars/icons/arrow-left.png' %}">
                 <div id="slider" class="car-gallery">
                     <img class="car-gallery-img active" src="{{car.main_image.url}}" alt="{{car.mark}} {{car.model}} img">
                     {% for image in car.carimages_set.all %}
                         <img class="car-gallery-img" src="{{image.image.url}}" alt="">
                     {% endfor %}
                 </div>
-                <img id="slideRight" class="slider-arrow" src="{% static 'images/arrow-right.png' %}">
+                <img id="slideRight" class="slider-arrow" src="{% static 'cars/icons/arrow-right.png' %}">
             </div>
         </div>
         <div class="col-5 ">
             <h1 class="car-title">{{car.mark}} {{car.model}}</h1>
-            <h3 class="car-price">Ціна: {{car.price}}$</h3>
+            <h3 class="car-price">{% trans 'Price:' %} {{car.price}}$</h3>
             <p class="price-descrition">
                 <span>Увага!</span> В зв’язку зі змінами курсу долару уточнюйте ціни у менеджерів
             </p>
@@ -30,13 +31,13 @@
                 <tr>
                     <td>
                         <div class="table-content">
-                            <img class="table-img" src="{% static 'images/car-fuel.png' %}" alt="">
+                            <img class="table-img" src="{% static 'cars/icons/car-fuel.png' %}" alt="">
                             <p class="car-char">{{car.engine_type}}</p>
                         </div>
                     </td>
                     <td>
                         <div class="table-content">
-                            <img class="table-img" src="{% static 'images/car-transmission.png' %}" alt="">
+                            <img class="table-img" src="{% static 'cars/icons/car-transmission.png' %}" alt="">
                             {% for transmission in car.transmission.all %}
                             <p class="car-char">{{transmission.name }} </p>
                             {% endfor %}
@@ -46,13 +47,13 @@
                 <tr>
                     <td>
                         <div class="table-content">
-                            <img class="table-img" src="{% static 'images/car-year.png' %}" alt="">
+                            <img class="table-img" src="{% static 'cars/icons/car-year.png' %}" alt="">
                             <p class="car-char">{{car.year}}</p>
                         </div>
                     </td>
                     <td>
                         <div class="table-content">
-                            <img class="table-img" src="{% static 'images/car-engine.png' %}" alt="">
+                            <img class="table-img" src="{% static 'cars/icons/car-engine.png' %}" alt="">
                             <p class="car-char">{{car.engine_volume}} см3</p>
                         </div>
                     </td>
@@ -78,7 +79,7 @@
 <div class="modal-w">
     <div class="modal-window">
         <button class="modal-close">
-            <img class="close-img" src="{% static 'images/cancel.png' %}" alt="">
+            <img class="close-img" src="{% static 'cars/icons/cancel.png' %}" alt="">
         </button>
         <div class="modal-container">
             <div class="modal-header">
@@ -122,13 +123,20 @@
             <a class="nav-item nav-link tab-link active-tab" id="nav-home-tab" data-toggle="pill" href="#pills-desc" role="tab" aria-controls="nav-home" aria-selected="true">Опис</a>
             <a class="nav-item nav-link tab-link" id="nav-profile-tab" data-toggle="pills-chars" href="#pills-chars" role="tab" aria-controls="nav-profile" aria-selected="false">Характеристики</a>
             {% if complectation.first.car == car %}
-            <a class="nav-item nav-link tab-link" id="nav-contact-tab" data-toggle="pill" href="#pills-complects" role="tab" aria-controls="nav-contact" aria-selected="false">Комплектація</a>
+            <a class="nav-item nav-link tab-link" id="nav-contact-tab" data-toggle="pill-complect" href="#pills-complects" role="tab" aria-controls="nav-contact" aria-selected="false">Комплектація</a>
+            <a class="nav-item nav-link tab-link" id="nav-price-tab" data-toggle="pill-price" href="#pills-price" role="tab" aria-controls="nav-price" aria-selected="false">Ціни</a>
             {% endif %}
         </div>
     </nav>
 
+
+
     <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-desc" role="tabpanel" aria-labelledby="pills-home-tab">{{car.description}}</div>
+        {% if LANGUAGE_CODE == 'en' %}
+        <div class="tab-pane fade show active" id="pills-desc" role="tabpanel" aria-labelledby="pills-home-tab">{{car.description_en|safe}}</div>
+        {% else %}
+        <div class="tab-pane fade show active" id="pills-desc" role="tabpanel" aria-labelledby="pills-home-tab">{{car.description_uk|safe}}</div>
+        {% endif %}
 
         <!--    CHARACTERISTICS BLOCK    -->
         <div class="tab-pane fade" id="pills-chars" role="tabpanel" aria-labelledby="pills-profile-tab">

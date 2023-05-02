@@ -6,8 +6,8 @@ from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from modeltranslation.admin import TranslationAdmin
 
 class CarAdminForm(forms.ModelForm):
-    description_en = forms.CharField(label="Опис", widget=CKEditorUploadingWidget())
-    description_uk = forms.CharField(label="Опис", widget=CKEditorUploadingWidget())
+    description_en = forms.CharField(label="Опис en", widget=CKEditorUploadingWidget())
+    description_uk = forms.CharField(label="Опис uk", widget=CKEditorUploadingWidget())
     class Meta:
         model = Car
         fields = 'description_uk', 'description_en'
