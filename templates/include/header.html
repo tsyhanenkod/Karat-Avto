@@ -1,0 +1,48 @@
+{% load static %}
+<nav class="navbar">
+    <div class="container-fluid container">
+        <a class="navbar-brand link-light" href="/">
+            <img class='logo-img' src="{% static 'base/logo.png' %}" alt="">
+        </a>
+
+        <div class="col-6-lg nav">
+            <ul class="nav justify-content-end nav-list">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle link-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Автомобілі
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item dropdown-link" href="/cars/">Всі категорії</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        {% for car_category in car_category.all %}
+                            <li><a class="dropdown-item dropdown-link" href="/cars/?category={{car_category.url}}">{{car_category}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="nav-item dropdown" >
+                    <a class="nav-link dropdown-toggle link-light" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Послуги
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item dropdown-link" href="/services/">Всі послуги</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        {% for service in service.all %}
+                            <li><a class="dropdown-item dropdown-link" href="/services/{{service.url}}/">{{service}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-light"  href="/about">Про Нас</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-light" href="/contacts">Контакти</a>
+                </li>
+            </ul>
+            <ul class="nav justify-content-end">
+                <li><a class="nav-link link-light" style="padding: 8px 2px" href="#">UA</a></li>
+                <li><a class="nav-link" style="padding: 8px 2px" href="#">|</a></li>
+                <li><a class="nav-link link-light" style="padding: 8px 2px" href="#">ENG</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

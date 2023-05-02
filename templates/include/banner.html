@@ -1,0 +1,32 @@
+{% load static %}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+<link rel="stylesheet" href="{% static  'base/css/banner.css' %}">
+
+
+<!-- Slider main container -->
+
+<div class="swiper">
+  <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+    <!-- Slides -->
+    {% for image in banner.all %}
+        <div class="swiper-slide">
+            <img src="{{image.image.url}}" alt="">
+        </div>
+    {% endfor %}
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="{% static 'base/js/main-banner.js' %}"></script>

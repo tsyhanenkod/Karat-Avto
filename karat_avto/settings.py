@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+
 from pathlib import Path
 import os
 from django.utils.translation import gettext_lazy as _
@@ -20,6 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
 
+SITE_ID = 1
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -30,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 EMAIL_BACKEND = f"{os.environ.get('EMAIL_BACKEND')}"
 EMAIL_HOST = f"{os.environ.get('EMAIL_HOST')}"

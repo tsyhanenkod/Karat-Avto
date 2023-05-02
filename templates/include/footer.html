@@ -1,0 +1,44 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'base/css/footer.css' %}">
+
+<footer class="footer-all p-3">
+    <div class="container">
+        <div class="row footer-row">
+            <div class="col-lg-3 col-md-3 footer-col">
+                <h5 class="footer-title">Інформація</h5>
+                <div class="footer-links">
+                    <a class="footer-link" href="/about/">Про Нас</a>
+                    <a class="footer-link" href="/contacts/">Контакти</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 footer-col">
+                <h5 class="footer-title">Автомобілі</h5>
+                <div class="footer-links">
+                    {% for car_category in car_category.all %}
+                        <a class="footer-link" href="/cars/?category={{car_category.url}}">{{car_category}}</a>
+                    {% endfor %}
+                    <a class="footer-link" href="/cars/">Всі авто</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 footer-col">
+                <h5 class="footer-title">Послуги</h5>
+                <div class="footer-links">
+                    {% for service in service.all %}
+                        <a class="footer-link" href="/services/{{service.url}}/">{{service}}</a>
+                    {% endfor %}
+                    <a class="footer-link" href="/services/">Всі сервіси</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 footer-col">
+                <h5 class="footer-title">Зв'язок</h5>
+                <div class="footer-links">
+                    <a class="footer-link" href="#">karatavto@ukr.net</a>
+                    <br>
+                    <a class="footer-link" href="#">(050) 311-99-07</a>
+                    <a class="footer-link" href="#">(063) 237-32-38</a>
+                    <a class="footer-link" href="#">(044) 483-01-34</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

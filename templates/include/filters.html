@@ -1,0 +1,142 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'cars/css/filters.css' %}">
+<div class="filters m-3">
+    <button class="filter-btn">Пошукові фільтри</button>
+
+    <form method="GET" action="." role="form" class="all-filters">
+        <div class="row pt-4">
+            <div class="col-lg col-md col-sm select-filters">
+                <!--    Line 1    -->
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm">
+                        <ul class="filter-fields">
+                            <li class="filter-use">
+                                <!--  CAR MARK  -->
+                                <label class="label_class" for="mark">Марка:</label>
+                                <select id="brand-select" class="filter-links" name="mark" >
+                                    <option class="filter-option main-option"></option>
+                                    {% for car_mark in car_mark.all %}
+                                        <option class="filter-option" value="{{car_mark.url}}">{{car_mark}}</option>
+                                    {% endfor %}
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm">
+                        <ul class="filter-fields">
+                            <li class="filter-use">
+                                <label class="label_class" for="category">Категорія:</label>
+                                <select class="filter-links" name="category">
+                                    <option class="filter-option main-option"></option>
+                                    {% for category in car_category.all %}
+                                        <option class="filter-option" value="{{category.url}}">{{category}}</option>
+                                    {% endfor %}
+                                </select>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm">
+                        <ul class="filter-fields">
+                            <li class="filter-use">
+                                <label class="label_class" for="enginet">Двигун:</label>
+                                <select class="filter-links" name="enginet">
+                                    <option class="filter-option main-option" name="car_engine_type"></option>
+                                    {% for car_engine_type in car_engine_type.all %}
+                                        <option class="filter-option" value="{{car_engine_type.url}}">{{car_engine_type}}</option>
+                                    {% endfor %}
+                                </select>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm">
+                        <ul class="filter-fields">
+                            <li class="filter-use">
+                                <label class="label_class" for="min_price">Ціна:</label>
+                                <input type="number" name="min_price" style="max-width: 100px">
+                                <p class="between-value"> - </p>
+                                <input type="number" name="max_price" style="max-width: 100px">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--    Line 2    -->
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm">
+                        <ul class="filter-fields">
+                            <li class="filter-use">
+                                <label class="label_class" for="model">Модель:</label>
+                                <select id="model-select" class="filter-links" name="model">
+                                    <option class="filter-option main-option"></option>
+                                    {% for car_model in car_model.all %}
+                                        <option class="filter-option" value="{{car_model.url}}">{{car_model}}</option>
+                                    {% endfor %}
+                                </select>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm">
+                        <ul class="filter-fields">
+                            <li class="filter-use">
+                                <label class="label_class" for="color">Колір:</label>
+                                <select class="filter-links" name="color">
+                                    <option class="filter-option main-option"></option>
+                                    {% for car_color in car_color.all %}
+                                        <option class="filter-option" value="{{car_color.url}}">{{car_color}}</option>
+                                    {% endfor %}
+                                </select>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm">
+                        <ul class="filter-fields">
+                            <li class="filter-use">
+                                <label class="label_class" for="transmission">КП:</label>
+                                <select class="filter-links" name="transmission">
+                                    <option class="filter-option main-option"></option>
+                                    {% for car_transmission in car_transmission.all %}
+                                        <option class="filter-option" value="{{car_transmission.url}}">{{car_transmission}}</option>
+                                    {% endfor %}
+                                </select>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm">
+                        <ul class="filter-fields">
+                            <li class="filter-use">
+                                <label class="label_class" for="min_year">Рік:</label>
+                                <input type="number" name="min_year" style="max-width: 100px">
+                                <p class="between-value"> - </p>
+                                <input type="number" name="max_year" style="max-width: 100px">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <!--    Buttons    -->
+                <div class="row">
+                    <div class="col-lg-1">
+                        <button type="reset" class="cancel-btn">
+                            <img class="cancel-img" src="{% static 'images/cancel.png' %}" alt="">
+                        </button>
+                    </div>
+                    <div class="col-lg-11">
+                        <button type="submit" class="search-btn">
+                            <h4 class="light-text">Пошук</h4>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<script type="text/javascript" src="{% static 'cars/js/car-filters.js' %}"></script>

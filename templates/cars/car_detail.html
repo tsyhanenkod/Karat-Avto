@@ -1,0 +1,309 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+<!--    CONTENT    -->
+{% block content %}
+<link rel="stylesheet" href="{% static 'cars/css/car.css' %}">
+<!-- MAIN CAR INFO -->
+<div class="block-car-information">
+    <div class="row m-3 justify-content-space-between">
+        <div class="col-7 ">
+            <img id="featured" class="car-image" src="{{car.main_image.url}}" alt="{{car.mark}} {{car.model}} img">
+            <div class="gallery-slider">
+                <img id="slideLeft" class="slider-arrow" src="{% static 'images/arrow-left.png' %}">
+                <div id="slider" class="car-gallery">
+                    <img class="car-gallery-img active" src="{{car.main_image.url}}" alt="{{car.mark}} {{car.model}} img">
+                    {% for image in car.carimages_set.all %}
+                        <img class="car-gallery-img" src="{{image.image.url}}" alt="">
+                    {% endfor %}
+                </div>
+                <img id="slideRight" class="slider-arrow" src="{% static 'images/arrow-right.png' %}">
+            </div>
+        </div>
+        <div class="col-5 ">
+            <h1 class="car-title">{{car.mark}} {{car.model}}</h1>
+            <h3 class="car-price">Ціна: {{car.price}}$</h3>
+            <p class="price-descrition">
+                <span>Увага!</span> В зв’язку зі змінами курсу долару уточнюйте ціни у менеджерів
+            </p>
+            <table class="car-char-table">
+                <tr>
+                    <td>
+                        <div class="table-content">
+                            <img class="table-img" src="{% static 'images/car-fuel.png' %}" alt="">
+                            <p class="car-char">{{car.engine_type}}</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-content">
+                            <img class="table-img" src="{% static 'images/car-transmission.png' %}" alt="">
+                            {% for transmission in car.transmission.all %}
+                            <p class="car-char">{{transmission.name }} </p>
+                            {% endfor %}
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="table-content">
+                            <img class="table-img" src="{% static 'images/car-year.png' %}" alt="">
+                            <p class="car-char">{{car.year}}</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table-content">
+                            <img class="table-img" src="{% static 'images/car-engine.png' %}" alt="">
+                            <p class="car-char">{{car.engine_volume}} см3</p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="car-colors">
+                <h6 class="colors-title">Кольори:</h6>
+                {% for color in car.color.all %}
+                    <a class="color-link" href="#">
+                        <div class="color-preview" style="background-color: #{{color.hex}};"></div>
+                    </a>
+
+                {% endfor %}
+            </div>
+            <button class="offer-button"><h4 class="button-text">Оформити заявку</h4></button>
+
+
+        </div>
+    </div>
+</div>
+
+<!--  Modal Window Block  -->
+<div class="modal-w">
+    <div class="modal-window">
+        <button class="modal-close">
+            <img class="close-img" src="{% static 'images/cancel.png' %}" alt="">
+        </button>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h5 class="modal-title">Оформлення заявки на "{{car.mark}} {{car.model}}"</h5>
+            </div>
+            <form action="" class="modal-form" method="POST">
+                {% csrf_token %}
+                <div class="form-content">
+                    <div class="form-gloup form-gloup-flex">
+                        <label class="form-check-label" for="form-name-label">*</label>
+                        <input class="modal-input modal-inp-name" name="form-name" id="form-name-label" type="text" placeholder="ім'я" required minlength="4">
+                    </div>
+                    <div class="form-gloup">
+                        <input class="modal-input modal-inp-email" name="form-email" type="email" placeholder="e-mail"minlength="5">
+                    </div>
+                    <div class="form-gloup form-gloup-flex">
+                        <label class="form-check-label" for="form-tel-label">*</label>
+                        <input class="modal-input modal-inp-tel" id="form-tel-label" name="form-tel" type="tel" placeholder="номер моб." required minlength="10">
+                    </div>
+                    <div class="form-gloup form-gloup-flex">
+                        <label class="form-check-label" for="form-text-label">*</label>
+                        <textarea class="modal-input modal-inp-comment" id="form-text-label" name="form-msg" placeholder="коментар" required></textarea>
+                    </div>
+                    <div class="form-gloup">
+                        <input class="modal-inp-ringup" type="checkbox" name="form-check">
+                        <label class="form-label" id="form-check-label">Зворотній зв'язок по e-mail</label>
+                    </div>
+                    <button class="send-btn" type="submit">Надіслати</button>
+                    <p class="all-fields">Всі поля з <span>*</span> є обов'язковими для заповнення</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- CAR DESCRIPTION BLOCK -->
+<div class="car-desc-block">
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link tab-link active-tab" id="nav-home-tab" data-toggle="pill" href="#pills-desc" role="tab" aria-controls="nav-home" aria-selected="true">Опис</a>
+            <a class="nav-item nav-link tab-link" id="nav-profile-tab" data-toggle="pills-chars" href="#pills-chars" role="tab" aria-controls="nav-profile" aria-selected="false">Характеристики</a>
+            {% if complectation.first.car == car %}
+            <a class="nav-item nav-link tab-link" id="nav-contact-tab" data-toggle="pill" href="#pills-complects" role="tab" aria-controls="nav-contact" aria-selected="false">Комплектація</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-desc" role="tabpanel" aria-labelledby="pills-home-tab">{{car.description}}</div>
+
+        <!--    CHARACTERISTICS BLOCK    -->
+        <div class="tab-pane fade" id="pills-chars" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <div class="row">
+                <div class="col">
+                    <div class="char-title">
+                        <h6 class="title-text">Загальні:</h6>
+                    </div>
+
+                    <div class="row p-2">
+                        <div class="col-6">Марка:</div>
+                        <div class="col-6">{{car.mark}}</div>
+                    </div>
+                    <hr>
+                    <div class="row p-2">
+                        <div class="col-6">Модель:</div>
+                        <div class="col-6">{{car.model}}</div>
+                    </div>
+                    <hr>
+                    <div class="row p-2">
+                        <div class="col-6">Рік випуску:</div>
+                        <div class="col-6">{{car.year}}</div>
+                    </div>
+                    <hr>
+                    <div class="row p-2">
+                        <div class="col-6">Категорії:</div>
+                        <div class="col-6">
+                        {% for category in car.category.all %}
+                            <p class="char-item-text">{{category}}</p>
+                        {% endfor %}
+                        </div>
+                    </div>
+                    {% if complectation.first.car == car %}
+                    <hr>
+                    <div class="row p-2">
+                        <div class="col-6">Комплектації:</div>
+                        <div class="col-6">
+                        {% if complectation.first.car == car %}
+                        {% for complectation in complectation.all %}
+                            <p class="char-item-text">{{complectation}}</p>
+                        {% endfor %}
+                        {% else %}
+                            <p class="char-item-text">-</p>
+                        {% endif %}
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="char-title">
+                        <h6 class="title-text">Двигун і Трансміссія:</h6>
+                    </div>
+
+                    <div class="row p-2">
+                        <div class="col-6">Тип двигуна:</div>
+                        <div class="col-6">{{car.engine_type}}</div>
+                    </div>
+                    <hr>
+                    <div class="row p-2">
+                        <div class="col-6">Об'єм двигуна:</div>
+                        <div class="col-6">{{car.engine_volume}} см3</div>
+                    </div>
+                    <hr>
+                    <div class="row p-2">
+                        <div class="col-6">Потужність:</div>
+                        <div class="col-6">{{car.power}} к.с.</div>
+                    </div>
+                    <hr>
+                    <div class="row p-2">
+                        <div class="col-6">Трансміссія:</div>
+                        <div class="col-6">
+                        {% for transmission in car.transmission.all %}
+                            <p class="char-item-text">{{transmission}}</p>
+                        {% endfor %}
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row p-2">
+                        <div class="col-6">Привід:</div>
+                        <div class="col-6">
+                            {{car.drive_unit}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="char-title">
+                        <h6 class="title-text">Кузов:</h6>
+                    </div>
+
+                    <div class="row p-2">
+                        <div class="col-6">Тип кузова:</div>
+                        <div class="col-6">{{car.body_type}}</div>
+                    </div>
+                    <hr>
+                    <div class="row p-2">
+                        <div class="col-6">Кольори:</div>
+                        <div class="col-6">
+                        {% for color in car.color.all %}
+                            <div class="color-char">
+                                <div class="color-show" style="background-color: #{{color.hex}}"></div>
+                                <p class="char-item-text">{{color}}</p>
+                            </div>
+                        {% endfor %}
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+
+        <!--    COMPLECTATION BLOCK    -->
+        {% if complectation.first.car == car %}
+        <div class="tab-pane fade" id="pills-complects" role="tabpanel" aria-labelledby="pills-contact-tab">
+
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-6"></div>
+                        {% for complectation in complectation.all %}
+                        {% if complectation.car == car %}
+                            <div class="col-3" style="text-align: center">
+                                <h6>{{complectation}}</h6>
+                            </div>
+                        {% endif %}
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            {% for category in char_category.all.distinct %}
+            <div class="row">
+                <div class="col-2 category-block"><p>{{category}}</p></div>
+                <div class="col-10">
+                    <div class="row">
+                        {% for char in char.all %}
+                        {% if char.char_category == category %}
+                            <div class="col-6">{{char}}</div>
+                            {% for complectation in complectation.all %}
+                            {% if complectation.car == car %}
+                            {% for char_cat in char_cat.all %}
+                            {% if char_cat.feature == char and char_cat.configuration == complectation %}
+                                <div class="col-3" style="text-align: center">
+                                    {% if char_cat.value == True %}
+                                    <img class="value-img" src="{% static 'images/yes.png' %}" alt="">
+                                    {% else %}
+                                    <img class="value-img" src="{% static 'images/no.png' %}" alt="">
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                            {% endfor %}
+
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <hr>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+
+
+<script type="text/javascript" src="{% static 'cars/js/car-slider.js' %}"></script>
+<script type="text/javascript" src="{% static 'cars/js/car-desc.js' %}"></script>
+<script type="text/javascript" src="{% static 'cars/js/modal.js' %}"></script>
+{% endblock content %}

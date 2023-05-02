@@ -1,0 +1,192 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+<!--    CONTENT    -->
+{% block content %}
+<link rel="stylesheet" href="{% static 'base/css/home.css' %}">
+<link rel="stylesheet" href="{% static 'services/css/services.css' %}">
+<link rel="stylesheet" href="{% static 'base/css/contacts.css' %}">
+
+<!--  MAIN BANNER  -->
+{% include 'include/banner.html' %}
+
+<!-- CARS BLOCK -->
+<div class="block-cars">
+    <h2 class="block-title">Автомобілі</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg">
+                <a href="/cars/?category=passenger" class="category-link">
+                    <div class="car-category">
+                        <h2 class="car-text">Легкові</h2>
+                        <img class="category-img" src="{% static 'base/images/pass.jpg' %}" alt="">
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg">
+                <a href="/cars/?category=commercial" class="category-link">
+                    <div class="car-category">
+                        <h2 class="car-text">Комерційні</h2>
+                        <img class="category-img" src="{% static 'base/images/comm.jpg' %}" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SERVICES BLOCK -->
+<div class="block-services" style="margin-bottom: 50px;">
+    <h2 class="block-title">Послуги</h2>
+    {% for service in service.all %}
+    <a href="/services/{{service.url}}/" class="service-link">
+        <div class="block-row">
+            <h2 class="service-title">{{service.name}}</h2>
+            <img class="service-img" src="{{service.service_image.url}}" alt="">
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
+
+
+<!-- INFO BLOCK -->
+<h2 class="block-title contacts-title">
+    Наші автосалони:
+</h2>
+<div class="row p-3 api-maps">
+    <div class="address-info">
+        <h4 class="dep-title">Автосалон "Карат Авто" в м. Київ:</h4>
+        <table class="contacts-table">
+            <tr class="table-row">
+                <td>
+                    <p class="address table-row"><strong>Адреса:</strong></p>
+                </td>
+                <td>
+                    <p class="address table-row">04112, м. Київ, вул. Оранжерейна, 1</p>
+                </td>
+            </tr>
+            <tr class="table-row">
+                <td>
+                    <p class="phone-fax table-row"><strong>Тел / Факс:</strong></p>
+                </td>
+                <td>
+                    <p class="phone-fax table-row">(044) 483 01-34</p>
+                </td>
+            </tr>
+            <tr class="table-row">
+                <td>
+                    <p class="phone-num table-row"><strong>Телефони:</strong></p>
+                </td>
+                <td>
+                    <p class="phone-num table-row">(050) 311 99-07</p>
+                    <p class="phone-num table-row">(063) 237 32-38</p>
+                </td>
+            </tr>
+            <tr class="table-row">
+                <td>
+                    <p class="email table-row"><strong>E-Mail:</strong></p>
+                </td>
+                <td>
+                    <p class="email table-row">karatavto@ukr.net</p>
+                </td>
+            </tr>
+            <tr class="table-row">
+                <td>
+                    <p class="email table-row"><strong>Працюємо:</strong></p>
+                </td>
+                <td>
+                    <p class="email table-row">Цілодобово</p>
+                </td>
+            </tr>
+            <tr class="table-row">
+                <td>
+                    <p class="email table-row"><strong>Охорона:</strong></p>
+                </td>
+                <td>
+                    <p class="email table-row">24/7</p>
+                </td>
+            </tr>
+            <tr class="table-row">
+                <td>
+                    <p class="email table-row"><strong>Зберігання Авто на комісію:</strong></p>
+                </td>
+                <td>
+                    <p class="email table-row">Безкоштовно</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="row maps">
+        <div id="map-kyiv"></div>
+    </div>
+</div>
+<hr>
+<div class="row p-3 api-maps">
+    <div class="address-info">
+        <h4 class="dep-title">Автосалон "Карат Авто" в м. Вишгород:</h4>
+        <table class="contacts-table">
+            <tr class="table-row">
+                <td>
+                    <p class="address table-row"><strong>Адреса:</strong></p>
+                </td>
+                <td>
+                    <p class="address table-row">м. Вишгород, вул. Шолуденка, 14а</p>
+                </td>
+            </tr>
+            <tr class="table-row">
+                <td>
+                    <p class="phone-num table-row"><strong>Телефони:</strong></p>
+                </td>
+                <td>
+                    <p class="phone-num table-row">(050) 311 99-07</p>
+                    <p class="phone-num table-row">(063) 237 32-38</p>
+                </td>
+            </tr>
+            <tr class="table-row">
+                <td>
+                    <p class="email table-row"><strong>E-Mail:</strong></p>
+                </td>
+                <td>
+                    <p class="email table-row">karatavto@ukr.net</p>
+                </td>
+            </tr>
+            <tr class="table-row">
+                <td>
+                    <p class="email table-row"><strong>Працюємо:</strong></p>
+                </td>
+                <td>
+                    <p class="email table-row">Цілодобово</p>
+                </td>
+            </tr>
+            <tr class="table-row">
+                <td>
+                    <p class="email table-row"><strong>Охорона:</strong></p>
+                </td>
+                <td>
+                    <p class="email table-row">24/7</p>
+                </td>
+            </tr>
+            <tr class="table-row">
+                <td>
+                    <p class="email table-row"><strong>Зберігання Авто на комісію:</strong></p>
+                </td>
+                <td>
+                    <p class="email table-row">Безкоштовно</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="row maps">
+        <div id="map-vishgorod"></div>
+    </div>
+</div>
+<hr style="margin-bottom: 50px;">
+
+<script type="module" src="{% static 'base/js/map-kyiv.js' %}"></script>
+<script type="module" src="{% static 'base/js/map-vishgorod.js' %}"></script>
+<script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyASmRngRzV46I4uvs8t9EjDfKBvRK8Ol-M", v: "weekly"});</script>
+<script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyDPRWDEg1okBKQr5ixSugAXNgZsUgZLb4E", v: "weekly"});</script>
+{% endblock content %}
