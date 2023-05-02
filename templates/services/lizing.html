@@ -1,0 +1,47 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+<!--    CONTENT    -->
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/lizing.css' %}">
+
+<h2 class="block-title lizing-main-title">Лізинг</h2>
+
+<div class="lizing-block p-1">
+    <h6 class="lizing-title p-1">Базові умови:</h6>
+    <ul class="lizing-list">
+        <li class="lizing-list-item">Аванс від 30%</li>
+        <li class="lizing-list-item">Автомобілі не старше 2009-го року</li>
+        <li class="lizing-list-item">Термін лізингу від 12-ти до 48 місяців</li>
+        <li class="lizing-list-item">Фінансування в гривні без прив’язки до курсу валют</li>
+        <li class="lizing-list-item">Ніяких прихованих платежів чи комісій</li>
+        <li class="lizing-list-item">Графік погашення класичний, ануїтетний, індивідуальний</li>
+        <li class="lizing-list-item">Фінансування фізичних, юридичних осіб та ФОП</li>
+    </ul>
+    <hr>
+</div>
+<div class="lizing-block p-1">
+    <h6 class="lizing-title p-1">Процедура оформлення лізингової угоди на автомобіль:</h6>
+    <ul class="lizing-list">
+        <li class="lizing-list-item">Ви вибираєте один чи кілька автомобілів у компанії «КАРАТ-АВТО»</li>
+        <li class="lizing-list-item">Заповнюєте просту форму заявки і разом зі спрощеним пакетом документів передаєте на розгляд в «ЕСКА Капітал»</li>
+        <li class="lizing-list-item">Отримавши позитивну відповідь впродовж двох годин (з моменту подачі заявки і пакету документів), ви підписуєте лізингову угоду й сплачуєте аванс. Одночасно з цим, лізингова компанія «ЕСКА Капітал» підписує договір купівлі-продажу з компанією «КАРАТ-АВТО»</li>
+        <li class="lizing-list-item">Автомобіль страхується і передається вам у користування на визначений у договорі термін</li>
+        <li class="lizing-list-item">Ви виплачуєте вартість авто частинами (згідно з графіком платежів) протягом усього терміну лізингу, а по завершенні дії угоди, право власності переходить до Вас</li>
+    </ul>
+    <hr>
+</div>
+<div class="lizing-block p-1">
+    <h6 class="lizing-title p-1">Переваги покупки автомобіля в лізинг:</h6>
+    <ul class="lizing-list">
+        <li class="lizing-list-item">Застава не потрібна, — на відміну від ситуації зі звичайним банківським кредитом. Достатньо внести авансовий платіж (від 30%) від вартості автомобіля, який ви купуєте</li>
+        <li class="lizing-list-item">Автомобіль буде застрахованим упродовж всього терміну лізингу за повною програмою від надійної страхової компанії</li>
+        <li class="lizing-list-item">Вартість реєстрації автомобіля, а також вартість страхування КАСКО та ОСЦПВ включаються в лізингові платежі</li>
+    </ul>
+    <hr>
+</div>
+
+<div class="lizing-btn">
+    <a target="_blank" class="lizing-button" href="https://eskacapital.com/ua/order?utm_source=karatavto&utm_medium=knopka&utm_campaign=karatavto">Оформити лізинг</a>
+</div>
+{% endblock content %}

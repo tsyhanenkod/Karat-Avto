@@ -1,0 +1,39 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+<!--    CONTENT    -->
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/reregistration.css' %}">
+
+<div class="reregister">
+    <h2 class="block-title rereg-main-title">Пряма перереєстрація транспортного засобу</h2>
+
+    <div class="rereg-block p-1">
+        <h6 class="rereg-title p-1">Для фізичних та юридичних осіб:</h6>
+        <ul class="rereg-list">
+            <li class="rereg-list-item">оформлення прямої перереєстрації, професійна консультація з усіх питань купівлі-продажу транспортного засобу, (перевірка транспортного засобу)</li>
+        </ul>
+        <hr>
+    </div>
+
+    <div class="rereg-block p-1">
+        <h6 class="rereg-title p-1">Документи для фізичних осіб:</h6>
+        <ul class="rereg-list">
+            <li class="rereg-list-item">Паспорт+код продавця (якщо є нотаріальна довіреність, потрібен оригінал, який залишається у нас в архіві)</li>
+            <li class="rereg-list-item">Паспорт+код покупця (якщо є нотаріальна довіреність, оригінал, у нас залишається копія)</li>
+            <li class="rereg-list-item">Технічний паспорт на транспортний засіб</li>
+        </ul>
+        <hr>
+    </div>
+
+    <div class="rereg-block p-1">
+        <h6 class="rereg-title p-1">Для фізичних та юридичних осіб:</h6>
+        <ul class="rereg-list">
+            <li class="rereg-list-item">Продавець/покупець: Установчі документи підприємства (копії, завірені печаткою), наказ на придбання/продаж т/з від підприємства, з зазначеною ціною продажу чи купівлею т/з, довіреність від підприємства на особу, яка буде займатися купівлею/продажем т/з + паспорт+код довіреної особи</li>
+            <li class="rereg-list-item">Перевірка по всіх базах (викрадення, арешт і ін.)</li>
+        </ul>
+        <hr>
+    </div>
+</div>
+
+{% endblock content %}

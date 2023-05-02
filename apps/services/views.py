@@ -39,16 +39,6 @@ class ReregistrationView(View):
         return render(request, 'services/reregistration.html', context)
 
 
-class EquipmentView(View):
-    def get(self, request):
-        products = 'pass'
-
-        context = {
-            'products':products,
-        }
-        return render(request, 'services/equipment.html', context)
-
-
 class CarOnCommissionView(View):
     def get(self, request):
         context = {}
