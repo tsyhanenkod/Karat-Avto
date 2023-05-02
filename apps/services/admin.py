@@ -5,7 +5,7 @@ from modeltranslation.admin import TranslationAdmin
 
 @admin.register(Service)
 class ServiceAdmin(TranslationAdmin):
-    list_display = ("id", "name")
+    list_display = ("id", "name", 'url', )
     list_display_links = ("name", )
 
     fieldsets = (
@@ -14,6 +14,9 @@ class ServiceAdmin(TranslationAdmin):
         }),
         ("", {
             "fields": (("name"),)
+        }),
+        ("", {
+            "fields": (("url"),)
         }),
     )
 

@@ -39,6 +39,7 @@ class ReregistrationView(View):
         return render(request, 'services/reregistration.html', context)
 
 
+
 class CarOnCommissionView(View):
     def get(self, request):
         context = {}
