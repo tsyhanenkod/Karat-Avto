@@ -1,5 +1,6 @@
 {% extends 'base/main.html' %}
 {% load static %}
+{% load i18n %}
 
 <!--    CONTENT    -->
 {% block content %}
@@ -12,13 +13,13 @@
 
 <!-- CARS BLOCK -->
 <div class="block-cars">
-    <h2 class="block-title">Автомобілі</h2>
+    <h2 class="block-title">{% trans 'Cars' %}</h2>
     <div class="container">
         <div class="row">
             <div class="col-lg">
                 <a href="/cars/?category=passenger" class="category-link">
                     <div class="car-category">
-                        <h2 class="car-text">Легкові</h2>
+                        <h2 class="car-text">{% trans 'Passenger' %}</h2>
                         <img class="category-img" src="{% static 'base/images/pass.jpg' %}" alt="">
                     </div>
                 </a>
@@ -26,7 +27,7 @@
             <div class="col-lg">
                 <a href="/cars/?category=commercial" class="category-link">
                     <div class="car-category">
-                        <h2 class="car-text">Комерційні</h2>
+                        <h2 class="car-text">{% trans 'Commercial' %}</h2>
                         <img class="category-img" src="{% static 'base/images/comm.jpg' %}" alt="">
                     </div>
                 </a>
@@ -37,7 +38,7 @@
 
 <!-- SERVICES BLOCK -->
 <div class="block-services" style="margin-bottom: 50px;">
-    <h2 class="block-title">Послуги</h2>
+    <h2 class="block-title">{% trans 'Services' %}</h2>
     {% for service in service.all %}
     <a href="/services/{{service.url}}/" class="service-link">
         <div class="block-row">
@@ -52,23 +53,23 @@
 
 <!-- INFO BLOCK -->
 <h2 class="block-title contacts-title">
-    Наші автосалони:
+    {% trans 'Showrooms' %}
 </h2>
 <div class="row p-3 api-maps">
     <div class="address-info">
-        <h4 class="dep-title">Автосалон "Карат Авто" в м. Київ:</h4>
+        <h4 class="dep-title">{% trans 'Showroom "Karat Avto" in Kyiv:' %}</h4>
         <table class="contacts-table">
             <tr class="table-row">
                 <td>
-                    <p class="address table-row"><strong>Адреса:</strong></p>
+                    <p class="address table-row"><strong>{% trans 'Address:' %}</strong></p>
                 </td>
                 <td>
-                    <p class="address table-row">04112, м. Київ, вул. Оранжерейна, 1</p>
+                    <p class="address table-row">{% trans 'Oranzhereina St, 1, Kyiv' %}</p>
                 </td>
             </tr>
             <tr class="table-row">
                 <td>
-                    <p class="phone-fax table-row"><strong>Тел / Факс:</strong></p>
+                    <p class="phone-fax table-row"><strong>{% trans 'Phone / Fax:' %}</strong></p>
                 </td>
                 <td>
                     <p class="phone-fax table-row">(044) 483 01-34</p>
@@ -76,7 +77,7 @@
             </tr>
             <tr class="table-row">
                 <td>
-                    <p class="phone-num table-row"><strong>Телефони:</strong></p>
+                    <p class="phone-num table-row"><strong>{% trans 'Phone numbers:' %}</strong></p>
                 </td>
                 <td>
                     <p class="phone-num table-row">(050) 311 99-07</p>
@@ -93,15 +94,15 @@
             </tr>
             <tr class="table-row">
                 <td>
-                    <p class="email table-row"><strong>Працюємо:</strong></p>
+                    <p class="email table-row"><strong>{% trans 'Open:' %}</strong></p>
                 </td>
                 <td>
-                    <p class="email table-row">Цілодобово</p>
+                    <p class="email table-row">{% trans 'Around the clock' %}</p>
                 </td>
             </tr>
             <tr class="table-row">
                 <td>
-                    <p class="email table-row"><strong>Охорона:</strong></p>
+                    <p class="email table-row"><strong>{% trans 'Security:' %}</strong></p>
                 </td>
                 <td>
                     <p class="email table-row">24/7</p>
@@ -109,10 +110,10 @@
             </tr>
             <tr class="table-row">
                 <td>
-                    <p class="email table-row"><strong>Зберігання Авто на комісію:</strong></p>
+                    <p class="email table-row"><strong>{% trans 'Storage car on commission:' %}</strong></p>
                 </td>
                 <td>
-                    <p class="email table-row">Безкоштовно</p>
+                    <p class="email table-row">{% trans 'Free' %}</p>
                 </td>
             </tr>
         </table>
@@ -124,19 +125,19 @@
 <hr>
 <div class="row p-3 api-maps">
     <div class="address-info">
-        <h4 class="dep-title">Автосалон "Карат Авто" в м. Вишгород:</h4>
+        <h4 class="dep-title">{% trans 'Showroom "Karat Avto" in Vyshhorod:' %}</h4>
         <table class="contacts-table">
             <tr class="table-row">
                 <td>
-                    <p class="address table-row"><strong>Адреса:</strong></p>
+                    <p class="address table-row"><strong>{% trans 'Address:' %}</strong></p>
                 </td>
                 <td>
-                    <p class="address table-row">м. Вишгород, вул. Шолуденка, 14а</p>
+                    <p class="address table-row">{% trans 'Sholudenka St, 14а, Vyshhorod' %}</p>
                 </td>
             </tr>
             <tr class="table-row">
                 <td>
-                    <p class="phone-num table-row"><strong>Телефони:</strong></p>
+                    <p class="phone-num table-row"><strong>{% trans 'Phone numbers:' %}</strong></p>
                 </td>
                 <td>
                     <p class="phone-num table-row">(050) 311 99-07</p>
@@ -153,15 +154,15 @@
             </tr>
             <tr class="table-row">
                 <td>
-                    <p class="email table-row"><strong>Працюємо:</strong></p>
+                    <p class="email table-row"><strong>{% trans 'Open:' %}</strong></p>
                 </td>
                 <td>
-                    <p class="email table-row">Цілодобово</p>
+                    <p class="email table-row">{% trans 'Around the clock' %}</p>
                 </td>
             </tr>
             <tr class="table-row">
                 <td>
-                    <p class="email table-row"><strong>Охорона:</strong></p>
+                    <p class="email table-row"><strong>{% trans 'Security:' %}</strong></p>
                 </td>
                 <td>
                     <p class="email table-row">24/7</p>
@@ -169,10 +170,10 @@
             </tr>
             <tr class="table-row">
                 <td>
-                    <p class="email table-row"><strong>Зберігання Авто на комісію:</strong></p>
+                    <p class="email table-row"><strong>{% trans 'Storage car on commission:' %}</strong></p>
                 </td>
                 <td>
-                    <p class="email table-row">Безкоштовно</p>
+                    <p class="email table-row">{% trans 'Free:' %}</p>
                 </td>
             </tr>
         </table>

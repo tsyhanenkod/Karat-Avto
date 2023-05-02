@@ -1,30 +1,29 @@
 {% extends 'base/main.html' %}
 {% load static %}
+{% load i18n %}
 
 <!--    CONTENT    -->
 {% block content %}
 <link rel="stylesheet" href="{% static 'base/css/contacts.css' %}">
 
 <h2 class="block-title contacts-title">
-    Наші автосалони:
+    {% trans 'Showrooms' %}
 </h2>
-
-<!-- INFO BLOCK -->
 <div class="row p-3 api-maps">
     <div class="address-info">
-        <h4 class="dep-title">Автосалон "Карат Авто" в м. Київ:</h4>
+        <h4 class="dep-title">{% trans 'Showroom "Karat Avto" in Kyiv:' %}</h4>
         <table class="contacts-table">
             <tr class="table-row">
                 <td>
-                    <p class="address table-row"><strong>Адреса:</strong></p>
+                    <p class="address table-row"><strong>{% trans 'Address:' %}</strong></p>
                 </td>
                 <td>
-                    <p class="address table-row">04112, м. Київ, вул. Оранжерейна, 1</p>
+                    <p class="address table-row">{% trans 'Oranzhereina St, 1, Kyiv' %}</p>
                 </td>
             </tr>
             <tr class="table-row">
                 <td>
-                    <p class="phone-fax table-row"><strong>Тел / Факс:</strong></p>
+                    <p class="phone-fax table-row"><strong>{% trans 'Phone / Fax:' %}</strong></p>
                 </td>
                 <td>
                     <p class="phone-fax table-row">(044) 483 01-34</p>
@@ -32,7 +31,7 @@
             </tr>
             <tr class="table-row">
                 <td>
-                    <p class="phone-num table-row"><strong>Телефони:</strong></p>
+                    <p class="phone-num table-row"><strong>{% trans 'Phone numbers:' %}</strong></p>
                 </td>
                 <td>
                     <p class="phone-num table-row">(050) 311 99-07</p>
@@ -49,15 +48,15 @@
             </tr>
             <tr class="table-row">
                 <td>
-                    <p class="email table-row"><strong>Працюємо:</strong></p>
+                    <p class="email table-row"><strong>{% trans 'Open:' %}</strong></p>
                 </td>
                 <td>
-                    <p class="email table-row">Цілодобово</p>
+                    <p class="email table-row">{% trans 'Around the clock' %}</p>
                 </td>
             </tr>
             <tr class="table-row">
                 <td>
-                    <p class="email table-row"><strong>Охорона:</strong></p>
+                    <p class="email table-row"><strong>{% trans 'Security:' %}</strong></p>
                 </td>
                 <td>
                     <p class="email table-row">24/7</p>
@@ -65,10 +64,10 @@
             </tr>
             <tr class="table-row">
                 <td>
-                    <p class="email table-row"><strong>Зберігання Авто на комісію:</strong></p>
+                    <p class="email table-row"><strong>{% trans 'Storage car on commission:' %}</strong></p>
                 </td>
                 <td>
-                    <p class="email table-row">Безкоштовно</p>
+                    <p class="email table-row">{% trans 'Free' %}</p>
                 </td>
             </tr>
         </table>
@@ -80,19 +79,19 @@
 <hr>
 <div class="row p-3 api-maps">
     <div class="address-info">
-        <h4 class="dep-title">Автосалон "Карат Авто" в м. Вишгород:</h4>
+        <h4 class="dep-title">{% trans 'Showroom "Karat Avto" in Vyshhorod:' %}</h4>
         <table class="contacts-table">
             <tr class="table-row">
                 <td>
-                    <p class="address table-row"><strong>Адреса:</strong></p>
+                    <p class="address table-row"><strong>{% trans 'Address:' %}</strong></p>
                 </td>
                 <td>
-                    <p class="address table-row">м. Вишгород, вул. Шолуденка, 14а</p>
+                    <p class="address table-row">{% trans 'Sholudenka St, 14а, Vyshhorod' %}</p>
                 </td>
             </tr>
             <tr class="table-row">
                 <td>
-                    <p class="phone-num table-row"><strong>Телефони:</strong></p>
+                    <p class="phone-num table-row"><strong>{% trans 'Phone numbers:' %}</strong></p>
                 </td>
                 <td>
                     <p class="phone-num table-row">(050) 311 99-07</p>
@@ -109,15 +108,15 @@
             </tr>
             <tr class="table-row">
                 <td>
-                    <p class="email table-row"><strong>Працюємо:</strong></p>
+                    <p class="email table-row"><strong>{% trans 'Open:' %}</strong></p>
                 </td>
                 <td>
-                    <p class="email table-row">Цілодобово</p>
+                    <p class="email table-row">{% trans 'Around the clock' %}</p>
                 </td>
             </tr>
             <tr class="table-row">
                 <td>
-                    <p class="email table-row"><strong>Охорона:</strong></p>
+                    <p class="email table-row"><strong>{% trans 'Security:' %}</strong></p>
                 </td>
                 <td>
                     <p class="email table-row">24/7</p>
@@ -125,13 +124,12 @@
             </tr>
             <tr class="table-row">
                 <td>
-                    <p class="email table-row"><strong>Зберігання Авто на комісію:</strong></p>
+                    <p class="email table-row"><strong>{% trans 'Storage car on commission:' %}</strong></p>
                 </td>
                 <td>
-                    <p class="email table-row">Безкоштовно</p>
+                    <p class="email table-row">{% trans 'Free:' %}</p>
                 </td>
             </tr>
-
         </table>
     </div>
     <div class="row maps">
@@ -143,33 +141,33 @@
 <!-- MESSAGE FORM -->
 <div class="block-message-form">
     <h2 class="block-title contacts-title">
-        Відправити повідомлення:
+        {% trans 'Send message' %}
     </h2>
 
     <form class="message-form" role="form" method="post">
         {% csrf_token %}
         <div class="form-group">
-            <label for="cotacts-name">Ім'я</label>
-            <input type="text" class="form-control" id="cotacts-name" name="cotacts-name" placeholder="Введіть ваше ім'я" required minlength="3">
+            <label for="cotacts-name">{% trans 'Name' %}</label>
+            <input type="text" class="form-control" id="cotacts-name" name="cotacts-name" placeholder="name" required minlength="3">
         </div>
         <div class="form-group">
             <label for="cotacts-email">Email</label>
             <input type="email" class="form-control" id="cotacts-email" name="cotacts-email" placeholder="example@example.com" required minlength="6">
         </div>
         <div class="form-group">
-            <label for="cotacts-tel">Номер телефону</label>
+            <label for="cotacts-tel">{% trans 'Phone number' %}</label>
             <input type="tel" class="form-control" id="cotacts-tel" name="cotacts-tel" placeholder="(097)-777-77-77" required minlength="10">
         </div>
 
         <div class="form-group">
-            <label for="cotacts-text">Текст повідомлення</label>
-            <textarea class="form-control" id="cotacts-text" name="cotacts-msg" placeholder="Введіть текст" rows="3" required></textarea>
+            <label for="cotacts-text">{% trans 'Message' %}</label>
+            <textarea class="form-control" id="cotacts-text" name="cotacts-msg" placeholder="text" rows="3" required></textarea>
         </div>
         <div class="form-check form-group">
             <input type="checkbox" class="form-check-input" name="cotacts-ringup" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Зворотній дзвінок</label>
+            <label class="form-check-label" for="exampleCheck1">{% trans 'Call back' %}</label>
         </div>
-        <button type="submit" class="btn btn-primary form-button">Відправити</button>
+        <button type="submit" class="btn btn-primary form-button">{% trans 'Send' %}</button>
     </form>
 </div>
 

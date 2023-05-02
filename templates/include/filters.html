@@ -1,7 +1,8 @@
 {% load static %}
+{% load i18n %}
 <link rel="stylesheet" href="{% static 'cars/css/filters.css' %}">
 <div class="filters m-3">
-    <button class="filter-btn">Пошукові фільтри</button>
+    <button class="filter-btn">{% trans 'Search filters' %}</button>
 
     <form method="GET" action="." role="form" class="all-filters">
         <div class="row pt-4">
@@ -12,7 +13,7 @@
                         <ul class="filter-fields">
                             <li class="filter-use">
                                 <!--  CAR MARK  -->
-                                <label class="label_class" for="mark">Марка:</label>
+                                <label class="label_class" for="mark">{% trans 'Brand:' %}</label>
                                 <select id="brand-select" class="filter-links" name="mark" >
                                     <option class="filter-option main-option"></option>
                                     {% for car_mark in car_mark.all %}
@@ -25,7 +26,7 @@
                     <div class="col-lg-3 col-md-3 col-sm">
                         <ul class="filter-fields">
                             <li class="filter-use">
-                                <label class="label_class" for="category">Категорія:</label>
+                                <label class="label_class" for="category">{% trans 'Category:' %}</label>
                                 <select class="filter-links" name="category">
                                     <option class="filter-option main-option"></option>
                                     {% for category in car_category.all %}
@@ -39,7 +40,7 @@
                     <div class="col-lg-3 col-md-3 col-sm">
                         <ul class="filter-fields">
                             <li class="filter-use">
-                                <label class="label_class" for="enginet">Двигун:</label>
+                                <label class="label_class" for="enginet">{% trans 'Engine:' %}</label>
                                 <select class="filter-links" name="enginet">
                                     <option class="filter-option main-option" name="car_engine_type"></option>
                                     {% for car_engine_type in car_engine_type.all %}
@@ -53,7 +54,7 @@
                     <div class="col-lg-3 col-md-3 col-sm">
                         <ul class="filter-fields">
                             <li class="filter-use">
-                                <label class="label_class" for="min_price">Ціна:</label>
+                                <label class="label_class" for="min_price">{% trans 'Price:' %}</label>
                                 <input type="number" name="min_price" style="max-width: 100px">
                                 <p class="between-value"> - </p>
                                 <input type="number" name="max_price" style="max-width: 100px">
@@ -67,7 +68,7 @@
                     <div class="col-lg-3 col-md-3 col-sm">
                         <ul class="filter-fields">
                             <li class="filter-use">
-                                <label class="label_class" for="model">Модель:</label>
+                                <label class="label_class" for="model">{% trans 'Model:' %}</label>
                                 <select id="model-select" class="filter-links" name="model">
                                     <option class="filter-option main-option"></option>
                                     {% for car_model in car_model.all %}
@@ -81,7 +82,7 @@
                     <div class="col-lg-3 col-md-3 col-sm">
                         <ul class="filter-fields">
                             <li class="filter-use">
-                                <label class="label_class" for="color">Колір:</label>
+                                <label class="label_class" for="color">{% trans 'Color:' %}</label>
                                 <select class="filter-links" name="color">
                                     <option class="filter-option main-option"></option>
                                     {% for car_color in car_color.all %}
@@ -95,7 +96,7 @@
                     <div class="col-lg-3 col-md-3 col-sm">
                         <ul class="filter-fields">
                             <li class="filter-use">
-                                <label class="label_class" for="transmission">КП:</label>
+                                <label class="label_class" for="transmission">{% trans 'Transmis:' %}</label>
                                 <select class="filter-links" name="transmission">
                                     <option class="filter-option main-option"></option>
                                     {% for car_transmission in car_transmission.all %}
@@ -109,7 +110,7 @@
                     <div class="col-lg-3 col-md-3 col-sm">
                         <ul class="filter-fields">
                             <li class="filter-use">
-                                <label class="label_class" for="min_year">Рік:</label>
+                                <label class="label_class" for="min_year">{% trans 'Year:' %}</label>
                                 <input type="number" name="min_year" style="max-width: 100px">
                                 <p class="between-value"> - </p>
                                 <input type="number" name="max_year" style="max-width: 100px">
@@ -129,7 +130,7 @@
                     </div>
                     <div class="col-lg-11">
                         <button type="submit" class="search-btn">
-                            <h4 class="light-text">Пошук</h4>
+                            <h4 class="light-text">{% trans 'Search:' %}</h4>
                         </button>
                     </div>
                 </div>

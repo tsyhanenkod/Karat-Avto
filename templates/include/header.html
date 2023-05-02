@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <nav class="navbar">
     <div class="container-fluid container">
         <a class="navbar-brand link-light" href="/">
@@ -9,10 +10,10 @@
             <ul class="nav justify-content-end nav-list">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle link-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Автомобілі
+                        {% trans 'Cars' %}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item dropdown-link" href="/cars/">Всі категорії</a></li>
+                        <li><a class="dropdown-item dropdown-link" href="/cars/">{% trans 'All categories' %}</a></li>
                         <li><hr class="dropdown-divider"></li>
                         {% for car_category in car_category.all %}
                             <li><a class="dropdown-item dropdown-link" href="/cars/?category={{car_category.url}}">{{car_category}}</a></li>
@@ -21,10 +22,10 @@
                 </li>
                 <li class="nav-item dropdown" >
                     <a class="nav-link dropdown-toggle link-light" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Послуги
+                        {% trans 'Services' %}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item dropdown-link" href="/services/">Всі послуги</a></li>
+                        <li><a class="dropdown-item dropdown-link" href="/services/">{% trans 'All services' %}</a></li>
                         <li><hr class="dropdown-divider"></li>
                         {% for service in service.all %}
                             <li><a class="dropdown-item dropdown-link" href="/services/{{service.url}}/">{{service}}</a></li>
@@ -32,17 +33,33 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link-light"  href="/about">Про Нас</a>
+                    <a class="nav-link link-light"  href="/about">{% trans 'About' %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link-light" href="/contacts">Контакти</a>
+                    <a class="nav-link link-light" href="/contacts">{% trans 'Contacts' %}</a>
                 </li>
             </ul>
             <ul class="nav justify-content-end">
-                <li><a class="nav-link link-light" style="padding: 8px 2px" href="#">UA</a></li>
-                <li><a class="nav-link" style="padding: 8px 2px" href="#">|</a></li>
-                <li><a class="nav-link link-light" style="padding: 8px 2px" href="#">ENG</a></li>
+                <li class="nav-item lang-block">
+                    <img src="{% static  'base/icons/lang.png' %}" alt="" class="lang-icon">
+                    <form action="{% url 'set_language' %}" id="language-form"  method="post">{% csrf_token %}
+                        <input name="next" type="hidden" value="{{ redirect_to }}">
+                        <select name="language" class="language-select">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% get_available_languages as LANGUAGES %}
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {% for language in languages %}
+                                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
+                                        selected{% endif %}>
+                                    {{ language.name_local|slice:3  }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </form>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
+
+<script type="text/javascript" src="{% static 'base/js/languages.js' %}"></script>

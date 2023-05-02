@@ -22,8 +22,8 @@ msgstr ""
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: templates/base/about.html:10
-msgid "About us:"
-msgstr "Про Нас:"
+msgid "About us"
+msgstr "Про Нас"
 
 #: templates/base/about.html:14
 msgid ""
@@ -161,11 +161,11 @@ msgid "- sale, service, warranty, registration"
 msgstr "- продаж, сервіс, гарантія, реєстрація"
 
 #: templates/base/contacts.html:10 templates/base/home.html:55
-msgid "Our showrooms:"
-msgstr "Автосалони:"
+msgid "Showrooms"
+msgstr "Автосалони"
 
 #: templates/base/contacts.html:16 templates/base/home.html:59
-msgid "Car showroom \"Karat Avto\" in Kyiv:"
+msgid "Showroom \"Karat Avto\" in Kyiv:"
 msgstr "Автосалон \"Карат Авто\" в м. Київ:"
 
 #: templates/base/contacts.html:20 templates/base/contacts.html:88
@@ -174,8 +174,8 @@ msgid "Address:"
 msgstr "Адреса:"
 
 #: templates/base/contacts.html:23 templates/base/home.html:66
-msgid "Oranzhereina St, 1, Kyiv, 02000"
-msgstr "02000, м. Київ, вул. Оранжерійна, 1"
+msgid "Oranzhereina St, 1, Kyiv"
+msgstr "м. Київ, вул. Оранжерійна, 1"
 
 #: templates/base/contacts.html:28 templates/base/home.html:71
 msgid "Phone / Fax:"
@@ -212,12 +212,12 @@ msgid "Free"
 msgstr "Безкоштовно"
 
 #: templates/base/contacts.html:84 templates/base/home.html:127
-msgid "Car showroom \"Karat Avto\" in Vyshhorod:"
+msgid "Showroom \"Karat Avto\" in Vyshhorod:"
 msgstr "Автосалон \"Карат Авто\" в м. Вишгород:"
 
 #: templates/base/contacts.html:91 templates/base/home.html:134
-msgid "Sholudenka St, 14а, Vyshhorod, 07301"
-msgstr "07301, м. Вишгород, вул. Шолуденка, 14а"
+msgid "Sholudenka St, 14а, Vyshhorod"
+msgstr "м. Вишгород, вул. Шолуденка, 14а"
 
 #: templates/base/contacts.html:147
 msgid "Send message"
@@ -228,10 +228,8 @@ msgid "Name"
 msgstr "Ім'я"
 
 #: templates/base/contacts.html:161
-#, fuzzy
-#| msgid "Phone numbers:"
 msgid "Phone number"
-msgstr "Телефони:"
+msgstr "Телефон"
 
 #: templates/base/contacts.html:166
 msgid "Message"
@@ -268,7 +266,7 @@ msgid "Search filters"
 msgstr "Пошукові фільтри"
 
 #: templates/include/filters.html:17
-msgid "Mark:"
+msgid "Brand:"
 msgstr "Марка:"
 
 #: templates/include/filters.html:30
@@ -304,7 +302,7 @@ msgid "Search"
 msgstr "Пошук:"
 
 #: templates/include/footer.html:9
-msgid "Info"
+msgid "Information"
 msgstr "Інформація"
 
 #: templates/include/footer.html:11 templates/include/header.html:37
