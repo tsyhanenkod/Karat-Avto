@@ -1,0 +1,340 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-02 14:57+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: templates/base/about.html:10
+msgid "About us:"
+msgstr "Про Нас:"
+
+#: templates/base/about.html:14
+msgid ""
+"Our company has been operating in the automotive market since 1994. We sell "
+"new and used cars, and are an official dealer of the following brands: JAC. "
+"It also provides a full range of support and after-sales services. The "
+"financial service department works in our car dealership (perfect knowledge "
+"of credit products of banks, leasing companies, conditions of other "
+"financial products presented on the market - consumer loans without "
+"collateral, loans with a specific purpose, loans with grace periods, "
+"financing conditions not only for the purchase of cars, but also their "
+"repair.) Based on many years of work experience, we will professionally "
+"provide you with the following services:"
+msgstr ""
+"Наша компанія працює на автомобільному ринку з 1994 р. Займаємся продажем "
+"автомобілів нових і з пробігом, є офіційним дилером брендів: JAC. А так же "
+"надає повний спектр супровідних і післяпродажних послуг. У нашому автосалоні "
+"працює відділ фінансового сервісу (досконале знання кредитних продуктів "
+"банків, лізингових компаній, умов інших фінансових продуктів, представлених "
+"на ринку - споживчі без заставні кредити, кредит з цільовим призначенням, "
+"кредити з пільговими періодами, умов фінансування не тільки покупки "
+"автомобілів, але і їх ремонту.) Спираючись на багаторічний досвід роботи, ми "
+"професійно надамо Вам наступні послуги:"
+
+#: templates/base/about.html:18
+msgid "SALE NEW CAR:"
+msgstr "ПРОДАЖ НОВИХ АВТО:"
+
+#: templates/base/about.html:20
+msgid ""
+"At your request, we are ready to provide you with comparative "
+"characteristics of car brands, give you a TEST-DRIVE on the cars you are "
+"interested in, and introduce you to promotional offers of dealer networks. A "
+"flexible system of promotions and discounts will pleasantly surprise you! "
+"Our car buyer decides for himself in what form he would like to receive a "
+"gift for the car. It can be one of the following options: retrofitting the "
+"car, installing HBO (gas cylinder equipment) and always nice gifts!"
+msgstr ""
+"На Ваш запит, ми готові надати Вам порівняльні характеристики автомобільних "
+"брендів, провести Вам ТЕСТ-ДРАЙВ на цікавлять Вас автомобілів і ознайомити з "
+"акційними пропозиціями дилерських мереж. Гнучка система акцій та знижок Вас "
+"приємно здивує! Наш покупець автомобіля вирішує сам, в якому вигляді він "
+"хотів би отримати подарунок до автомобіля. Це може бути один з наступних "
+"варіантів: доукомплектация автомобіля установка ГБО (газобалонне обладнання) "
+"і завжди приємні подарунки!"
+
+#: templates/base/about.html:26
+msgid "BUYING / SELLING CARS WITH MILEAGE:"
+msgstr "КУПІВЛЯ / ПРОДАЖ АВТОМОБІЛЕЙ З ПРОБІГОМ:"
+
+#: templates/base/about.html:28
+msgid ""
+"Have you decided to sell your car or trade it in for another, newer one, or "
+"do you have doubts and just want to get an estimate? Our experts will offer "
+"you the following: car evaluation (market and urgent buyback) TRADE-IN "
+"program (car exchange for a newer car) sale of your car at the market price "
+"(without prior commissions and obligations, it is not necessary to leave the "
+"car at our site ) sale / purchase of a car issued on credit (transfer of "
+"ownership without risks!)"
+msgstr ""
+"Ви вирішили продати автомобіль або вигідно обміняти його на інший, новіший "
+"або Ви сумніваєтеся і хочете просто прицінитися? Наші фахівці запропонують "
+"Вам наступне: оцінка автомобіля (ринкова і терміновий викуп) програма TRADE-"
+"IN (обмін автомобіля на більш новий автомобіль) продаж Вашого автомобіля за "
+"ринковою ціною (без попередніх комісій і зобов'язань, залишати автомобіль на "
+"нашому майданчику не обов'язково) продаж / купівля автомобіля, оформленого в "
+"кредит (перехід права власності без ризиків!)"
+
+#: templates/base/about.html:30
+msgid ""
+"Direct car re-registration, directly in our salon! (i.e. transfer of car "
+"ownership)"
+msgstr ""
+"Пряма перереєстрація автомобіля, безпосередньо у нас в салоні! (тобто "
+"перехід права власності на автомобіль)"
+
+#: templates/base/about.html:35
+msgid "LENDING:"
+msgstr "КРЕДИТУВАННЯ:"
+
+#: templates/base/about.html:37
+msgid ""
+"We orient our client to transparent credit products, without \"pitfalls\", "
+"we provide credit agreements for preliminary review, settlement options with "
+"a detailed description."
+msgstr ""
+"Ми орієнтуємо свого клієнта на прозорі кредитні продукти, без «підводних "
+"каменів», надаємо кредитні договори для попереднього ознайомлення, варіанти "
+"розрахунків з детальним описом."
+
+#: templates/base/about.html:39
+msgid ""
+"There are many financial fraudsters operating on the market who attract "
+"customers with low interest rates, minimal contributions and the optional "
+"presence of documents confirming income. We work directly with banks without "
+"intermediaries."
+msgstr ""
+"На ринку працює безліч фінансових шахраїв, які залучають клієнтів низькими "
+"процентними ставками, мінімальними внесками і необов'язковим наявністю "
+"документів, що підтверджують доходи. Ми працюємо без посередників, "
+"безпосередньо з банками."
+
+#: templates/base/about.html:41
+msgid "Important terms of the credit agreement:"
+msgstr "Важливі умови кредитного договору:"
+
+#: templates/base/about.html:43
+msgid ""
+"Additional insurance products (life insurance, accident insurance) CASCO "
+"conditions (car insurance is mandatory for a loan, but filling out the "
+"insurance product is in your hands."
+msgstr ""
+"додаткові страхові продукти (страхування життя, нещасного випадку) умови "
+"КАСКО (страхування автомобіля є обов'язковим при кредиті, але наповнення "
+"страхового продукту - в Ваших руках."
+
+#: templates/base/about.html:48
+msgid "INSTALLATION OF GCE:"
+msgstr "ВСТАНОВЛЕННЯ ГБО:"
+
+#: templates/base/about.html:50
+msgid ""
+"- 4 generations, Italy, Poland - brand selection (BRC, LandiRenzo, LonGas, "
+"Stag, LPG, A.E.B, Prins)"
+msgstr ""
+"- 4 покоління, Італія, Польща - вибір бренду (BRC, LandiRenzo, LonGas, Stag, "
+"LPG, A.E.B, Prins)"
+
+#: templates/base/about.html:52
+msgid "- turnkey installation"
+msgstr "- установка «під ключ»"
+
+#: templates/base/about.html:54
+msgid "- sale, service, warranty, registration"
+msgstr "- продаж, сервіс, гарантія, реєстрація"
+
+#: templates/base/contacts.html:10 templates/base/home.html:55
+msgid "Our showrooms:"
+msgstr "Автосалони:"
+
+#: templates/base/contacts.html:16 templates/base/home.html:59
+msgid "Car showroom \"Karat Avto\" in Kyiv:"
+msgstr "Автосалон \"Карат Авто\" в м. Київ:"
+
+#: templates/base/contacts.html:20 templates/base/contacts.html:88
+#: templates/base/home.html:63 templates/base/home.html:131
+msgid "Address:"
+msgstr "Адреса:"
+
+#: templates/base/contacts.html:23 templates/base/home.html:66
+msgid "Oranzhereina St, 1, Kyiv, 02000"
+msgstr "02000, м. Київ, вул. Оранжерійна, 1"
+
+#: templates/base/contacts.html:28 templates/base/home.html:71
+msgid "Phone / Fax:"
+msgstr "Тел / Факс:"
+
+#: templates/base/contacts.html:36 templates/base/contacts.html:96
+#: templates/base/home.html:79 templates/base/home.html:139
+msgid "Phone numbers:"
+msgstr "Телефони:"
+
+#: templates/base/contacts.html:53 templates/base/contacts.html:113
+#: templates/base/home.html:96 templates/base/home.html:156
+msgid "Open:"
+msgstr "Працюємо:"
+
+#: templates/base/contacts.html:56 templates/base/contacts.html:116
+#: templates/base/home.html:99 templates/base/home.html:159
+msgid "Around the clock"
+msgstr "Цілодобово"
+
+#: templates/base/contacts.html:61 templates/base/contacts.html:121
+#: templates/base/home.html:104 templates/base/home.html:164
+msgid "Security:"
+msgstr "Охорона:"
+
+#: templates/base/contacts.html:69 templates/base/contacts.html:129
+#: templates/base/home.html:112 templates/base/home.html:172
+msgid "Storage car on commission:"
+msgstr "Зберігання авто на комісі:"
+
+#: templates/base/contacts.html:72 templates/base/contacts.html:132
+#: templates/base/home.html:115 templates/base/home.html:175
+msgid "Free"
+msgstr "Безкоштовно"
+
+#: templates/base/contacts.html:84 templates/base/home.html:127
+msgid "Car showroom \"Karat Avto\" in Vyshhorod:"
+msgstr "Автосалон \"Карат Авто\" в м. Вишгород:"
+
+#: templates/base/contacts.html:91 templates/base/home.html:134
+msgid "Sholudenka St, 14а, Vyshhorod, 07301"
+msgstr "07301, м. Вишгород, вул. Шолуденка, 14а"
+
+#: templates/base/contacts.html:147
+msgid "Send message"
+msgstr "Відправити повідомлення"
+
+#: templates/base/contacts.html:153
+msgid "Name"
+msgstr "Ім'я"
+
+#: templates/base/contacts.html:161
+#, fuzzy
+#| msgid "Phone numbers:"
+msgid "Phone number"
+msgstr "Телефони:"
+
+#: templates/base/contacts.html:166
+msgid "Message"
+msgstr "Повідомлення"
+
+#: templates/base/contacts.html:171
+msgid "Call back"
+msgstr "Зворотній дзвінок"
+
+#: templates/base/contacts.html:173
+msgid "Send"
+msgstr "Відправити"
+
+#: templates/base/home.html:15 templates/include/footer.html:18
+#: templates/include/header.html:14
+msgid "Cars"
+msgstr "Автомобілі"
+
+#: templates/base/home.html:21
+msgid "Passenger"
+msgstr "Легкові"
+
+#: templates/base/home.html:29
+msgid "Commercial"
+msgstr "Комерційні"
+
+#: templates/base/home.html:40 templates/include/footer.html:29
+#: templates/include/header.html:26
+msgid "Services"
+msgstr "Послуги"
+
+#: templates/include/filters.html:6
+msgid "Search filters"
+msgstr "Пошукові фільтри"
+
+#: templates/include/filters.html:17
+msgid "Mark:"
+msgstr "Марка:"
+
+#: templates/include/filters.html:30
+msgid "Category:"
+msgstr "Категорія:"
+
+#: templates/include/filters.html:44
+msgid "Engine:"
+msgstr "Двигун:"
+
+#: templates/include/filters.html:58
+msgid "Price:"
+msgstr "Ціна:"
+
+#: templates/include/filters.html:72
+msgid "Model:"
+msgstr "Модель:"
+
+#: templates/include/filters.html:86
+msgid "Color:"
+msgstr "Колір:"
+
+#: templates/include/filters.html:100
+msgid "Transmis:"
+msgstr "КП:"
+
+#: templates/include/filters.html:114
+msgid "Year:"
+msgstr "Рік:"
+
+#: templates/include/filters.html:134
+msgid "Search"
+msgstr "Пошук:"
+
+#: templates/include/footer.html:9
+msgid "Info"
+msgstr "Інформація"
+
+#: templates/include/footer.html:11 templates/include/header.html:37
+msgid "About"
+msgstr "Про Нас"
+
+#: templates/include/footer.html:12 templates/include/footer.html:40
+#: templates/include/header.html:40
+msgid "Contacts"
+msgstr "Контакти"
+
+#: templates/include/footer.html:23
+#, fuzzy
+#| msgid "All categories"
+msgid "All cars"
+msgstr "Всі послуги"
+
+#: templates/include/footer.html:34 templates/include/header.html:29
+msgid "All services"
+msgstr "Всі послуги"
+
+#: templates/include/header.html:17
+msgid "All categories"
+msgstr "Всі категорії"
+
+#~ msgid "Security"
+#~ msgstr "Охорона"
+
+#~ msgid "Eng"
+#~ msgstr "Анг"
+
+#~ msgid "Ukr"
+#~ msgstr "Укр"

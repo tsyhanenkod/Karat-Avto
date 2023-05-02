@@ -1,4 +1,8 @@
-.venv
-../.idea
-.evn
-.dbsqlite3
+.idea
+*__pycache__
+db.sqlite3
+venv
+.env
+*.pyc
+notes
+static/media

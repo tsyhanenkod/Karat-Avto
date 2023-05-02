@@ -1,5 +1,5 @@
 """
-WSGI config for karat project.
+WSGI config for karat_avto project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'karat.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'karat_avto.settings')
 
 application = get_wsgi_application()
