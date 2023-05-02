@@ -8,11 +8,13 @@ from django.contrib.humanize.templatetags.humanize import intcomma
 from django.core.mail import send_mail
 import os
 from complect.models import *
+from django.core.paginator import Paginator, EmptyPage
 
 
 class CarsView(View):
     def get(self, request):
         car = Car.objects.filter(draft=False)
+
         params = {
             'category': self.request.GET.get('category'),
             'mark': self.request.GET.get('mark'),
@@ -41,13 +43,30 @@ class CarsView(View):
                     q_objects &= Q(**{f"{key}__url": value})
 
         car = car.filter(q_objects)
+        paginator = Paginator(car, 1)
+        page_number = request.GET.get("page")
+        try:
+            page_obj = paginator.get_page(page_number)
+        except EmptyPage:
+            page_obj = paginator.get_page(page_number)
 
         context = {
-            'car': car,
-            'params': params
+            # 'car': car,
+            'params': params,
+            'page_obj':page_obj,
         }
 
         return render(request, 'cars/cars.html', context)
+
+
+    # def get(self, request):
+    #     car = Car.objects.all()
+    #     paginator = Paginator(car, 1)  # Show 25 contacts per page.
+    #
+    #     page_number = request.GET.get("page")
+    #     page_obj = paginator.get_page(page_number)
+    #     return render(request, "cars/cars.html", {"page_obj": page_obj})
+
 
 class CarsDetailView(View):
     def get(self, request, slug):

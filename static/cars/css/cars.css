@@ -59,24 +59,67 @@
 
 /* PAGINATION */
 
-.paginate{
+.pagination{
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
-.page-link{
-    color: black;
+.step-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.page-link:hover{
-    color: white;
-    background-color: #C8C8C8;
+.pagination-list{
+    display: flex;
 }
 
-.page-link:focus{
-    color: white;
+.pagination-item{
+    display: flex;
+    justify-content: center;
+    border: 1px solid #C8C8C8;
+    border-radius: 5px;
+
+    transition: all .3s;
+}
+
+.pagination-item:hover{
+    border-color: #900020;
+}
+
+.pagination-item:hover .pag-link{
+    color: #900020;
+}
+
+.pagination-item + .pagination-item{
+    margin-left: 5px;
+}
+
+.pag-arrow{
+    align-items: center;
+}
+
+.active-pag{
+    align-items: center;
+    padding: 2px 10px;
     background-color: #900020;
-    box-shadow: none;
+    color: white;
+    text-decoration: none;
+    margin: 0;
+}
+
+.pag-link{
+    padding: 2px 10px;
+    color: black;
+    text-decoration: none;
+
+    transition: all .3s;
+}
+
+.arrow-img{
+    width: 10px;
+    height: 15px;
+    margin: 10px;
 }
