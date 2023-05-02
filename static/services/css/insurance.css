@@ -1,0 +1,86 @@
+.insurance-main-title{
+    margin-top: 30px;
+}
+
+.insurance-table{
+    border: 1px solid black;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+ }
+
+ .table-col{
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+     width: 2%;
+     padding: 1px;
+}
+
+.table-row{
+    border: 1px solid black;
+    width: 20%;
+    text-align: center;
+    padding: 5px;
+    padding: 1px;
+}
+
+.title-table{
+    font-size: 34px;
+}
+
+.little-text{
+    font-size: 10px;
+}
+
+.table-main-title-add{
+    font-size: 10px;
+}
+
+.table-main-title-add span{
+    color: red;
+}
+
+.blue{
+    background-color: cornflowerblue;
+}
+
+.yellow{
+    background-color: yellow;
+}
+
+.green{
+    background-color: #c5e3bf;
+}
+
+.orange{
+    background-color: #ffd1a8;
+}
+
+.grey{
+    background-color: #e3e3e3;
+}
+
+.info-fiz{
+    border-left: 1px solid black;
+}
+
+.under-desc{
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.header-fiz-title{
+    font-size: 20px;
+    text-align: center;
+}
+
+.header-fiz-title span{
+    font-weight: 700;
+}
+
+.pensioners{
+    margin-bottom: 75px;
+}
+
+

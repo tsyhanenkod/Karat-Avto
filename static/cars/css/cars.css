@@ -1,0 +1,55 @@
+/* -- CAR LIST  -- */
+
+.block-car-information{
+    margin-top: 30px;
+}
+.card{
+    background-color: #F2F2F2;
+    border:none;
+}
+.card-img-top-cover{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    height: 240px;
+    width: 100%;
+    align-items: center;
+}
+
+.image-cover{
+    height: 240px;
+    width: 100%;
+}
+
+.card-img-top{
+    object-fit: cover;
+    transition: all .75s;
+    height: 240px;
+    width: 100%;
+}
+
+.card-img-top:hover{
+    filter: brightness(0.8);
+    scale: 1.025;
+}
+
+.cover-link{
+    text-decoration: none;
+}
+
+.table-img{
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+}
+
+.table-content{
+    display: flex;
+}
+
+.car-char{
+    margin-right: 7px;
+    margin-bottom: 10px;
+}
+

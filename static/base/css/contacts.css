@@ -1,0 +1,66 @@
+/* -- CONTACTS PAGE -- */
+.contacts-title{
+    margin-top: 30px;
+}
+
+.dep-title{
+    margin-bottom: 15px;
+}
+
+.contacts-table{
+    width: 100%;
+}
+
+.table-row{
+    margin: 2px 0;
+    vertical-align: top;
+}
+
+/* GOOGLE MAPS */
+.api-maps{
+    display: flex;
+}
+
+.address-info{
+    width: 50%;
+}
+
+#map-kyiv, #map-vishgorod {
+    height: 250px;
+    width: 100%;
+}
+
+.maps{
+    width: 50%;
+}
+
+/* message form */
+.block-message-form{
+    align-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.message-form{
+    padding: 0 200px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+.form-button{
+    background-color: #900020;
+    color: white;
+    transition: all .3s;
+    border: none;
+    padding: 10px 0;
+}
+
+.form-button:hover{
+    background-color: #680017;
+    color: #C8C8C8;
+}

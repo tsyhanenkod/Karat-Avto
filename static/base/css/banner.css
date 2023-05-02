@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.swiper{
+    height: auto;
+    width: 100%;
+    margin-bottom: 20px;
+    /*margin-top: 3px;*/
+}
+
+.swiper-slide img{
+    height: auto;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+.swiper-pagination-bullet{
+    width: 20px;
+    height: 3px;
+    border-radius: 3px;
+}
+.swiper-pagination-bullet-active{
+    background-color: #C8C8C8;
+    width: 20px;
+    height: 3px;
+    border-radius: 3px;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: #C8C8C8;
+}

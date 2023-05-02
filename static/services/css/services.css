@@ -1,0 +1,46 @@
+.block-row{
+    height: 120px;
+    width: 100%;
+    margin: 0;
+    text-align: left;
+    margin-bottom: 5px;
+    padding: 0;
+    position: relative;
+    object-fit: cover;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.service-title{
+    color: white;
+    margin-left: 75px;
+    position: absolute;
+    z-index: 1;
+    transition: all .7s;
+}
+
+.service-img{
+    object-fit: cover;
+
+    height: auto;
+    width: 105%;
+    position: absolute;
+    z-index: 0;
+    opacity: .8;
+    transition: all .7s;
+}
+
+.service-img:hover{
+    scale: 1.03;
+    opacity: 1;
+}
+
+.service-link{
+    color: white;
+    text-decoration: none;
+}
+
+.service-link:hover .service-title{
+    color: white;
+}

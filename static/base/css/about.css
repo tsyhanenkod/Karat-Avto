@@ -1,0 +1,20 @@
+.description{
+    font-size: 16px;
+}
+
+.service-block{
+    margin-bottom: 40px;
+}
+
+.service-title{
+    color: white;
+    background-color: #900020;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.service-img{
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
