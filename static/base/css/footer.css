@@ -34,3 +34,16 @@
 .footer-link:hover{
     color: #C8C8C8;
 }
+
+
+
+/* Media */
+@media (max-width: 991px) {
+    .footer-title{
+        font-size: 16px;
+    }
+
+    .footer-link{
+        font-size: 14px;
+    }
+}

@@ -17,12 +17,12 @@
 }
 
 /* GOOGLE MAPS */
-.api-maps{
-    display: flex;
-}
+/*.api-maps{*/
+/*    display: flex;*/
+/*}*/
 
 .address-info{
-    width: 50%;
+
 }
 
 #map-kyiv, #map-vishgorod {
@@ -31,7 +31,7 @@
 }
 
 .maps{
-    width: 50%;
+    margin-top: 10px;
 }
 
 /* message form */
@@ -63,4 +63,41 @@
 .form-button:hover{
     background-color: #680017;
     color: #C8C8C8;
+}
+
+
+
+/* MEDIA */
+
+@media (max-width: 991px){
+    .dep-title{
+        font-size: 18px;
+    }
+
+    .contacts-table{
+        font-size: 14px;
+    }
+
+    .block-message-form{
+        margin-top: 30px;
+    }
+
+    .message-form{
+        padding: 0 40px;
+        margin-bottom: 40px;
+    }
+
+    .form-control{
+        font-size: 14px;
+    }
+
+    .message-label{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .message-form{
+        padding: 0 10px;
+    }
 }

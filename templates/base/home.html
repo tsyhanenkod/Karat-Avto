@@ -18,7 +18,7 @@
         <h2 class="block-title">{% trans 'Cars' %}</h2>
         <div class="container">
             <div class="row">
-                <div class="col-lg">
+                <div class="col-md p-0">
                     <a href="/cars/?category=passenger" class="category-link">
                         <div class="car-category">
                             <h2 class="car-text">{% trans 'Passenger' %}</h2>
@@ -26,7 +26,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-lg">
+                <div class="col-md p-0">
                     <a href="/cars/?category=commercial" class="category-link">
                         <div class="car-category">
                             <h2 class="car-text">{% trans 'Commercial' %}</h2>
@@ -39,13 +39,13 @@
     </div>
 
     <!-- SERVICES BLOCK -->
-    <div class="block-services" style="margin-bottom: 50px;">
-        <h2 class="block-title">{% trans 'Services' %}</h2>
+    <div class="block-services">
+        <h2 class="block-title">Послуги</h2>
         {% for service in service.all %}
         <a href="/services/{{service.url}}/" class="service-link">
             <div class="block-row">
                 <h2 class="service-title">{{service.name}}</h2>
-                <img class="service-img" src="{{service.service_image.url}}" alt="">
+                <img class="service-logo" src="{{service.service_image.url}}" alt="">
             </div>
         </a>
         {% endfor %}
@@ -57,8 +57,8 @@
     <h2 class="block-title contacts-title">
         {% trans 'Showrooms' %}
     </h2>
-    <div class="row p-3 api-maps">
-        <div class="address-info">
+    <div class="row flex-row flex-wrap p-3">
+        <div class="col-md-6 address-info">
             <h4 class="dep-title">{% trans 'Showroom "Karat Avto" in Kyiv:' %}</h4>
             <table class="contacts-table">
                 <tr class="table-row">
@@ -120,13 +120,15 @@
                 </tr>
             </table>
         </div>
-        <div class="row maps">
+
+        <div class="col-md-6 maps">
             <div id="map-kyiv"></div>
         </div>
     </div>
+
     <hr>
-    <div class="row p-3 api-maps">
-        <div class="address-info">
+    <div class="row flex-row flex-wrap p-3 api-maps">
+        <div class="col-md-6 address-info">
             <h4 class="dep-title">{% trans 'Showroom "Karat Avto" in Vyshhorod:' %}</h4>
             <table class="contacts-table">
                 <tr class="table-row">
@@ -180,7 +182,7 @@
                 </tr>
             </table>
         </div>
-        <div class="row maps">
+        <div class="col-md-6 maps">
             <div id="map-vishgorod"></div>
         </div>
     </div>

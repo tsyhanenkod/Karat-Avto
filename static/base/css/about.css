@@ -18,3 +18,25 @@
     height: auto;
     margin: 10px 0;
 }
+
+
+
+/* MEDIA */
+@media (max-width: 991px){
+    .description{
+        font-size: 14px;
+    }
+    .service-block{
+        margin-bottom: 20px;
+    }
+    .service-title{
+        color: white;
+        font-size: 14px;
+        background-color: #900020;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
+
+
+
+}

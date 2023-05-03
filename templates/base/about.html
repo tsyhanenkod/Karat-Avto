@@ -1,5 +1,6 @@
 {% extends 'base/main.html' %}
 {% load static %}
+{% load i18n %}
 
 <!--    CONTENT    -->
 {% block content %}
@@ -8,50 +9,50 @@
 
     <div class="container">
     <h2 class="block-title about-title">
-        Про Нас:
+        {% trans 'About us' %}
     </h2>
 
     <p class="description p-2">
-        Наша компанія працює на автомобільному ринку з 1994 р. Займаємся продажем автомобілів нових і з пробігом, є офіційним дилером брендів: JAC. А так же надає повний спектр супровідних і післяпродажних послуг. У нашому автосалоні працює відділ фінансового сервісу (досконале знання кредитних продуктів банків, лізингових компаній, умов інших фінансових продуктів, представлених на ринку - споживчі без заставні кредити, кредит з цільовим призначенням, кредити з пільговими періодами, умов фінансування не тільки покупки автомобілів, але і їх ремонту.) Спираючись на багаторічний досвід роботи, ми професійно надамо Вам наступні послуги:
+        {% trans 'Our company has been operating in the automotive market since 1994. We sell new and used cars, and are an official dealer of the following brands: JAC. It also provides a full range of support and after-sales services. The financial service department works in our car dealership (perfect knowledge of credit products of banks, leasing companies, conditions of other financial products presented on the market - consumer loans without collateral, loans with a specific purpose, loans with grace periods, financing conditions not only for the purchase of cars, but also their repair.) Based on many years of work experience, we will professionally provide you with the following services:' %}
     </p>
     <div class="service-block p-1">
-        <h6 class="service-title p-1">ПРОДАЖ НОВОГО АВТОМОБІЛЯ:</h6>
+        <h6 class="service-title p-1">{% trans 'SALE NEW CAR:' %}</h6>
         <p class="description">
-            На Ваш запит, ми готові надати Вам порівняльні характеристики автомобільних брендів, провести Вам ТЕСТ-ДРАЙВ на цікавлять Вас автомобілів і ознайомити з акційними пропозиціями дилерських мереж. Гнучка система акцій та знижок Вас приємно здивує! Наш покупець автомобіля вирішує сам, в якому вигляді він хотів би отримати подарунок до автомобіля. Це може бути один з наступних варіантів: доукомплектация автомобіля установка ГБО (газобалонне обладнання) і завжди приємні подарунки!
+            {% trans 'At your request, we are ready to provide you with comparative characteristics of car brands, give you a TEST-DRIVE on the cars you are interested in, and introduce you to promotional offers of dealer networks. A flexible system of promotions and discounts will pleasantly surprise you! Our car buyer decides for himself in what form he would like to receive a gift for the car. It can be one of the following options: retrofitting the car, installing HBO (gas cylinder equipment) and always nice gifts!' %}
         </p>
-        <img class="service-img" src="{% static 'images/about.jpg' %}" alt="our-cars">
+        <img class="service-img" src="{% static 'base/images/about.jpg' %}" alt="">
         <hr>
     </div>
     <div class="service-block p-1">
-        <h6 class="service-title p-1">КУПІВЛЯ / ПРОДАЖ АВТОМОБІЛЕЙ З ПРОБІГОМ:</h6>
+        <h6 class="service-title p-1">{% trans 'BUYING / SELLING CARS WITH MILEAGE:' %}</h6>
         <p class="description">
-            Ви вирішили продати автомобіль або вигідно обміняти його на інший, новіший або Ви сумніваєтеся і хочете просто прицінитися? Наші фахівці запропонують Вам наступне: оцінка автомобіля (ринкова і терміновий викуп) програма TRADE-IN (обмін автомобіля на більш новий автомобіль) продаж Вашого автомобіля за ринковою ціною (без попередніх комісій і зобов'язань, залишати автомобіль на нашому майданчику не обов'язково) продаж / купівля автомобіля, оформленого в кредит (перехід права власності без ризиків!)
+           {% trans 'Have you decided to sell your car or trade it in for another, newer one, or do you have doubts and just want to get an estimate? Our experts will offer you the following: car evaluation (market and urgent buyback) TRADE-IN program (car exchange for a newer car) sale of your car at the market price (without prior commissions and obligations, it is not necessary to leave the car at our site ) sale / purchase of a car issued on credit (transfer of ownership without risks!)' %}
             <br><br>
-            Пряма перереєстрація автомобіля, безпосередньо у нас в салоні! (тобто перехід права власності на автомобіль)
-        </p>
-        <hr>
-    </div>
-    <div class="service-block p-1">
-        <h6 class="service-title p-1">КРЕДИТУВАННЯ:</h6>
-        <p class="description">
-            Ми орієнтуємо свого клієнта на прозорі кредитні продукти, без «підводних каменів», надаємо кредитні договори для попереднього ознайомлення, варіанти розрахунків з детальним описом.
-            <br><br>
-            На ринку працює безліч фінансових шахраїв, які залучають клієнтів низькими процентними ставками, мінімальними внесками і необов'язковим наявністю документів, що підтверджують доходи. Ми працюємо без посередників, безпосередньо з банками.
-            <br><br>
-            Важливі умови кредитного договору:
-            <br>
-            додаткові страхові продукти (страхування життя, нещасного випадку) умови КАСКО (страхування автомобіля є обов'язковим при кредиті, але наповнення страхового продукту - в Ваших руках.
+            {% trans 'Direct car re-registration, directly in our salon! (i.e. transfer of car ownership)' %}
         </p>
         <hr>
     </div>
     <div class="service-block p-1">
-        <h6 class="service-title p-1">ВСТАНОВЛЕННЯ ГБО:</h6>
+        <h6 class="service-title p-1">{% trans 'LENDING:' %}</h6>
         <p class="description">
-            - 4 покоління, Італія, Польща - вибір бренду (BRC, LandiRenzo, LonGas, Stag, LPG, A.E.B, Prins)
+            {% trans 'We orient our client to transparent credit products, without "pitfalls", we provide credit agreements for preliminary review, settlement options with a detailed description.' %}
+            <br><br>
+            {% trans 'There are many financial fraudsters operating on the market who attract customers with low interest rates, minimal contributions and the optional presence of documents confirming income. We work directly with banks without intermediaries.' %}
+            <br><br>
+            {% trans 'Important terms of the credit agreement:' %}
             <br>
-            - установка «під ключ»
+            {% trans 'Additional insurance products (life insurance, accident insurance) CASCO conditions (car insurance is mandatory for a loan, but filling out the insurance product is in your hands.' %}
+        </p>
+        <hr>
+    </div>
+    <div class="service-block p-1">
+        <h6 class="service-title p-1">{% trans 'INSTALLATION OF GCE:' %}</h6>
+        <p class="description">
+            {% trans '- 4 generations, Italy, Poland - brand selection (BRC, LandiRenzo, LonGas, Stag, LPG, A.E.B, Prins)' %}
             <br>
-            - продаж, сервіс, гарантія, реєстрація
+            {% trans '- turnkey installation' %}
+            <br>
+            {% trans '- sale, service, warranty, registration' %}
         </p>
         <hr>
     </div>

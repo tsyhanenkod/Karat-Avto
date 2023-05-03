@@ -5,16 +5,17 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'services/css/services.css' %}">
 <!-- SERVICES BLOCK -->
-<div class="block-services" style="margin-bottom: 50px; margin-top: 30px;">
-    <h2 class="block-title">Послуги</h2>
-    {% for service in service.all %}
-    <a href="/services/{{service.url}}/" class="service-link">
-        <div class="block-row">
-            <h2 class="service-title">{{service.name}}</h2>
-            <img class="service-img" src="{{service.service_image.url}}" alt="">
-        </div>
-    </a>
-    {% endfor %}
+<div class="container">
+    <div class="block-services">
+        <h2 class="block-title">Послуги</h2>
+        {% for service in service.all %}
+        <a href="/services/{{service.url}}/" class="service-link">
+            <div class="block-row">
+                <h2 class="service-title">{{service.name}}</h2>
+                <img class="service-logo" src="{{service.service_image.url}}" alt="">
+            </div>
+        </a>
+        {% endfor %}
+    </div>
 </div>
-
 {% endblock content %}

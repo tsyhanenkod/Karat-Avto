@@ -84,3 +84,81 @@
 }
 
 
+
+
+/* NEDIA */
+@media (max-width: 1230px){
+    .car-category{
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 1075px){
+    .car-category{
+        max-height: 260px;
+    }
+}
+
+@media (max-width: 991px){
+    .car-category{
+        max-height: 250px;
+    }
+
+    .car-text{
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 900px){
+    .car-category{
+        max-height: 230px;
+    }
+}
+
+@media (max-width: 840px){
+    .car-category{
+        max-height: 200px;
+    }
+}
+
+@media (max-width: 767px){
+    .car-category{
+        max-height: 500px;
+    }
+}
+
+@media (max-width: 615px){
+    .car-category{
+        max-height: 320px;
+    }
+}
+
+@media (max-width: 560px){
+    .car-category{
+        max-height: 280px;
+    }
+}
+
+@media (max-width: 500px){
+    .car-category{
+        max-height: 250px;
+    }
+}
+
+@media (max-width: 450px){
+    .car-category{
+        max-height: 200px;
+    }
+
+    .car-text{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 380px){
+    .car-category{
+        max-height: 160px;
+    }
+}
+
+

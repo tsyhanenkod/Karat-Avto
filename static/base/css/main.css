@@ -250,6 +250,11 @@ hr{
     .lang-item{
         padding: 5px 10px;
     }
+
+    .block-title{
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
 }
 
 
