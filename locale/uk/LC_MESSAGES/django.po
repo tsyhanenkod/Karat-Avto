@@ -299,7 +299,7 @@ msgstr "Рік:"
 
 #: templates/include/filters.html:134
 msgid "Search"
-msgstr "Пошук:"
+msgstr "Пошук"
 
 #: templates/include/footer.html:9
 msgid "Information"

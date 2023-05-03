@@ -39,8 +39,19 @@
     border: 1px solid #C8C8C8;
     margin-bottom: 15px;
 }
+
+.input-data{
+    max-width: 100px
+}
+
 .label_class{
-    width: 40%;
+    display: block;
+    width: 110px;
+    margin-right: 5px;
+}
+
+.label-inp{
+    width: 70px;
 }
 
 .filter-use{
@@ -90,7 +101,6 @@
     transition: all .3s;
 }
 
-
 .cancel-btn{
     width: 100%;
     background-color: #F2F2F2;
@@ -129,6 +139,80 @@
     color: #C8C8C8;
 }
 
+.year-label{
+    margin-right: 10px;
+}
+
+.price-label{
+
+}
+
+
+
+/* MEDIA */
+@media (max-width: 991px){
+    .input-data{
+        max-width: 175px
+    }
+
+    .year-label{
+    margin-right: 55px;
+}
+
+    .price-label{
+        margin-right: 50px;
+    }
+
+    .search-btn{
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+
+    .cancel-btn{
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+
+    .cancel-img{
+        height: 20px;
+        width: 20px;
+    }
+}
+
+@media (max-width: 767px){
+    .input-data{
+        max-width: 310px
+    }
+
+    .label_class{
+        font-size: 14px;
+    }
+
+    .light-text, .filter-btn{
+        font-size: 16px;
+    }
+
+    .cancel-img{
+        height: 10px;
+        width: 10px;
+    }
+
+    .cancel-btn{
+        margin-bottom: 10px;
+        padding: 0;
+    }
+
+}
+
+@media (max-width: 410px){
+    .year-label{
+    margin-right: 50px;
+}
+
+    .price-label{
+        margin-right: 45px;
+    }
+}
 
 
 

@@ -8,8 +8,8 @@
         <div class="row pt-4">
             <div class="col-lg col-md col-sm select-filters">
                 <!--    Line 1    -->
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm">
+                <div class="row flex-row flex-wrap">
+                    <div class="col-lg-3 col-md-6">
                         <ul class="filter-fields">
                             <li class="filter-use">
                                 <!--  CAR MARK  -->
@@ -23,7 +23,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm">
+                    <div class="col-lg-3 col-md-6">
                         <ul class="filter-fields">
                             <li class="filter-use">
                                 <label class="label_class" for="category">{% trans 'Category:' %}</label>
@@ -37,7 +37,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm">
+                    <div class="col-lg-3 col-md-6">
                         <ul class="filter-fields">
                             <li class="filter-use">
                                 <label class="label_class" for="enginet">{% trans 'Engine:' %}</label>
@@ -51,21 +51,21 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm">
+                    <div class="col-lg-3 col-md-6">
                         <ul class="filter-fields">
                             <li class="filter-use">
-                                <label class="label_class" for="min_price">{% trans 'Price:' %}</label>
-                                <input type="number" name="min_price" style="max-width: 100px">
+                                <label class="label_class price-label" for="">{% trans 'Price:' %}</label>
+                                <input class="filter-links input-data" type="number" name="min_price">
                                 <p class="between-value"> - </p>
-                                <input type="number" name="max_price" style="max-width: 100px">
+                                <input class="filter-links input-data" type="number" name="max_price">
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <!--    Line 2    -->
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm">
+                <div class="row flex-row flex-wrap">
+                    <div class="col-lg-3 col-md-6">
                         <ul class="filter-fields">
                             <li class="filter-use">
                                 <label class="label_class" for="model">{% trans 'Model:' %}</label>
@@ -79,7 +79,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm">
+                    <div class="col-lg-3 col-md-6">
                         <ul class="filter-fields">
                             <li class="filter-use">
                                 <label class="label_class" for="color">{% trans 'Color:' %}</label>
@@ -93,7 +93,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm">
+                    <div class="col-lg-3 col-md-6">
                         <ul class="filter-fields">
                             <li class="filter-use">
                                 <label class="label_class" for="transmission">{% trans 'Transmis:' %}</label>
@@ -107,13 +107,13 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm">
+                    <div class="col-lg-3 col-md-6">
                         <ul class="filter-fields">
                             <li class="filter-use">
-                                <label class="label_class" for="min_year">{% trans 'Year:' %}</label>
-                                <input type="number" name="min_year" style="max-width: 100px">
+                                <label class="label_class year-label" for="min_year">{% trans 'Year:' %}</label>
+                                <input class="filter-links input-data" type="number" name="min_year">
                                 <p class="between-value"> - </p>
-                                <input type="number" name="max_year" style="max-width: 100px">
+                                <input class="filter-links input-data" type="number" name="max_year">
                             </li>
                         </ul>
                     </div>
@@ -123,14 +123,14 @@
 
                 <!--    Buttons    -->
                 <div class="row">
-                    <div class="col-lg-1">
+                    <div class="col-lg-1 col-6">
                         <button type="reset" class="cancel-btn">
                             <img class="cancel-img" src="{% static 'cars/icons/cancel.png' %}" alt="">
                         </button>
                     </div>
-                    <div class="col-lg-11">
+                    <div class="col-lg-11 col-6">
                         <button type="submit" class="search-btn">
-                            <h4 class="light-text">{% trans 'Search:' %}</h4>
+                            <h4 class="light-text">{% trans 'Search' %}</h4>
                         </button>
                     </div>
                 </div>

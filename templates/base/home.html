@@ -40,7 +40,7 @@
 
     <!-- SERVICES BLOCK -->
     <div class="block-services">
-        <h2 class="block-title">Послуги</h2>
+        <h2 class="block-title">{% trans 'Services' %}</h2>
         {% for service in service.all %}
         <a href="/services/{{service.url}}/" class="service-link">
             <div class="block-row">
