@@ -1,5 +1,6 @@
 var form = document.querySelector("#language-form");
 var select = form.querySelector(".language-select");
+
 select.addEventListener("change", function() {
     console.log("Selected language:", select.value);
     console.log("Next page:", form.querySelector("input[name=next]").value);

@@ -7,9 +7,11 @@
 <!--    CONTENT    -->
 {% block content %}
 <link rel="stylesheet" href="{% static 'cars/css/cars.css' %}">
-    <!--  MAIN BANNER  -->
-    {% include 'include/banner.html' %}
 
+        <!--  MAIN BANNER  -->
+        {% include 'include/banner.html' %}
+
+<div class="container">
     <!--  SEARCH FILTERS  -->
     {% include 'include/filters.html' %}
 
@@ -77,36 +79,36 @@
     </div>
 
 
-<div class="pagination">
-    <div class="step-links">
-        {% if page_obj.has_previous %}
-        <a class="pag-arrow" href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}{% if not forloop.last %}&{% endif %}{% endif %}{% endfor %}&page={{ page_obj.previous_page_number }}">
-            <img class="arrow-img" src="{% static 'cars/icons/arrow-left.png' %}" alt="">
-        </a>
-        {% endif %}
+    <div class="pagination">
+        <div class="step-links">
+            {% if page_obj.has_previous %}
+            <a class="pag-arrow" href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}{% if not forloop.last %}&{% endif %}{% endif %}{% endfor %}&page={{ page_obj.previous_page_number }}">
+                <img class="arrow-img" src="{% static 'cars/icons/arrow-left.png' %}" alt="">
+            </a>
+            {% endif %}
 
-        {% if page_obj.paginator.num_pages > 1 %}
-        <ul class="pagination-list">
-            {% for page_num in page_obj.paginator.page_range %}
-                {% if page_obj.number == page_num %}
-                <li class="pagination-item active-pag">{{ page_num }}</li>
-                {% else %}
-                <li class="pagination-item">
-                    <a class="pag-link" href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}{% if not forloop.last %}&{% endif %}{% endif %}{% endfor %}&page={{ page_num }}">{{ page_num }}</a>
-                </li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-        {% endif %}
+            {% if page_obj.paginator.num_pages > 1 %}
+            <ul class="pagination-list">
+                {% for page_num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == page_num %}
+                    <li class="pagination-item active-pag">{{ page_num }}</li>
+                    {% else %}
+                    <li class="pagination-item">
+                        <a class="pag-link" href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}{% if not forloop.last %}&{% endif %}{% endif %}{% endfor %}&page={{ page_num }}">{{ page_num }}</a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            {% endif %}
 
-        {% if page_obj.has_next %}
-        <a class="pag-arrow" href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}{% if not forloop.last %}&{% endif %}{% endif %}{% endfor %}&page={{ page_obj.next_page_number }}">
-            <img class="arrow-img" src="{% static 'cars/icons/arrow-right.png' %}" alt="">
-        </a>
-        {% endif %}
+            {% if page_obj.has_next %}
+            <a class="pag-arrow" href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}{% if not forloop.last %}&{% endif %}{% endif %}{% endfor %}&page={{ page_obj.next_page_number }}">
+                <img class="arrow-img" src="{% static 'cars/icons/arrow-right.png' %}" alt="">
+            </a>
+            {% endif %}
+        </div>
     </div>
 </div>
-
 
 
 

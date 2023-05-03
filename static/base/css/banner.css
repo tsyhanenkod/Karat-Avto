@@ -6,7 +6,7 @@
 
 .swiper{
     height: auto;
-    width: 100%;
+    max-width: 1270px;
     margin-bottom: 20px;
     /*margin-top: 3px;*/
 }
@@ -32,3 +32,16 @@
 .swiper-button-next, .swiper-button-prev {
     color: #C8C8C8;
 }
+
+
+
+
+/* Media */
+
+@media (max-width: 991px){
+    .swiper-button-next, .swiper-button-prev{
+        display: none;
+    }
+}
+
+

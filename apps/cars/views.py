@@ -43,7 +43,7 @@ class CarsView(View):
                     q_objects &= Q(**{f"{key}__url": value})
 
         car = car.filter(q_objects)
-        paginator = Paginator(car, 1)
+        paginator = Paginator(car, 18)
         page_number = request.GET.get("page")
         try:
             page_obj = paginator.get_page(page_number)

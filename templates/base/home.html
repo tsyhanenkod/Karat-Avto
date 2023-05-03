@@ -9,180 +9,183 @@
 <link rel="stylesheet" href="{% static 'base/css/contacts.css' %}">
 
 <!--  MAIN BANNER  -->
+
 {% include 'include/banner.html' %}
 
 <!-- CARS BLOCK -->
-<div class="block-cars">
-    <h2 class="block-title">{% trans 'Cars' %}</h2>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg">
-                <a href="/cars/?category=passenger" class="category-link">
-                    <div class="car-category">
-                        <h2 class="car-text">{% trans 'Passenger' %}</h2>
-                        <img class="category-img" src="{% static 'base/images/pass.jpg' %}" alt="">
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg">
-                <a href="/cars/?category=commercial" class="category-link">
-                    <div class="car-category">
-                        <h2 class="car-text">{% trans 'Commercial' %}</h2>
-                        <img class="category-img" src="{% static 'base/images/comm.jpg' %}" alt="">
-                    </div>
-                </a>
+<div class="container">
+    <div class="block-cars">
+        <h2 class="block-title">{% trans 'Cars' %}</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg">
+                    <a href="/cars/?category=passenger" class="category-link">
+                        <div class="car-category">
+                            <h2 class="car-text">{% trans 'Passenger' %}</h2>
+                            <img class="category-img" src="{% static 'base/images/pass.jpg' %}" alt="">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg">
+                    <a href="/cars/?category=commercial" class="category-link">
+                        <div class="car-category">
+                            <h2 class="car-text">{% trans 'Commercial' %}</h2>
+                            <img class="category-img" src="{% static 'base/images/comm.jpg' %}" alt="">
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- SERVICES BLOCK -->
-<div class="block-services" style="margin-bottom: 50px;">
-    <h2 class="block-title">{% trans 'Services' %}</h2>
-    {% for service in service.all %}
-    <a href="/services/{{service.url}}/" class="service-link">
-        <div class="block-row">
-            <h2 class="service-title">{{service.name}}</h2>
-            <img class="service-img" src="{{service.service_image.url}}" alt="">
+    <!-- SERVICES BLOCK -->
+    <div class="block-services" style="margin-bottom: 50px;">
+        <h2 class="block-title">{% trans 'Services' %}</h2>
+        {% for service in service.all %}
+        <a href="/services/{{service.url}}/" class="service-link">
+            <div class="block-row">
+                <h2 class="service-title">{{service.name}}</h2>
+                <img class="service-img" src="{{service.service_image.url}}" alt="">
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+
+
+
+    <!-- INFO BLOCK -->
+    <h2 class="block-title contacts-title">
+        {% trans 'Showrooms' %}
+    </h2>
+    <div class="row p-3 api-maps">
+        <div class="address-info">
+            <h4 class="dep-title">{% trans 'Showroom "Karat Avto" in Kyiv:' %}</h4>
+            <table class="contacts-table">
+                <tr class="table-row">
+                    <td>
+                        <p class="address table-row"><strong>{% trans 'Address:' %}</strong></p>
+                    </td>
+                    <td>
+                        <p class="address table-row">{% trans 'Oranzhereina St, 1, Kyiv' %}</p>
+                    </td>
+                </tr>
+                <tr class="table-row">
+                    <td>
+                        <p class="phone-fax table-row"><strong>{% trans 'Phone / Fax:' %}</strong></p>
+                    </td>
+                    <td>
+                        <p class="phone-fax table-row">(044) 483 01-34</p>
+                    </td>
+                </tr>
+                <tr class="table-row">
+                    <td>
+                        <p class="phone-num table-row"><strong>{% trans 'Phone numbers:' %}</strong></p>
+                    </td>
+                    <td>
+                        <p class="phone-num table-row">(050) 311 99-07</p>
+                        <p class="phone-num table-row">(063) 237 32-38</p>
+                    </td>
+                </tr>
+                <tr class="table-row">
+                    <td>
+                        <p class="email table-row"><strong>E-Mail:</strong></p>
+                    </td>
+                    <td>
+                        <p class="email table-row">karatavto@ukr.net</p>
+                    </td>
+                </tr>
+                <tr class="table-row">
+                    <td>
+                        <p class="email table-row"><strong>{% trans 'Open:' %}</strong></p>
+                    </td>
+                    <td>
+                        <p class="email table-row">{% trans 'Around the clock' %}</p>
+                    </td>
+                </tr>
+                <tr class="table-row">
+                    <td>
+                        <p class="email table-row"><strong>{% trans 'Security:' %}</strong></p>
+                    </td>
+                    <td>
+                        <p class="email table-row">24/7</p>
+                    </td>
+                </tr>
+                <tr class="table-row">
+                    <td>
+                        <p class="email table-row"><strong>{% trans 'Storage car on commission:' %}</strong></p>
+                    </td>
+                    <td>
+                        <p class="email table-row">{% trans 'Free' %}</p>
+                    </td>
+                </tr>
+            </table>
         </div>
-    </a>
-    {% endfor %}
+        <div class="row maps">
+            <div id="map-kyiv"></div>
+        </div>
+    </div>
+    <hr>
+    <div class="row p-3 api-maps">
+        <div class="address-info">
+            <h4 class="dep-title">{% trans 'Showroom "Karat Avto" in Vyshhorod:' %}</h4>
+            <table class="contacts-table">
+                <tr class="table-row">
+                    <td>
+                        <p class="address table-row"><strong>{% trans 'Address:' %}</strong></p>
+                    </td>
+                    <td>
+                        <p class="address table-row">{% trans 'Sholudenka St, 14а, Vyshhorod' %}</p>
+                    </td>
+                </tr>
+                <tr class="table-row">
+                    <td>
+                        <p class="phone-num table-row"><strong>{% trans 'Phone numbers:' %}</strong></p>
+                    </td>
+                    <td>
+                        <p class="phone-num table-row">(050) 311 99-07</p>
+                        <p class="phone-num table-row">(063) 237 32-38</p>
+                    </td>
+                </tr>
+                <tr class="table-row">
+                    <td>
+                        <p class="email table-row"><strong>E-Mail:</strong></p>
+                    </td>
+                    <td>
+                        <p class="email table-row">karatavto@ukr.net</p>
+                    </td>
+                </tr>
+                <tr class="table-row">
+                    <td>
+                        <p class="email table-row"><strong>{% trans 'Open:' %}</strong></p>
+                    </td>
+                    <td>
+                        <p class="email table-row">{% trans 'Around the clock' %}</p>
+                    </td>
+                </tr>
+                <tr class="table-row">
+                    <td>
+                        <p class="email table-row"><strong>{% trans 'Security:' %}</strong></p>
+                    </td>
+                    <td>
+                        <p class="email table-row">24/7</p>
+                    </td>
+                </tr>
+                <tr class="table-row">
+                    <td>
+                        <p class="email table-row"><strong>{% trans 'Storage car on commission:' %}</strong></p>
+                    </td>
+                    <td>
+                        <p class="email table-row">{% trans 'Free:' %}</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="row maps">
+            <div id="map-vishgorod"></div>
+        </div>
+    </div>
+    <hr style="margin-bottom: 50px;">
 </div>
-
-
-
-<!-- INFO BLOCK -->
-<h2 class="block-title contacts-title">
-    {% trans 'Showrooms' %}
-</h2>
-<div class="row p-3 api-maps">
-    <div class="address-info">
-        <h4 class="dep-title">{% trans 'Showroom "Karat Avto" in Kyiv:' %}</h4>
-        <table class="contacts-table">
-            <tr class="table-row">
-                <td>
-                    <p class="address table-row"><strong>{% trans 'Address:' %}</strong></p>
-                </td>
-                <td>
-                    <p class="address table-row">{% trans 'Oranzhereina St, 1, Kyiv' %}</p>
-                </td>
-            </tr>
-            <tr class="table-row">
-                <td>
-                    <p class="phone-fax table-row"><strong>{% trans 'Phone / Fax:' %}</strong></p>
-                </td>
-                <td>
-                    <p class="phone-fax table-row">(044) 483 01-34</p>
-                </td>
-            </tr>
-            <tr class="table-row">
-                <td>
-                    <p class="phone-num table-row"><strong>{% trans 'Phone numbers:' %}</strong></p>
-                </td>
-                <td>
-                    <p class="phone-num table-row">(050) 311 99-07</p>
-                    <p class="phone-num table-row">(063) 237 32-38</p>
-                </td>
-            </tr>
-            <tr class="table-row">
-                <td>
-                    <p class="email table-row"><strong>E-Mail:</strong></p>
-                </td>
-                <td>
-                    <p class="email table-row">karatavto@ukr.net</p>
-                </td>
-            </tr>
-            <tr class="table-row">
-                <td>
-                    <p class="email table-row"><strong>{% trans 'Open:' %}</strong></p>
-                </td>
-                <td>
-                    <p class="email table-row">{% trans 'Around the clock' %}</p>
-                </td>
-            </tr>
-            <tr class="table-row">
-                <td>
-                    <p class="email table-row"><strong>{% trans 'Security:' %}</strong></p>
-                </td>
-                <td>
-                    <p class="email table-row">24/7</p>
-                </td>
-            </tr>
-            <tr class="table-row">
-                <td>
-                    <p class="email table-row"><strong>{% trans 'Storage car on commission:' %}</strong></p>
-                </td>
-                <td>
-                    <p class="email table-row">{% trans 'Free' %}</p>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="row maps">
-        <div id="map-kyiv"></div>
-    </div>
-</div>
-<hr>
-<div class="row p-3 api-maps">
-    <div class="address-info">
-        <h4 class="dep-title">{% trans 'Showroom "Karat Avto" in Vyshhorod:' %}</h4>
-        <table class="contacts-table">
-            <tr class="table-row">
-                <td>
-                    <p class="address table-row"><strong>{% trans 'Address:' %}</strong></p>
-                </td>
-                <td>
-                    <p class="address table-row">{% trans 'Sholudenka St, 14а, Vyshhorod' %}</p>
-                </td>
-            </tr>
-            <tr class="table-row">
-                <td>
-                    <p class="phone-num table-row"><strong>{% trans 'Phone numbers:' %}</strong></p>
-                </td>
-                <td>
-                    <p class="phone-num table-row">(050) 311 99-07</p>
-                    <p class="phone-num table-row">(063) 237 32-38</p>
-                </td>
-            </tr>
-            <tr class="table-row">
-                <td>
-                    <p class="email table-row"><strong>E-Mail:</strong></p>
-                </td>
-                <td>
-                    <p class="email table-row">karatavto@ukr.net</p>
-                </td>
-            </tr>
-            <tr class="table-row">
-                <td>
-                    <p class="email table-row"><strong>{% trans 'Open:' %}</strong></p>
-                </td>
-                <td>
-                    <p class="email table-row">{% trans 'Around the clock' %}</p>
-                </td>
-            </tr>
-            <tr class="table-row">
-                <td>
-                    <p class="email table-row"><strong>{% trans 'Security:' %}</strong></p>
-                </td>
-                <td>
-                    <p class="email table-row">24/7</p>
-                </td>
-            </tr>
-            <tr class="table-row">
-                <td>
-                    <p class="email table-row"><strong>{% trans 'Storage car on commission:' %}</strong></p>
-                </td>
-                <td>
-                    <p class="email table-row">{% trans 'Free:' %}</p>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="row maps">
-        <div id="map-vishgorod"></div>
-    </div>
-</div>
-<hr style="margin-bottom: 50px;">
 
 <script type="module" src="{% static 'base/js/map-kyiv.js' %}"></script>
 <script type="module" src="{% static 'base/js/map-vishgorod.js' %}"></script>
