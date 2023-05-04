@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['165.232.123.247', '127.0.0.1']
 
 EMAIL_BACKEND = f"{os.environ.get('EMAIL_BACKEND')}"
 EMAIL_HOST = f"{os.environ.get('EMAIL_HOST')}"
