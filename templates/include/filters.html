@@ -26,6 +26,19 @@
                     <div class="col-lg-3 col-md-6">
                         <ul class="filter-fields">
                             <li class="filter-use">
+                                <label class="label_class" for="model">{% trans 'Model:' %}</label>
+                                <select id="model-select" class="filter-links" name="model">
+                                    <option class="filter-option main-option"></option>
+                                    {% for car_model in car_model.all %}
+                                        <option class="filter-option" value="{{car_model.url}}">{{car_model}}</option>
+                                    {% endfor %}
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <ul class="filter-fields">
+                            <li class="filter-use">
                                 <label class="label_class" for="category">{% trans 'Category:' %}</label>
                                 <select class="filter-links" name="category">
                                     <option class="filter-option main-option"></option>
@@ -33,7 +46,6 @@
                                         <option class="filter-option" value="{{category.url}}">{{category}}</option>
                                     {% endfor %}
                                 </select>
-
                             </li>
                         </ul>
                     </div>
@@ -47,17 +59,6 @@
                                         <option class="filter-option" value="{{car_engine_type.url}}">{{car_engine_type}}</option>
                                     {% endfor %}
                                 </select>
-
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <ul class="filter-fields">
-                            <li class="filter-use">
-                                <label class="label_class price-label" for="">{% trans 'Price:' %}</label>
-                                <input class="filter-links input-data" type="number" name="min_price">
-                                <p class="between-value"> - </p>
-                                <input class="filter-links input-data" type="number" name="max_price">
                             </li>
                         </ul>
                     </div>
@@ -68,11 +69,11 @@
                     <div class="col-lg-3 col-md-6">
                         <ul class="filter-fields">
                             <li class="filter-use">
-                                <label class="label_class" for="model">{% trans 'Model:' %}</label>
-                                <select id="model-select" class="filter-links" name="model">
+                                <label class="label_class" for="transmission">{% trans 'Transmis:' %}</label>
+                                <select class="filter-links" name="transmission">
                                     <option class="filter-option main-option"></option>
-                                    {% for car_model in car_model.all %}
-                                        <option class="filter-option" value="{{car_model.url}}">{{car_model}}</option>
+                                    {% for car_transmission in car_transmission.all %}
+                                        <option class="filter-option" value="{{car_transmission.url}}">{{car_transmission}}</option>
                                     {% endfor %}
                                 </select>
 
@@ -89,21 +90,16 @@
                                         <option class="filter-option" value="{{car_color.url}}">{{car_color}}</option>
                                     {% endfor %}
                                 </select>
-
                             </li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <ul class="filter-fields">
                             <li class="filter-use">
-                                <label class="label_class" for="transmission">{% trans 'Transmis:' %}</label>
-                                <select class="filter-links" name="transmission">
-                                    <option class="filter-option main-option"></option>
-                                    {% for car_transmission in car_transmission.all %}
-                                        <option class="filter-option" value="{{car_transmission.url}}">{{car_transmission}}</option>
-                                    {% endfor %}
-                                </select>
-
+                                <label class="label_class price-label" for="">{% trans 'Price:' %}</label>
+                                <input class="filter-links input-data" type="number" name="min_price">
+                                <p class="between-value"> - </p>
+                                <input class="filter-links input-data" type="number" name="max_price">
                             </li>
                         </ul>
                     </div>
