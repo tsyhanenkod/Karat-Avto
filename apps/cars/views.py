@@ -75,11 +75,11 @@ class CarsDetailView(View):
         drive_unit = DriveUnit.objects.all()
 
         char_category = Charcategory.objects.all()
-        complects = Complect.objects.all()
+        complects = Complect.objects.filter(car=car)
         char = Char.objects.all()
         value = Values.objects.all()
         complect_transmissions = Prices.objects.all()
-
+        print(complects)
         context = {
             "car": car,
             "drive_unit": drive_unit,

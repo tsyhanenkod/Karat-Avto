@@ -116,7 +116,6 @@ class Car(models.Model):
     model = models.ForeignKey(CarModel, verbose_name='Модель', on_delete=models.SET_NULL, null=True)
     category = models.ManyToManyField(Category, verbose_name='Категорія')
     year = models.PositiveSmallIntegerField('Рік випуску', default=2010)
-    car_weight = models.FloatField('Масс авто', default=0)
 
     main_image = models.ImageField('Основне зображення', upload_to='cars/car_main_images/')
     description_uk = models.TextField("Опис автомобіля (мінімум 500 символів)")
@@ -131,9 +130,10 @@ class Car(models.Model):
     power = models.PositiveSmallIntegerField('Потужність (к.с.)', default=0)
     drive_unit = models.ForeignKey(DriveUnit, verbose_name='Привід', on_delete=models.SET_NULL, null=True)
 
+    body_type = models.ForeignKey(BodyType, verbose_name="Тип кузова", on_delete=models.SET_NULL, null=True)
+    car_weight = models.FloatField('Масс авто', default=0)
     dimensions = models.CharField('Габарити (позначати як ДхШхВ)')
     color = models.ManyToManyField(Colors, verbose_name='Колір')
-    body_type = models.ForeignKey(BodyType, verbose_name="Тип кузова", on_delete=models.SET_NULL, null=True)
 
     draft = models.BooleanField('Чернетка', default=False)
     url = models.SlugField(max_length=100)

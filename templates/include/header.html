@@ -62,35 +62,34 @@
                 <img src="{% static 'base/icons/burger.png' %}" alt="" class="burger-icon">
             </button>
         </div>
+
+        <div id="menu">
+            <div class="menu-header">
+                <button class="close" id="close">
+                    <img src="{% static 'base/icons/close.png' %}" alt="" class="close-img">
+                </button>
+            </div>
+
+            <ul class="menu-links">
+                <h5 class="menu-title">{% trans 'Cars' %}</h5>
+                {% for car_category in car_category.all %}
+                <li class="nav-items "><a class="nav-link link-light" href="/cars/?category={{car_category.url}}">{{car_category}}</a></li>
+                {% endfor %}
+            </ul>
+            <ul class="menu-links">
+                <h5 class="menu-title">{% trans 'Services' %}</h5>
+                {% for service in service.all %}
+                    <li class="nav-items"><a class="nav-link link-light" href="/services/{{service.url}}/">{{service}}</a></li>
+                {% endfor %}
+            </ul>
+            <ul class="menu-links">
+                <h5 class="menu-title">{% trans 'Information' %}</h5>
+                <li class="nav-items "><a class="nav-link link-light" href="#">{% trans 'About' %}</a></li>
+                <li class="nav-items "><a class="nav-link link-light" href="#">{% trans 'Contacts' %}</a></li>
+            </ul>
+        </div>
     </div>
 </nav>
-
-<div id="menu">
-    <div class="menu-header">
-        <button class="close" id="close">
-            <img src="{% static 'base/icons/close.png' %}" alt="" class="close-img">
-        </button>
-    </div>
-
-    <ul class="menu-links">
-        <h5 class="menu-title">{% trans 'Cars' %}</h5>
-        {% for car_category in car_category.all %}
-        <li class="nav-items "><a class="nav-link link-light" href="/cars/?category={{car_category.url}}">{{car_category}}</a></li>
-        {% endfor %}
-    </ul>
-    <ul class="menu-links">
-        <h5 class="menu-title">{% trans 'Services' %}</h5>
-        {% for service in service.all %}
-            <li class="nav-items"><a class="nav-link link-light" href="/services/{{service.url}}/">{{service}}</a></li>
-        {% endfor %}
-    </ul>
-    <ul class="menu-links">
-        <h5 class="menu-title">{% trans 'Information' %}</h5>
-        <li class="nav-items "><a class="nav-link link-light" href="#">{% trans 'About' %}</a></li>
-        <li class="nav-items "><a class="nav-link link-light" href="#">{% trans 'Contacts' %}</a></li>
-    </ul>
-
-</div>
 
 <script type="text/javascript" src="{% static 'base/js/menu.js' %}"></script>
 <script type="text/javascript" src="{% static 'base/js/languages.js' %}"></script>
