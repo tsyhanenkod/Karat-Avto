@@ -1,275 +1,278 @@
 {% extends 'base/main.html' %}
 {% load static %}
+{% load i18n %}
 
 <!--    CONTENT    -->
 {% block content %}
 <link rel="stylesheet" href="{% static 'services/css/credit.css' %}">
 <link rel="stylesheet" href="{% static 'services/css/car.css' %}">
 
-<div class="credit">
-    <h2 class="block-title credit-main-title">Кредитування</h2>
+<div class="container">
+    <div class="credit">
+        <h2 class="block-title credit-main-title">{% trans 'Lending' %}</h2>
 
-    <div class="credit-block p-1">
-        <h6 class="credit-title p-1">Наші переваги:</h6>
-        <ul class="credit-list">
-            <li class="credit-list-item">Мінімальний початковий внесок від 30%</li>
-            <li class="credit-list-item">Фіксована ставка в гривні від 0,01% річних!!! </li>
-            <li class="credit-list-item">Попередньо надаємо договір і варіанти розрахунків для вивчення</li>
-        </ul>
-        <hr>
-        <br>
-    </div>
+        <div class="credit-block p-1">
+            <h6 class="credit-title p-1">{% trans 'Our advantages' %}:</h6>
+            <ul class="credit-list">
+                <li class="credit-list-item">{% trans 'Minimum down payment from 30%' %}</li>
+                <li class="credit-list-item">{% trans 'Fixed rate in hryvnia from 0.01% per annum' %}!</li>
+                <li class="credit-list-item">{% trans 'In advance, we provide the contract and calculation options for study' %}</li>
+            </ul>
+            <hr>
+            <br>
+        </div>
 
-    <div class="credit-block p-1">
-        <h6 class="credit-title p-1">Чим відрізняється кредит від лізингу?</h6>
-        <p class="credit-description">
-            <strong>Кредит</strong> - ви є власником автомобіля. Банк фінансує купівлю, а автомобіль є заставним майном в даному банку. На вимогу банку вам необхідно буде застрахувати автомобіль, тобто оформити КАСКО.
-        </p>
-        <br>
-        <p class="credit-description">
-            <strong>Лізинг</strong> - це довгострокова оренда з правом викупу. Протягом всього терміну лізингу, власником буде лізингова компанія. Купуючи автомобіль в лізинг, Ви будете користуватися не тільки фінансуванням лізингової компанії, але і послугою супроводу. У лізингові платежі включені всі необхідні витрати як при оформленні, а так само виникають протягом усього терміну лізингу - КАСКО та цивільно-правового страхування, реєстрація та ін.
-            <a href="" class="description-link">Детальніше про лізинг</a>
-        </p>
-        <br>
-        <p class="credit-description">
-            На ринку безліч фінансових організацій (банки, лізингові компанії, соціальні організації і ін.) Деякі з них є шахраями. Якщо Вам пропонують автомобіль за низькою вартістю, не вимагають довідку про доходи, обов'язкового страхування, то можливо Ви звернулися саме в «сумнівну» компанію. На Ваш запит ми Вам надамо всі договори, які необхідно буде підписати на угоді, детальні порівняльні розрахунки. Співпрацюючи з нами, Вам не доведеться брати на себе будь-які зобов'язання, попередньо не вивчивши всі умови договору.
-        </p>
-        <hr>
-        <br>
-    </div>
+        <div class="credit-block p-1">
+            <h6 class="credit-title p-1">{% trans 'What is the difference between a loan and a lease' %}?</h6>
+            <p class="credit-description">
+                <strong>{% trans 'Lending' %}</strong> - {% trans 'you are the owner of the car. The bank is financing the purchase, and the car is a mortgaged property in this bank. At the request of the bank, you will need to insure the car, i.e. issue CASCO.' %}
+            </p>
+            <br>
+            <p class="credit-description">
+                <strong>{% trans 'Leasing' %}</strong> - {% trans 'це довгострокова оренда з правом викупу. Протягом всього терміну лізингу, власником буде лізингова компанія. Купуючи автомобіль в лізинг, Ви будете користуватися не тільки фінансуванням лізингової компанії, але і послугою супроводу. У лізингові платежі включені всі необхідні витрати як при оформленні, а так само виникають протягом усього терміну лізингу - КАСКО та цивільно-правового страхування, реєстрація та ін.' %}
+                <a href="/services/lizing" class="description-link">{% trans 'Learn more about leasing' %}</a>
+            </p>
+            <br>
+            <p class="credit-description">
+                {% trans 'There are many financial organizations on the market (banks, leasing companies, social organizations, etc.). Some of them are scammers. If you are offered a car at a low price, do not require a certificate of income, mandatory insurance, then you may have turned to a "dubious" company. At your request, we will provide you with all contracts that will need to be signed on the agreement, detailed comparative calculations. Cooperating with us, you will not have to assume any obligations without first studying all the terms of the contract.' %}
+            </p>
+            <hr>
+            <br>
+        </div>
 
-    <div class="credit-block p-1">
-        <h6 class="credit-title p-1">На які умови ми орієнтуємо свого клієнта:</h6>
-        <p class="credit-description">
-            Фіксована ставка - банк в односторонньому порядку не змінить процентну ставку, як це можливо при плаваючій ставці; Відсутність щомісячних комісій - відсоток нараховується тільки на залишок; Вигідне КАСКО з мінімально можливим тарифом (можливо з розбивкою платежу навіть при кредиті). Відсутність завищених витрат при оформленні - додаткові страховки і комісії.
-        </p>
-        <br>
-        <p class="credit-description">
-            У кожному банку є кілька кредитних продуктів - стандартні і спільно розроблені для певних автомобільних брендів (акційні умови). Часом привабливий кредитний продукт зі зниженим річним відсотком в кінцевому результаті, порахувавши всі одноразові витрати і виплати, стає менш вигідним, ніж стандартний продукт банку. На вигідність продукту впливає термін кредиту і початковий внесок.
-        </p>
+        <div class="credit-block p-1">
+            <h6 class="credit-title p-1">{% trans 'What conditions do we orient our client to' %}:</h6>
+            <p class="credit-description">
+                {% trans 'Fixed rate - the bank will not unilaterally change the interest rate, as is possible with a floating rate; No monthly fees - interest is charged only on the balance; Affordable CASCO with the lowest possible tariff (possible with a breakdown of payment even with a loan). Absence of excessive costs during registration - additional insurances and commissions.' %}
+            </p>
+            <br>
+            <p class="credit-description">
+                {% trans 'Each bank has several credit products - standard and jointly developed for certain car brands (promotional conditions). Sometimes an attractive loan product with a reduced annual interest rate in the final result, after calculating all one-time costs and payments, becomes less profitable than a standard bank product. The profitability of the product is affected by the term of the loan and the down payment.' %}
+            </p>
 
-        <!--    Oschad People    -->
-        <br>
-        <br>
-        <h4 class="oschad"><img class="oschad-logo" src="{% static 'services/icons/oschad.png' %}" alt=""> ОщадБанк умови кредитування для фізичних осіб</h4>
-        <br>
+            <!--    Oschad People    -->
+            <br>
+            <br>
+            <h4 class="oschad"><img class="oschad-logo" src="{% static 'services/icons/oschad.png' %}" alt="">{% trans 'OschadBank lending conditions for individuals' %}</h4>
+            <br>
 
-        <table class="credit-table">
-            <tr class="table-row">
-                <th class="table-col" rowspan="3">Термін кредитування</th>
-            </tr>
-            <tr class="table-row">
-                <th class="table-col" rowspan="2">Разова коміся банку</th>
-                <td colspan="5" class="table-col">Процентна ставка залежно від терміну кредитування та початкового внеску, % річних</td>
-            </tr>
-            <tr class="table-row">
-                <td class="table-col">30%</td>
-                <td class="table-col">40%</td>
-                <td class="table-col">50%</td>
-                <td class="table-col">60%</td>
-                <td class="table-col">70%</td>
-            </tr>
-            <tr class="table-row">
-                <td class="table-col">12 міс.</td>
-                <td rowspan="5" class="table-col">0.00%</td>
-                <td class="table-col">6,49%</td>
-                <td class="table-col">4,49%</td>
-                <td class="table-col">1,49%</td>
-                <td class="table-col">0,01%</td>
-                <td class="table-col">0,01%</td>
-            </tr>
-            <tr class="table-row">
-                <td class="table-col">24 міс.</td>
-                <td class="table-col">8,99%</td>
-                <td class="table-col">7,49%</td>
-                <td class="table-col">5,49%</td>
-                <td class="table-col">2,49%</td>
-                <td class="table-col">0,01%</td>
-            </tr>
-            <tr class="table-row">
-                <td class="table-col">25-36 міс.</td>
-                <td class="table-col">10,49%</td>
-                <td class="table-col">8,99%</td>
-                <td class="table-col">7,49%</td>
-                <td class="table-col">4,49%</td>
-                <td class="table-col">0,01%</td>
-            </tr>
-            <tr class="table-row">
-                <td class="table-col">37-60 міс.</td>
-                <td class="table-col">11,49%</td>
-                <td class="table-col">10,99%</td>
-                <td class="table-col">8,99%</td>
-                <td class="table-col">6,99%</td>
-                <td class="table-col">2,49%</td>
-            </tr>
-            <tr class="table-row">
-                <td class="table-col">61-84 міс.</td>
-                <td class="table-col">12,49%</td>
-                <td class="table-col">11,99%</td>
-                <td class="table-col">10,49%</td>
-                <td class="table-col">8,49%</td>
-                <td class="table-col">4,49%</td>
-            </tr>
-        </table>
+            <table class="credit-table">
+                <tr class="table-row">
+                    <th class="table-col" rowspan="3">{% trans 'Credit term' %}</th>
+                </tr>
+                <tr class="table-row">
+                    <th class="table-col" rowspan="2">{% trans 'One-time bank commission' %}</th>
+                    <td colspan="5" class="table-col">{% trans 'The interest rate depends on the term of the loan and the initial payment, % per annum' %}</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-col">30%</td>
+                    <td class="table-col">40%</td>
+                    <td class="table-col">50%</td>
+                    <td class="table-col">60%</td>
+                    <td class="table-col">70%</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-col">12 {% trans 'mo' %}.</td>
+                    <td rowspan="5" class="table-col">0.00%</td>
+                    <td class="table-col">6,49%</td>
+                    <td class="table-col">4,49%</td>
+                    <td class="table-col">1,49%</td>
+                    <td class="table-col">0,01%</td>
+                    <td class="table-col">0,01%</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-col">24 {% trans 'mo' %}.</td>
+                    <td class="table-col">8,99%</td>
+                    <td class="table-col">7,49%</td>
+                    <td class="table-col">5,49%</td>
+                    <td class="table-col">2,49%</td>
+                    <td class="table-col">0,01%</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-col">25-36 {% trans 'mo' %}.</td>
+                    <td class="table-col">10,49%</td>
+                    <td class="table-col">8,99%</td>
+                    <td class="table-col">7,49%</td>
+                    <td class="table-col">4,49%</td>
+                    <td class="table-col">0,01%</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-col">37-60 {% trans 'mo' %}.</td>
+                    <td class="table-col">11,49%</td>
+                    <td class="table-col">10,99%</td>
+                    <td class="table-col">8,99%</td>
+                    <td class="table-col">6,99%</td>
+                    <td class="table-col">2,49%</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-col">61-84 {% trans 'mo' %}.</td>
+                    <td class="table-col">12,49%</td>
+                    <td class="table-col">11,99%</td>
+                    <td class="table-col">10,49%</td>
+                    <td class="table-col">8,49%</td>
+                    <td class="table-col">4,49%</td>
+                </tr>
+            </table>
 
-        <!--    Oschad Business    -->
-        <br>
-        <br>
-        <h4 class="oschad"><img class="oschad-logo" src="{% static 'services/icons/oschad.png' %}" alt=""> ОщадБанк умови кредитування для бізнесу</h4>
-        <br>
+            <!--    Oschad Business    -->
+            <br>
+            <br>
+            <h4 class="oschad"><img class="oschad-logo" src="{% static 'services/icons/oschad.png' %}" alt="">{% trans 'OschadBank lending conditions for business' %}</h4>
+            <br>
 
-        <table class="credit-table">
-            <tr class="table-row">
-                <th class="table-col" rowspan="3">Термін кредитування</th>
-            </tr>
-            <tr class="table-row">
-                <td colspan="5" class="table-col">Процентна ставка залежно від терміну кредитування та початкового внеску, % річних</td>
-            </tr>
-            <tr class="table-row">
-                <td class="table-col">30%</td>
-                <td class="table-col">40%</td>
-                <td class="table-col">50%</td>
-                <td class="table-col">60%</td>
-                <td class="table-col">70%</td>
-            </tr>
-            <tr class="table-row">
-                <td class="table-col">12 міс.</td>
-                <td class="table-col">2,99%</td>
-                <td class="table-col">2,99%</td>
-                <td class="table-col">1,99%</td>
-                <td class="table-col">0,01%</td>
-                <td class="table-col">0,01%<span>*</span></td>
-            </tr>
-            <tr class="table-row">
-                <td class="table-col">24 міс.</td>
-                <td class="table-col">3,99%</td>
-                <td class="table-col">3,39%</td>
-                <td class="table-col">3,99%</td>
-                <td class="table-col">0,01%</td>
-                <td class="table-col">0,01%</td>
-            </tr>
-            <tr class="table-row">
-                <td class="table-col">36 міс.</td>
-                <td class="table-col">5,99%</td>
-                <td class="table-col">5,99%</td>
-                <td class="table-col">4,99%</td>
-                <td class="table-col">0,01%<span>**</span></td>
-                <td class="table-col">0,01%</td>
-            </tr>
-            <tr class="table-row">
-                <td class="table-col">48 міс.</td>
-                <td class="table-col">6,99%</td>
-                <td class="table-col">6,99%</td>
-                <td class="table-col">5,99%</td>
-                <td class="table-col">3,99%</td>
-                <td class="table-col">2,99%</td>
-            </tr>
-            <tr class="table-row">
-                <td class="table-col">60 міс.</td>
-                <td class="table-col">6,99%</td>
-                <td class="table-col">6,99%</td>
-                <td class="table-col">5,99%</td>
-                <td class="table-col">3,99%</td>
-                <td class="table-col">2,99%</td>
-            </tr>
-        </table>
-        <p class="table-info"><span>*</span> разова комісія складає 0,00% від суми кредиту</p>
-        <p class="table-info"><span>**</span> разова комісія складає 2,50% від суми кредиту</p>
+            <table class="credit-table">
+                <tr class="table-row">
+                    <th class="table-col" rowspan="3">{% trans 'Credit term' %}</th>
+                </tr>
+                <tr class="table-row">
+                    <td colspan="5" class="table-col">{% trans 'The interest rate depends on the term of the loan and the initial payment, % per annum' %}</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-col">30%</td>
+                    <td class="table-col">40%</td>
+                    <td class="table-col">50%</td>
+                    <td class="table-col">60%</td>
+                    <td class="table-col">70%</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-col">12 {% trans 'mo' %}.</td>
+                    <td class="table-col">2,99%</td>
+                    <td class="table-col">2,99%</td>
+                    <td class="table-col">1,99%</td>
+                    <td class="table-col">0,01%</td>
+                    <td class="table-col">0,01%<span>*</span></td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-col">24 {% trans 'mo' %}.</td>
+                    <td class="table-col">3,99%</td>
+                    <td class="table-col">3,39%</td>
+                    <td class="table-col">3,99%</td>
+                    <td class="table-col">0,01%</td>
+                    <td class="table-col">0,01%</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-col">36 {% trans 'mo' %}.</td>
+                    <td class="table-col">5,99%</td>
+                    <td class="table-col">5,99%</td>
+                    <td class="table-col">4,99%</td>
+                    <td class="table-col">0,01%<span>**</span></td>
+                    <td class="table-col">0,01%</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-col">48 {% trans 'mo' %}.</td>
+                    <td class="table-col">6,99%</td>
+                    <td class="table-col">6,99%</td>
+                    <td class="table-col">5,99%</td>
+                    <td class="table-col">3,99%</td>
+                    <td class="table-col">2,99%</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-col">60 {% trans 'mo' %}.</td>
+                    <td class="table-col">6,99%</td>
+                    <td class="table-col">6,99%</td>
+                    <td class="table-col">5,99%</td>
+                    <td class="table-col">3,99%</td>
+                    <td class="table-col">2,99%</td>
+                </tr>
+            </table>
+            <p class="table-info"><span>*</span>{% trans 'one-time fee is' %} 0.00% {% trans 'of the loan amount' %}</p>
+            <p class="table-info"><span>**</span>{% trans 'one-time fee is' %} 2.50% {% trans 'of the loan amount' %}</p>
 
-        <!--    Globus Bank People    -->
-        <br>
-        <br>
-        <h4 class="oschad"><img class="globus-logo" src="{% static 'services/icons/globusbank.png' %}" alt=""> Глобус Банк умови кредитування</h4>
-        <br>
+            <!--    Globus Bank People    -->
+            <br>
+            <br>
+            <h4 class="oschad"><img class="globus-logo" src="{% static 'services/icons/globusbank.png' %}" alt="">{% trans 'Globus Bank lending conditions' %}</h4>
+            <br>
 
-        <table class="credit-table">
-            <tr class="table-row">
-                <th class="table-col" rowspan="3">Термін кредитування</th>
-            </tr>
-            <tr class="table-row">
-                <th class="table-col" rowspan="2">Разова коміся банку</th>
-                <td colspan="5" class="table-col">Процентна ставка залежно від терміну кредитування та початкового внеску, % річних</td>
-            </tr>
-            <tr class="table-row">
-                <td class="table-col">30%</td>
-                <td class="table-col">40%</td>
-                <td class="table-col">50%</td>
-                <td class="table-col">60%</td>
-                <td class="table-col">70%</td>
-            </tr>
-            <tr class="table-row">
-                <td class="table-col">12 міс.</td>
-                <td rowspan="5" class="table-col">2.50%</td>
-                <td class="table-col">11,99%</td>
-                <td class="table-col">10,49%</td>
-                <td class="table-col">8,99%</td>
-                <td class="table-col">6,99%</td>
-                <td class="table-col">2,99%</td>
-            </tr>
-            <tr class="table-row">
-                <td class="table-col">24 міс.</td>
-                <td class="table-col">14,49%</td>
-                <td class="table-col">13,49%</td>
-                <td class="table-col">11,99%</td>
-                <td class="table-col">9,49%</td>
-                <td class="table-col">5,99%</td>
-            </tr>
-            <tr class="table-row">
-                <td class="table-col">36 міс.</td>
-                <td class="table-col">15,49%</td>
-                <td class="table-col">14,49%</td>
-                <td class="table-col">12,99%</td>
-                <td class="table-col">10,99%</td>
-                <td class="table-col">7,99%</td>
-            </tr>
-            <tr class="table-row">
-                <td class="table-col">48 міс.</td>
-                <td class="table-col">15,99%</td>
-                <td class="table-col">14,99%</td>
-                <td class="table-col">13,99%</td>
-                <td class="table-col">12,49%</td>
-                <td class="table-col">8,99%</td>
-            </tr>
-            <tr class="table-row">
-                <td class="table-col">60 міс.</td>
-                <td class="table-col">16,49%</td>
-                <td class="table-col">15,99%</td>
-                <td class="table-col">14,99%</td>
-                <td class="table-col">12,99%</td>
-                <td class="table-col">9,99%</td>
-            </tr>
-        </table>
+            <table class="credit-table">
+                <tr class="table-row">
+                    <th class="table-col" rowspan="3">{% trans 'Credit term' %}</th>
+                </tr>
+                <tr class="table-row">
+                    <th class="table-col" rowspan="2">{% trans 'One-time bank commission' %}</th>
+                    <td colspan="5" class="table-col">{% trans 'The interest rate depends on the term of the loan and the initial payment, % per annum' %}</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-col">30%</td>
+                    <td class="table-col">40%</td>
+                    <td class="table-col">50%</td>
+                    <td class="table-col">60%</td>
+                    <td class="table-col">70%</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-col">12 {% trans 'mo' %}.</td>
+                    <td rowspan="5" class="table-col">2.50%</td>
+                    <td class="table-col">11,99%</td>
+                    <td class="table-col">10,49%</td>
+                    <td class="table-col">8,99%</td>
+                    <td class="table-col">6,99%</td>
+                    <td class="table-col">2,99%</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-col">24 {% trans 'mo' %}.</td>
+                    <td class="table-col">14,49%</td>
+                    <td class="table-col">13,49%</td>
+                    <td class="table-col">11,99%</td>
+                    <td class="table-col">9,49%</td>
+                    <td class="table-col">5,99%</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-col">36 {% trans 'mo' %}.</td>
+                    <td class="table-col">15,49%</td>
+                    <td class="table-col">14,49%</td>
+                    <td class="table-col">12,99%</td>
+                    <td class="table-col">10,99%</td>
+                    <td class="table-col">7,99%</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-col">48 {% trans 'mo' %}.</td>
+                    <td class="table-col">15,99%</td>
+                    <td class="table-col">14,99%</td>
+                    <td class="table-col">13,99%</td>
+                    <td class="table-col">12,49%</td>
+                    <td class="table-col">8,99%</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-col">60 {% trans 'mo' %}.</td>
+                    <td class="table-col">16,49%</td>
+                    <td class="table-col">15,99%</td>
+                    <td class="table-col">14,99%</td>
+                    <td class="table-col">12,99%</td>
+                    <td class="table-col">9,99%</td>
+                </tr>
+            </table>
 
-        <br>
-        <br>
-    </div>
+            <br>
+            <br>
+        </div>
 
-    <div class="credit-block p-1">
-        <h6 class="credit-title p-1">Документи, необхідні для оформлення кредиту:</h6>
-        <p class="credit-description">
-            - Паспорт <br>
-            - ІПН <br>
-            - Довідка про доходи
-        </p>
-        <br>
-        <p class="credit-description">
-            Якщо Позичальник перебуває у шлюбі, то такий самий пакет документів <br>
-            на чоловіка / дружину + свідоцтво про шлюб.
-        </p>
-        <br>
-        <p class="credit-description">
-            Негативна кредитна історія, мінімальна довідка про доходи - не завжди є проблемою для придбання автомобіля в кредит.
-        </p>
-        <br>
-        <p class="credit-description">
-            Більш детальну інформацію Ви можете отримати, звернувшись по телефону  <br>
-            Унікальна пропозиція з кредитування нових і б/у автомобілів. Всебічний підхід..
-        </p>
-        <br>
-        <hr>
-        <br>
-        <br>
-        <br>
+        <div class="credit-block p-1">
+            <h6 class="credit-title p-1">{% trans 'Documents required for the loan' %}:</h6>
+            <p class="credit-description">
+                - {% trans 'Passport' %} <br>
+                - {% trans 'TIN' %} <br>
+                - {% trans 'Certificate of income' %}
+            </p>
+            <br>
+            <p class="credit-description">
+                {% trans 'If the Borrower is married, then the same package of documents' %} <br>
+                {% trans 'for husband / wife + marriage certificate' %}.
+            </p>
+            <br>
+            <p class="credit-description">
+                {% trans 'A negative credit history, a minimum certificate of income is not always a problem for purchasing a car on credit' %}.
+            </p>
+            <br>
+            <p class="credit-description">
+                {% trans 'You can get more detailed information by calling' %}  <br>
+                {% trans 'A unique offer for lending new and used cars. Comprehensive approach' %}.
+            </p>
+            <br>
+            <hr>
+            <br>
+            <br>
+            <br>
+        </div>
     </div>
 </div>
 

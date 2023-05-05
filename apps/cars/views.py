@@ -91,7 +91,7 @@ class CarsDetailView(View):
         drive_unit = DriveUnit.objects.all()
 
         char_category = Charcategory.objects.all()
-        complects = Complect.objects.filter(car=car)
+        complects = Complect.objects.filter(car=car).select_related('car')
         char = Char.objects.select_related('char_category')
         value = Values.objects.select_related('complectation').select_related('char')
         complect_transmissions = Prices.objects.all()
@@ -114,7 +114,7 @@ class CarsDetailView(View):
         price = intcomma(car.price)
 
         char_category = Charcategory.objects.all()
-        complects = Complect.objects.filter(car=car)
+        complects = Complect.objects.filter(car=car).select_related('car')
         char = Char.objects.select_related('char_category')
         value = Values.objects.select_related('complectation').select_related('char')
         complect_transmissions = Prices.objects.all()

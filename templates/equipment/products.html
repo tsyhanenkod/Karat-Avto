@@ -1,7 +1,44 @@
 {% extends 'base/main.html' %}
 {% load static %}
+{% load i18n %}
+
 
 {% block content %}
-products
+<link rel="stylesheet" href="{% static 'equipment/css/products.css' %}">
+
+<div class="container">
+    <h2 class="block-title credit-main-title">{% trans 'Additional equipment' %}</h2>
+    {% for product in products.all %}
+
+    <div class="row flex-row flex-wrap product p-1">
+        <div class="col-lg-5 order-2 order-lg-1">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% if LANGUAGE_CODE == 'en' %}
+                    <div class="block-info">
+                        <h3 class="product-title">{{product.name_en}}</h3>
+                        <div class="desc-block">
+                            <p class="product-description">{{product.description_en|safe}}</p>
+                        </div>
+                        <a href="#" class="contact">{% trans 'Contacts us' %}</a>
+                    </div>
+                {% elif LANGUAGE_CODE == 'uk' %}
+                    <div class="block-info">
+                        <h3 class="product-title">{{product.name_uk}}</h3>
+                        <div class="desc-block">
+                            <p class="product-description">{{product.description_uk|safe}}</p>
+                        </div>
+                        <a href="#" class="contact">{% trans 'Contacts us' %}</a>
+                    </div>
+                {% endif %}
+        </div>
+        <div class="col-lg-7 order-1 order-lg-2">
+            <div class="image-wrapper">
+                <img src="{{product.product_image.url}}" alt="" class="product-img">
+            </div>
+        </div>
+    </div>
+    <hr class="between">
+    {% endfor %}
+</div>
 
 {% endblock content %}

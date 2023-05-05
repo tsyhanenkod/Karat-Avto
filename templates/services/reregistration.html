@@ -1,39 +1,41 @@
 {% extends 'base/main.html' %}
 {% load static %}
+{% load i18n %}
 
 <!--    CONTENT    -->
 {% block content %}
 <link rel="stylesheet" href="{% static 'services/css/reregistration.css' %}">
 
-<div class="reregister">
-    <h2 class="block-title rereg-main-title">Пряма перереєстрація транспортного засобу</h2>
+<div class="container">
+    <div class="reregister">
+        <h2 class="block-title rereg-main-title">{% trans 'Vehicle re-registration' %}</h2>
 
-    <div class="rereg-block p-1">
-        <h6 class="rereg-title p-1">Для фізичних та юридичних осіб:</h6>
-        <ul class="rereg-list">
-            <li class="rereg-list-item">оформлення прямої перереєстрації, професійна консультація з усіх питань купівлі-продажу транспортного засобу, (перевірка транспортного засобу)</li>
-        </ul>
-        <hr>
-    </div>
+        <div class="rereg-block p-1">
+            <h6 class="rereg-title p-1">{% trans 'For individuals and legal entities:' %}</h6>
+            <ul class="rereg-list">
+                <li class="rereg-list-item">{% trans 'Registration of direct re-registration, professional consultation on all issues of vehicle purchase and sale, (vehicle inspection)' %}</li>
+            </ul>
+            <hr>
+        </div>
 
-    <div class="rereg-block p-1">
-        <h6 class="rereg-title p-1">Документи для фізичних осіб:</h6>
-        <ul class="rereg-list">
-            <li class="rereg-list-item">Паспорт+код продавця (якщо є нотаріальна довіреність, потрібен оригінал, який залишається у нас в архіві)</li>
-            <li class="rereg-list-item">Паспорт+код покупця (якщо є нотаріальна довіреність, оригінал, у нас залишається копія)</li>
-            <li class="rereg-list-item">Технічний паспорт на транспортний засіб</li>
-        </ul>
-        <hr>
-    </div>
+        <div class="rereg-block p-1">
+            <h6 class="rereg-title p-1">{% trans 'Documents for individuals:' %}</h6>
+            <ul class="rereg-list">
+                <li class="rereg-list-item">{% trans 'Passport + seller code (if there is a notarial power of attorney, we need the original, which remains in our archive)' %}</li>
+                <li class="rereg-list-item">{% trans 'Passport + buyer code (if there is a notarial power of attorney, the original, we keep a copy)' %}</li>
+                <li class="rereg-list-item">{% trans 'Technical passport for the vehicle' %}</li>
+            </ul>
+            <hr>
+        </div>
 
-    <div class="rereg-block p-1">
-        <h6 class="rereg-title p-1">Для фізичних та юридичних осіб:</h6>
-        <ul class="rereg-list">
-            <li class="rereg-list-item">Продавець/покупець: Установчі документи підприємства (копії, завірені печаткою), наказ на придбання/продаж т/з від підприємства, з зазначеною ціною продажу чи купівлею т/з, довіреність від підприємства на особу, яка буде займатися купівлею/продажем т/з + паспорт+код довіреної особи</li>
-            <li class="rereg-list-item">Перевірка по всіх базах (викрадення, арешт і ін.)</li>
-        </ul>
-        <hr>
+        <div class="rereg-block p-1">
+            <h6 class="rereg-title p-1">{% trans 'For individuals and legal entities:' %}</h6>
+            <ul class="rereg-list">
+                <li class="rereg-list-item">{% trans 'Seller/buyer: Founding documents of the enterprise (copies certified by seal), purchase/sale order from the enterprise, with the stated price of sale or purchase of the enterprise, power of attorney from the enterprise to the person who will be engaged in the purchase/sale of the enterprise + passport + proxy code' %}</li>
+                <li class="rereg-list-item">{% trans 'Check on all bases (kidnapping, arrest, etc.)' %}</li>
+            </ul>
+            <hr>
+        </div>
     </div>
 </div>
-
 {% endblock content %}

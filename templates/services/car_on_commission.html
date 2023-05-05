@@ -1,58 +1,60 @@
 {% extends 'base/main.html' %}
 {% load static %}
+{% load i18n %}
 
 <!--    CONTENT    -->
 {% block content %}
 <link rel="stylesheet" href="{% static 'services/css/car_on_comission.css' %}">
 
-<div class="car_on_com">
-    <h2 class="block-title credit-main-title">
-        Авто на коміссію
-    </h2>
+<div class="container">
+    <div class="car_on_com">
+        <h2 class="block-title credit-main-title">
+            {% trans 'Car on commission' %}
+        </h2>
 
-    <h6 class="car_on_com-title">
-        Про послугу "Авто на комісію":
-    </h6>
-    <div class="com_under_title">
-        <p>Наш автосалон приймає на комісію легкові автомобілі і мікроавтобуси будь-яких марок, нові і з пробігом, як в справному стані, так і з дефектами (після ДТП, що вимагають ремонту).</p>
-        <br>
-        <p><strong>Авто на комісію</strong> - це послуга, яка є справжнім порятунком для багатьох автовласників. Продати старий автомобіль не так то просто: спочатку необхідно подати оголошення, потім спілкуватися з потенційними покупцями, зустрічатися з ними, втрачаючи багато часу. Сучасні люди, які цінують свій час і бажають продати свій автомобіль якомога швидше, користуються послугами автосалону «Карат-Авто», який надає послуги з прийому авто на комісію.</p>
-    </div>
+        <h6 class="car_on_com-title">
+            {% trans 'About the "Car on commission" service' %}:
+        </h6>
+        <div class="com_under_title">
+            <p>{% trans 'Our car dealership accepts passenger cars and minibuses of any brand, new and with mileage, both in good condition and with defects (after road accidents that require repair) on commission.' %}.</p>
+            <br>
+            <p><strong>{% trans 'Car on commission' %}</strong> - {% trans 'this is a service that is a real salvation for many car owners. Selling an old car is not so easy: first you need to submit an ad, then communicate with potential buyers, meet with them, wasting a lot of time. Modern people who value their time and want to sell their car as soon as possible use the services of the Karat-Avto car dealership, which provides car pickup services on commission' %}.</p>
+        </div>
 
-    <h6 class="car_on_com-title">
-        Нашими головними перевагами є:
-    </h6>
-    <div class="com_under_title">
-        <ul class="ul-com">
-            <li>Активна рекламна кампанія Вашого автомобіля;</li>
-            <li>Вигідні програми кредитування, страхування  Вашого автомобіля;</li>
-            <li>Безпека Вашого автомобіля;</li>
-            <li>Професійна передпродажна підготовка Вашого автомобіля;</li>
-            <li>Пряма перереєстрація транспортного засобу на нового власника;</li>
-            <li>Відсутність витрат по рекламі, стоянці, охорони автомобіля;</li>
-            <li>Безкоштовні консультації з технічних і юридичних аспектів продажу автомобіля.</li>
-        </ul>
-    </div>
+        <h6 class="car_on_com-title">
+            {% trans 'Our main advantages are' %}:
+        </h6>
+        <div class="com_under_title">
+            <ul class="ul-com">
+                <li>{% trans 'Active advertising campaign of your car;' %}</li>
+                <li>{% trans 'Profitable lending programs, insurance of your car;' %}</li>
+                <li>{% trans 'Safety of your car;' %}</li>
+                <li>{% trans 'Professional pre-sale preparation of your car;' %}</li>
+                <li>{% trans 'Direct re-registration of the vehicle to the new owner;' %}</li>
+                <li>{% trans 'No costs for advertising, parking, car security;' %}</li>
+                <li>{% trans 'Free consultations on technical and legal aspects of car sales.' %}</li>
+            </ul>
+        </div>
 
-    <h6 class="car_on_com-title">
-        Умови прийому автомобіля за полсугою:
-    </h6>
-    <div class="com_under_title">
-        <p>При прийомі автомобіля на продаж Вам необхідно надати документи:</p>
-        <ul class="ul-com">
-            <li>Свідоцтво про реєстрацію;</li>
-            <li>Генеральну довіреність (якщо Ви не є власником автомобіля);</li>
-            <li>Власний паспорт, ідентифікаційний код.</li>
-        </ul>
-        <br>
-        <p>Між Вами і автосалоном «Карат-Авто» складається:</p>
-        <ul class="ul-com">
-            <li>Договір відповідального зберігання автомобіля;</li>
-            <li>Договір комісії;</li>
-            <li>Акт прийому транспортного засобу на продаж.</li>
-        </ul>
+        <h6 class="car_on_com-title">
+            {% trans 'Conditions for receiving a car for the service' %}:
+        </h6>
+        <div class="com_under_title">
+            <p>{% trans 'When accepting a car for sale, you must provide documents' %}:</p>
+            <ul class="ul-com">
+                <li>{% trans 'Certificate of registration;' %}</li>
+                <li>{% trans 'General power of attorney (if you are not the owner of the car);' %}</li>
+                <li>{% trans 'Own passport, identification code.' %}</li>
+            </ul>
+            <br>
+            <p>{% trans 'Between you and the "Karat-Avto" car dealership is formed' %}:</p>
+            <ul class="ul-com">
+                <li>{% trans 'Contract of responsible car storage;' %}</li>
+                <li>{% trans 'Commission contract;' %}</li>
+                <li>{% trans 'Act of acceptance of the vehicle for sale.' %}</li>
+            </ul>
+        </div>
     </div>
 </div>
-
 
 {% endblock content %}

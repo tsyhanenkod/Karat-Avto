@@ -133,9 +133,9 @@
 
                 <div class="tab-content" id="pills-tabContent">
                     {% if LANGUAGE_CODE == 'en' %}
-                    <div class="tab-pane fade show active" id="pills-desc" role="tabpanel" aria-labelledby="pills-home-tab">{{car.description_en|safe}}</div>
+                        <div class="tab-pane fade show active" id="pills-desc" role="tabpanel" aria-labelledby="pills-home-tab">{{car.description_en|safe}}</div>
                     {% else %}
-                    <div class="tab-pane fade show active" id="pills-desc" role="tabpanel" aria-labelledby="pills-home-tab">{{car.description_uk|safe}}</div>
+                        <div class="tab-pane fade show active" id="pills-desc" role="tabpanel" aria-labelledby="pills-home-tab">{{car.description_uk|safe}}</div>
                     {% endif %}
 
                     <!--    CHARACTERISTICS BLOCK    -->
@@ -268,10 +268,10 @@
                                         {% endif %}
                                         {% endfor %}
                                     {% elif complects|length == 2 %}
-                                        <div class="col-6"></div>
+                                        <div class="col-8"></div>
                                         {% for complect in complects.all %}
                                         {% if complect.car == car %}
-                                            <div class="col-3" style="text-align: center">
+                                            <div class="col-2" style="text-align: center">
                                                 <h6 class="complect-text">{{complect}}</h6>
                                             </div>
                                         {% endif %}
@@ -291,100 +291,127 @@
                         </div>
                         <hr>
 
-                        {% for category in char_category.all.distinct %}
-                        <div class="row">
-                            <div class="col-2 category-block complect-text"><p>{{category}}</p></div>
-                            <div class="col-10">
 
-                                {% if complects|length == 1 %}
-                                <div class="row">
-                                    {% for char in char.all %}
-                                        {% if char.char_category == category %}
-                                            {% for complect in complects.all %}
-                                                {% if char in complect.char.all.distinct %}
-                                                    {% ifchanged char %}
-                                                        <div class="col-8 complect-text" >{{char.name}}</div>
-                                                    {% endifchanged %}
-                                                {% endif %}
-                                            {% endfor %}
-                                            {% for complect in complects.all %}
-                                            {% for value in value.all %}
-                                            {% if value.char == char and value.complectation == complect %}
-                                            <div class="col-4" style="text-align: center">
-                                                {% if value.value == True %}
-                                                <img class="value-img" src="{% static 'cars/icons//yes.png' %}" alt="">
-                                                {% else %}
-                                                <img class="value-img" src="{% static 'cars/icons/no.png' %}" alt="">
-                                                {% endif %}
-                                            </div>
-                                            {% endif %}
-                                            {% endfor %}
-                                            {% endfor %}
-                                        {% endif %}
-                                    {% endfor %}
-                                </div>
-                                {% elif complects|length == 2 %}
-                                <div class="row">
-                                    {% for char in char.all %}
-                                        {% if char.char_category == category %}
-                                            {% for complect in complects.all %}
-                                                {% if char in complect.char.all.distinct %}
-                                                    {% ifchanged char %}
-                                                        <div class="col-6 complect-text" >{{char.name}}</div>
-                                                    {% endifchanged %}
-                                                {% endif %}
-                                            {% endfor %}
-                                            {% for complect in complects.all %}
-                                            {% for value in value.all %}
-                                            {% if value.char == char and value.complectation == complect %}
-                                            <div class="col-3" style="text-align: center">
-                                                {% if value.value == True %}
-                                                <img class="value-img" src="{% static 'cars/icons//yes.png' %}" alt="">
-                                                {% else %}
-                                                <img class="value-img" src="{% static 'cars/icons/no.png' %}" alt="">
-                                                {% endif %}
-                                            </div>
-                                            {% endif %}
-                                            {% endfor %}
-                                            {% endfor %}
-                                        {% endif %}
-                                    {% endfor %}
-                                </div>
-                                {% elif complects|length == 3 %}
-                                <div class="row">
-                                    {% for char in char.all %}
-                                        {% if char.char_category == category %}
-                                            {% for complect in complects.all %}
-                                                {% if char in complect.char.all.distinct %}
-                                                    {% ifchanged char %}
-                                                        <div class="col-6 complect-text" >{{char.name}}</div>
-                                                    {% endifchanged %}
-                                                {% endif %}
-                                            {% endfor %}
-                                            {% for complect in complects.all %}
-                                            {% for value in value.all %}
-                                            {% if value.char == char and value.complectation == complect %}
-                                            <div class="col-2" style="text-align: center">
-                                                {% if value.value == True %}
-                                                <img class="value-img" src="{% static 'cars/icons//yes.png' %}" alt="">
-                                                {% else %}
-                                                <img class="value-img" src="{% static 'cars/icons/no.png' %}" alt="">
-                                                {% endif %}
-                                            </div>
-                                            {% endif %}
-                                            {% endfor %}
-                                            {% endfor %}
-                                        {% endif %}
-                                    {% endfor %}
-                                </div>
-                                {% endif %}
 
+                        {% if complects|length == 1 %}
+                            <div class="row">
+                                {% for category in char_category.all %}
+                                    {% if category in complects.first.char_category.all %}
+                                    <div class="col-2 category-block complect-text"><p>{{category}}</p></div>
+
+                                    <div class="col-10">
+                                        <div class="row">
+                                            {% for char in char.all %}
+                                                {% if char.char_category == category %}
+                                                    {% for complect in complects.all %}
+                                                        {% if char in complect.char.all.distinct %}
+                                                            {% ifchanged char %}
+                                                                <div class="col-8 complect-text" >{{char.name}}</div>
+                                                            {% endifchanged %}
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                    {% for complect in complects.all %}
+                                                        {% for value in value.all %}
+                                                            {% if value.char == char and value.complectation == complect %}
+                                                                <div class="col-4" style="text-align: center">
+                                                                {% if value.value == True %}
+                                                                <img class="value-img" src="{% static 'cars/icons//yes.png' %}" alt="">
+                                                                {% else %}
+                                                                <img class="value-img" src="{% static 'cars/icons/no.png' %}" alt="">
+                                                                {% endif %}
+                                                            </div>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    {% endfor %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    {% endif %}
+                                {% endfor %}
                             </div>
-                        </div>
-                        <hr>
-                        {% endfor %}
-                    </div>
+
+                        {% elif complects|length == 2 %}
+                            <div class="row">
+                                {% for category in char_category.all %}
+                                    {% if category in complects.first.char_category.all %}
+                                    <div class="col-2 category-block complect-text"><p>{{category}}</p></div>
+
+                                    <div class="col-10">
+                                        <div class="row">
+                                            {% for char in char.all %}
+                                                {% if char.char_category == category %}
+                                                    {% for complect in complects.all %}
+                                                        {% if char in complect.char.all.distinct %}
+                                                            {% ifchanged char %}
+                                                                <div class="col-8 complect-text" >{{char.name}}</div>
+                                                            {% endifchanged %}
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                    {% for complect in complects.all %}
+                                                        {% for value in value.all %}
+                                                            {% if value.char == char and value.complectation == complect %}
+                                                                <div class="col-2" style="text-align: center">
+                                                                {% if value.value == True %}
+                                                                <img class="value-img" src="{% static 'cars/icons//yes.png' %}" alt="">
+                                                                {% else %}
+                                                                <img class="value-img" src="{% static 'cars/icons/no.png' %}" alt="">
+                                                                {% endif %}
+                                                            </div>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    {% endfor %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% elif complects|length == 3 %}
+                            <div class="row">
+                                {% for category in char_category.all %}
+                                    {% if category in complects.first.char_category.all %}
+                                    <div class="col-2 category-block complect-text"><p>{{category}}</p></div>
+
+                                    <div class="col-10">
+                                        <div class="row">
+                                            {% for char in char.all %}
+                                                {% if char.char_category == category %}
+                                                    {% for complect in complects.all %}
+                                                        {% if char in complect.char.all.distinct %}
+                                                            {% ifchanged char %}
+                                                                <div class="col-6 complect-text" >{{char.name}}</div>
+                                                            {% endifchanged %}
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                    {% for complect in complects.all %}
+                                                        {% for value in value.all %}
+                                                            {% if value.char == char and value.complectation == complect %}
+                                                                <div class="col-2" style="text-align: center">
+                                                                {% if value.value == True %}
+                                                                <img class="value-img" src="{% static 'cars/icons//yes.png' %}" alt="">
+                                                                {% else %}
+                                                                <img class="value-img" src="{% static 'cars/icons/no.png' %}" alt="">
+                                                                {% endif %}
+                                                            </div>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    {% endfor %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
                     {% endif %}
+
+                    </div>
 
                     <!--    PRICES BLOCK    -->
                     <div class="tab-pane fade" id="pills-price" role="tabpanel" aria-labelledby="pills-price-tab">
@@ -417,9 +444,9 @@
                                 <td class="table-col border-b">{{complect.drive_unit}}</td>
                                 <td class="table-col border-b">{{var.transmission}}</td>
                                 {% if LANGUAGE_CODE == 'en' %}
-                                <td class="table-col border-r border-b red">{{var.price_bf}} $</td>
+                                    <td class="table-col border-r border-b red">{{var.price_bf}} $</td>
                                 {% elif LANGUAGE_CODE == 'uk' %}
-                                <td class="table-col border-r border-b red">{{var.price_bf_ua}} грн.</td>
+                                    <td class="table-col border-r border-b red">{{var.price_bf_ua}} грн.</td>
                                 {% endif %}
                             </tr>
                             {% endif %}

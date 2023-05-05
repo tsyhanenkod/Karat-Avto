@@ -1,47 +1,50 @@
 {% extends 'base/main.html' %}
 {% load static %}
+{% load i18n %}
 
 <!--    CONTENT    -->
 {% block content %}
 <link rel="stylesheet" href="{% static 'services/css/lizing.css' %}">
 
-<h2 class="block-title lizing-main-title">Лізинг</h2>
 
-<div class="lizing-block p-1">
-    <h6 class="lizing-title p-1">Базові умови:</h6>
-    <ul class="lizing-list">
-        <li class="lizing-list-item">Аванс від 30%</li>
-        <li class="lizing-list-item">Автомобілі не старше 2009-го року</li>
-        <li class="lizing-list-item">Термін лізингу від 12-ти до 48 місяців</li>
-        <li class="lizing-list-item">Фінансування в гривні без прив’язки до курсу валют</li>
-        <li class="lizing-list-item">Ніяких прихованих платежів чи комісій</li>
-        <li class="lizing-list-item">Графік погашення класичний, ануїтетний, індивідуальний</li>
-        <li class="lizing-list-item">Фінансування фізичних, юридичних осіб та ФОП</li>
-    </ul>
-    <hr>
-</div>
-<div class="lizing-block p-1">
-    <h6 class="lizing-title p-1">Процедура оформлення лізингової угоди на автомобіль:</h6>
-    <ul class="lizing-list">
-        <li class="lizing-list-item">Ви вибираєте один чи кілька автомобілів у компанії «КАРАТ-АВТО»</li>
-        <li class="lizing-list-item">Заповнюєте просту форму заявки і разом зі спрощеним пакетом документів передаєте на розгляд в «ЕСКА Капітал»</li>
-        <li class="lizing-list-item">Отримавши позитивну відповідь впродовж двох годин (з моменту подачі заявки і пакету документів), ви підписуєте лізингову угоду й сплачуєте аванс. Одночасно з цим, лізингова компанія «ЕСКА Капітал» підписує договір купівлі-продажу з компанією «КАРАТ-АВТО»</li>
-        <li class="lizing-list-item">Автомобіль страхується і передається вам у користування на визначений у договорі термін</li>
-        <li class="lizing-list-item">Ви виплачуєте вартість авто частинами (згідно з графіком платежів) протягом усього терміну лізингу, а по завершенні дії угоди, право власності переходить до Вас</li>
-    </ul>
-    <hr>
-</div>
-<div class="lizing-block p-1">
-    <h6 class="lizing-title p-1">Переваги покупки автомобіля в лізинг:</h6>
-    <ul class="lizing-list">
-        <li class="lizing-list-item">Застава не потрібна, — на відміну від ситуації зі звичайним банківським кредитом. Достатньо внести авансовий платіж (від 30%) від вартості автомобіля, який ви купуєте</li>
-        <li class="lizing-list-item">Автомобіль буде застрахованим упродовж всього терміну лізингу за повною програмою від надійної страхової компанії</li>
-        <li class="lizing-list-item">Вартість реєстрації автомобіля, а також вартість страхування КАСКО та ОСЦПВ включаються в лізингові платежі</li>
-    </ul>
-    <hr>
-</div>
+<div class="container">
+    <h2 class="block-title lizing-main-title">{% trans 'Leasing' %}</h2>
+    <div class="lizing-block p-1">
+        <h6 class="lizing-title p-1">{% trans 'Basic conditions' %}:</h6>
+        <ul class="lizing-list">
+            <li class="lizing-list-item">{% trans 'Advance payment from 30%' %}</li>
+            <li class="lizing-list-item">{% trans 'Cars are not older than 2009' %}</li>
+            <li class="lizing-list-item">{% trans 'The lease term is from 12 to 48 months' %}</li>
+            <li class="lizing-list-item">{% trans 'Financing in hryvnia without reference to the exchange rate' %}</li>
+            <li class="lizing-list-item">{% trans 'No hidden fees or commissions' %}</li>
+            <li class="lizing-list-item">{% trans 'The repayment schedule is classic, annuity, individual' %}</li>
+            <li class="lizing-list-item">{% trans 'Financing of individuals, legal entities and LLC' %}</li>
+        </ul>
+        <hr>
+    </div>
+    <div class="lizing-block p-1">
+        <h6 class="lizing-title p-1">{% trans 'The procedure for signing a leasing agreement for a car:' %}</h6>
+        <ul class="lizing-list">
+            <li class="lizing-list-item">{% trans 'You choose one or more cars in the company "KARAT-AVTO"' %}</li>
+            <li class="lizing-list-item">{% trans 'Fill out a simple application form and, together with a simplified package of documents, submit it to "ESKA Capital" for consideration' %}</li>
+            <li class="lizing-list-item">{% trans 'After receiving a positive answer within two hours (from the moment of submitting the application and the package of documents), you sign the leasing agreement and pay the advance. At the same time, the leasing company "ESKA Capital" signs a sales contract with the company "KARAT-AVTO"' %}</li>
+            <li class="lizing-list-item">{% trans 'The car is insured and transferred to you for use for the period specified in the contract' %}</li>
+            <li class="lizing-list-item">{% trans 'You pay the cost of the car in installments (according to the payment schedule) during the entire lease term, and at the end of the agreement, ownership passes to you' %}</li>
+        </ul>
+        <hr>
+    </div>
+    <div class="lizing-block p-1">
+        <h6 class="lizing-title p-1">{% trans 'Advantages of leasing a car:' %}</h6>
+        <ul class="lizing-list">
+            <li class="lizing-list-item">{% trans 'Collateral is not required, unlike the situation with a conventional bank loan. It is enough to make an advance payment (from 30%) of the cost of the car you are buying' %}</li>
+            <li class="lizing-list-item">{% trans 'The car will be insured for the entire lease term under a full program from a reliable insurance company' %}</li>
+            <li class="lizing-list-item">{% trans 'The cost of car registration, as well as the cost of CASCO and OSCPV insurance, are included in the leasing payments' %}</li>
+        </ul>
+        <hr>
+    </div>
 
-<div class="lizing-btn">
-    <a target="_blank" class="lizing-button" href="https://eskacapital.com/ua/order?utm_source=karatavto&utm_medium=knopka&utm_campaign=karatavto">Оформити лізинг</a>
+    <div class="lizing-btn">
+        <a target="_blank" class="lizing-button" href="https://eskacapital.com/ua/order?utm_source=karatavto&utm_medium=knopka&utm_campaign=karatavto">{% trans 'Lease' %}</a>
+    </div>
 </div>
 {% endblock content %}

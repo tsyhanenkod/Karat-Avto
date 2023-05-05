@@ -1,19 +1,22 @@
 {% extends 'base/main.html' %}
 {% load static %}
+{% load i18n %}
 
 <!--    CONTENT    -->
 {% block content %}
 <link rel="stylesheet" href="{% static 'services/css/garant.css' %}">
 
-<div class="garant">
-    <h2 class="block-title garant-main-title">Гарантійні зобов'язання</h2>
+<div class="container">
+    <div class="garant">
+        <h2 class="block-title garant-main-title">{% trans 'Warranty obligations' %}</h2>
 
-    <p class="description">
-        Гарантія на автомобілі JAC складає 3 роки (тридцять шість місяців) при пробігу не більше 100 000 (ста тисяч) кілометрів, в залежності від того, що настане раніше. Гарантійний термін відраховується з дня передачі автомобіля дилером першому власнику.
-        <br>
-        При переході автомобіля до іншого власника період для пред'явлення вимог, пов'язаних з недоліками якості, зберігається в межах терміну та пробігу, встановлених при передачі автомобіля першому власнику.
-        <br><br>
-        Більш детальну інформацію про гарантії та сервісне обслуговування можна отримати в салонах офіційних дилерів марки.
-    </p>
+        <p class="description">
+            {% trans 'The warranty on JAC cars is 3 years (thirty-six months) with a mileage of no more than 100,000 (one hundred thousand) kilometers, whichever comes first. The warranty period is counted from the day the car is handed over by the dealer to the first owner.' %}
+            <br>
+            {% trans 'When the car is transferred to another owner, the period for filing claims related to quality defects remains within the limits of the term and mileage established when the car was transferred to the first owner.' %}
+            <br><br>
+            {% trans 'More detailed information about guarantees and service can be obtained in the salons of official dealers of the brand.' %}
+        </p>
+    </div>
 </div>
 {% endblock content %}

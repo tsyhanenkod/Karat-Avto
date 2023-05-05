@@ -1,383 +1,385 @@
 {% extends 'base/main.html' %}
 {% load static %}
+{% load i18n %}
 
 <!--    CONTENT    -->
 {% block content %}
 <link rel="stylesheet" href="{% static 'services/css/insurance.css' %}">
 
-<div class="insurance">
-    <h2 class="block-title insurance-main-title">Страхування</h2>
-    <br>
-    <div class="info-fiz green">
-        <p class="header-fiz-title">Таблиця коригуючих коефіцієнтів при розрахунку страхового платежу за договором ОСЦПВВНТЗ для <span>фізичних осіб</span> </p>
+<div class="container">
+    <div class="insurance">
+        <h2 class="block-title insurance-main-title">{% trans 'Insurance' %}</h2>
+        <br>
+        <div class="info-fiz green">
+            <p class="header-fiz-title">{% trans 'Table of adjustment coefficients when calculating the insurance payment under the OSTCPVVNTZ contract for' %} <span>{% trans 'individuals' %}</span> </p>
+        </div>
+        <p class="under-desc">{% trans 'Insurance sums (limits of liability) per victim: for damage to life and health - 320,000.00 uah, for damage to property - 160,000.00 uah' %}.</p>
+
+        <table class="insurance-table fiz">
+            <tr class="table-row">
+                <th rowspan="4" colspan="2" class="table-col"> <p class="title-table">{% trans 'TARIFFS' %}<br>{% trans 'OSAGO' %}</p> <p class="table-main-title-add">{% trans 'act with' %} <span>11.12.2022</span> </p> </th>
+                <td colspan="12"  class="table-row">
+                    {% trans 'Place of registration of the vehicle owner' %}
+                </td>
+            </tr>
+            <tr class="table-row">
+                <td colspan="2" class="table-col orange">
+                    {% trans 'Kyiv' %}
+                </td>
+                <td colspan="2" class="table-col orange">
+                    {% trans 'Dnipro, Lviv, Odesa, Kharkiv, Boryspil, Boyarka, Brovary, Bucha, Vasylkiv, Vyshhorod, Vyshneve, Irpin, Obukhiv' %}
+                </td>
+                <td colspan="2" class="table-col orange">
+                    {% trans 'Donetsk, Zaporizhia, Kryvyi Rih' %}
+                </td>
+                <td  colspan="2" class="table-col orange little-text">
+                    {% trans 'Alchevsk, Berdyansk, Bila Tserkva, Vinnytsia, Horlivka, Yevpatoria, Zhytomyr, Ivano-Frankivsk, Kamianets-Podilskyi, Kamiansyke, Kerch, Kropyvnytskyi Kramatorsk, Kremenchuk, Lysychansk, Luhansk, Lutsk, Makivka, Mariupol, Meligopol, Mykolaiv, Nikopol, Pavlograd, Poltava, Rivne, Sevastopol, Severodonetsk, Simferopol, Slavyansk, Sumy, Ternopil, Uzhgorod, Kherson, Khmelnytskyi, Cherkasy, Chernivtsi, Chernihiv' %}
+                </td>
+                <td colspan="2" class="table-col orange">
+                    {% trans 'Other settlements of Ukraine' %}
+                </td>
+                <td colspan="2" class="table-col orange">
+                    {% trans 'Non-cleared' %}
+                </td>
+            </tr>
+            <tr class="table-row">
+                <td colspan="2" class="table-col">4,80</td>
+                <td colspan="2" class="table-col">3,50</td>
+                <td colspan="2" class="table-col">2,80</td>
+                <td colspan="2" class="table-col">2,50</td>
+                <td colspan="2" class="table-col">1,60</td>
+                <td colspan="2" class="table-col">7,00</td>
+            </tr>
+            <tr class="table-row">
+                <td colspan="12"  class="table-col">{% trans 'Insurance payments' %} (12 {% trans 'months' %}), {% trans 'uah' %}.</td>
+            </tr>
+            <tr class="table-row">
+                <td colspan="2" class="table-col">{% trans 'vehicle category' %}</td>
+                <td class="table-col yellow">{% trans 'franchise' %}- о</td>
+                <td class="table-col blue">3200</td>
+                <td class="table-col yellow">{% trans 'franchise' %}- о</td>
+                <td class="table-col blue">3200</td>
+                <td class="table-col yellow">{% trans 'franchise' %}- о</td>
+                <td class="table-col blue">3200</td>
+                <td class="table-col yellow">{% trans 'franchise' %}- о</td>
+                <td class="table-col blue">3200</td>
+                <td class="table-col yellow">{% trans 'franchise' %}- о</td>
+                <td class="table-col blue">3200</td>
+                <td class="table-col yellow">{% trans 'franchise' %}- о</td>
+                <td class="table-col blue">3200</td>
+            </tr>
+
+            <!--    A1-A2    -->
+            <tr class="table-row">
+                <td class="table-col little-text">{% trans 'Motorcycles and scooters up to 300 сс (inclusive)' %}</td>
+                <td class="table-col col-little">А1</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">579</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">506</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">374</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">350</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">326</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">875</td>
+            </tr>
+            <tr class="table-row">
+                <td class="table-col little-text">{% trans 'Motorcycles over 300 сс' %}</td>
+                <td class="table-col col-little">А2</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">1158</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">980</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">749</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">700</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">642</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">1749</td>
+            </tr>
+
+            <!--    B1-B5    -->
+            <tr class="table-row">
+                <td class="table-col little-text green">{% trans 'Passenger car up to 1600 сс' %}</td>
+                <td class="table-col col-little green">B1</td>
+                <td class="table-col">2524</td>
+                <td class="table-col">1703</td>
+                <td class="table-col">2151</td>
+                <td class="table-col">1437</td>
+                <td class="table-col">1557</td>
+                <td class="table-col">1101</td>
+                <td class="table-col">1428</td>
+                <td class="table-col">1083</td>
+                <td class="table-col">1167</td>
+                <td class="table-col">857</td>
+                <td class="table-col">3260</td>
+                <td class="table-col">2572</td>
+            </tr>
+            <tr class="table-row">
+                <td class="table-col little-text green">{% trans 'Passenger car 1600-2000 сс' %}</td>
+                <td class="table-col col-little green">B2</td>
+                <td class="table-col">2897</td>
+                <td class="table-col">1959</td>
+                <td class="table-col">2503</td>
+                <td class="table-col">1801</td>
+                <td class="table-col">1785</td>
+                <td class="table-col">1266</td>
+                <td class="table-col">1689</td>
+                <td class="table-col">1257</td>
+                <td class="table-col">1353</td>
+                <td class="table-col">966</td>
+                <td class="table-col">3716</td>
+                <td class="table-col">2933</td>
+            </tr>
+            <tr class="table-row">
+                <td class="table-col little-text green">{% trans 'Passenger car 2001-3000 сс' %}</td>
+                <td class="table-col col-little green">B3</td>
+                <td class="table-col">2997</td>
+                <td class="table-col">2028</td>
+                <td class="table-col">2708</td>
+                <td class="table-col">1762</td>
+                <td class="table-col">1848</td>
+                <td class="table-col">1310</td>
+                <td class="table-col">1750</td>
+                <td class="table-col">1301</td>
+                <td class="table-col">1439</td>
+                <td class="table-col">1013</td>
+                <td class="table-col">3847</td>
+                <td class="table-col">3035</td>
+            </tr>
+            <tr class="table-row">
+                <td class="table-col little-text green">{% trans 'Passenger car over 3000 сс' %}</td>
+                <td class="table-col col-little green">B4</td>
+                <td class="table-col">4594</td>
+                <td class="table-col">3100</td>
+                <td class="table-col">3814</td>
+                <td class="table-col">2462</td>
+                <td class="table-col">2833</td>
+                <td class="table-col">2004</td>
+                <td class="table-col">2508</td>
+                <td class="table-col">1930</td>
+                <td class="table-col">1982</td>
+                <td class="table-col">1496</td>
+                <td class="table-col">5933</td>
+                <td class="table-col">4682</td>
+            </tr>
+            <tr class="table-row">
+                <td class="table-col little-text green">{% trans 'Passenger car (only with a power electric motor, except for hybrid cars)' %}</td>
+                <td class="table-col col-little green">B5</td>
+                <td class="table-col">2641</td>
+                <td class="table-col">1779</td>
+                <td class="table-col">2472</td>
+                <td class="table-col">1621</td>
+                <td class="table-col">1683</td>
+                <td class="table-col">1187</td>
+                <td class="table-col">1700</td>
+                <td class="table-col">1140</td>
+                <td class="table-col">1490</td>
+                <td class="table-col">1073</td>
+                <td class="table-col">2934</td>
+                <td class="table-col">2315</td>
+            </tr>
+
+            <!--    E-F-C1-C2    -->
+            <tr class="table-row">
+                <td class="table-col little-text">{% trans 'Truck trailers' %}</td>
+                <td class="table-col col-little">E</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">859</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">698</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">555</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">546</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">492</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">1286</td>
+            </tr>
+            <tr class="table-row">
+                <td class="table-col little-text">{% trans 'Trailers for cars' %}</td>
+                <td class="table-col col-little">F</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">584</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">484</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">378</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">372</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">318</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">875</td>
+            </tr>
+            <tr class="table-row">
+                <td class="table-col little-text">{% trans 'Truck up to 2 tons (inclusive)' %}</td>
+                <td class="table-col col-little">C1</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">3497</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">2949</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">2221</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">2138</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">1895</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">5145</td>
+            </tr>
+            <tr class="table-row">
+                <td class="table-col little-text">{% trans 'Truck over 2 tons' %}</td>
+                <td class="table-col col-little">C2</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">4111</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">3650</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">2462</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">2331</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">2093</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">5608</td>
+            </tr>
+        </table>
+        <br><br><br><br><br>
+
+        <div class="info-fiz green">
+            <p class="header-fiz-title">{% trans 'Table of adjustment coefficients when calculating the insurance payment under the OSTCPVVNTZ contract for individuals' %}(<span>{% trans 'pensioners' %}</span>)</p>
+        </div>
+        <p class="under-desc">{% trans 'Insurance sums (limits of liability) per victim: for damage to life and health - 320,000.00 uah, for damage to property - 160,000.00 uah' %}.</p>
+
+        <table class="insurance-table pensioners">
+            <tr class="table-row">
+                <th rowspan="4" colspan="2" class="table-col"> <p class="title-table">{% trans 'TARIFFS' %}<br>{% trans 'OSAGO' %}</p> <p class="table-main-title-add">{% trans 'act with' %} <span>11.12.2022</span> </p> </th>
+                <td colspan="10"  class="table-row">
+                    {% trans 'Place of registration of the vehicle owner' %}
+                </td>
+            </tr>
+            <tr class="table-row">
+                <td colspan="2" class="table-col orange">
+                    {% trans 'Kyiv' %}
+                </td>
+                <td colspan="2" class="table-col orange">
+                    {% trans 'Dnipro, Lviv, Odesa, Kharkiv, Boryspil, Boyarka, Brovary, Bucha, Vasylkiv, Vyshhorod, Vyshneve, Irpin, Obukhiv' %}
+                </td>
+                <td colspan="2" class="table-col orange">
+                    {% trans 'Donetsk, Zaporizhia, Kryvyi Rih' %}
+                </td>
+                <td  colspan="2" class="table-col orange little-text">
+                    {% trans 'Alchevsk, Berdyansk, Bila Tserkva, Vinnytsia, Horlivka, Yevpatoria, Zhytomyr, Ivano-Frankivsk, Kamianets-Podilskyi, Kamiansyke, Kerch, Kropyvnytskyi Kramatorsk, Kremenchuk, Lysychansk, Luhansk, Lutsk, Makivka, Mariupol, Meligopol, Mykolaiv, Nikopol, Pavlograd, Poltava, Rivne, Sevastopol, Severodonetsk, Simferopol, Slavyansk, Sumy, Ternopil, Uzhgorod, Kherson, Khmelnytskyi, Cherkasy, Chernivtsi, Chernihiv' %}
+                </td>
+                <td colspan="2" class="table-col orange">
+                    {% trans 'Other settlements of Ukraine' %}
+                </td>
+            </tr>
+            <tr class="table-row">
+                <td colspan="2" class="table-col">4,80</td>
+                <td colspan="2" class="table-col">3,50</td>
+                <td colspan="2" class="table-col">2,80</td>
+                <td colspan="2" class="table-col">2,50</td>
+                <td colspan="2" class="table-col">1,60</td>
+            </tr>
+            <tr class="table-row">
+                <td colspan="10"  class="table-col">{% trans 'Insurance payments' %} (12 {% trans 'months' %}), {% trans 'uah' %}.</td>
+            </tr>
+            <tr class="table-row">
+                <td colspan="2" class="table-col">{% trans 'vehicle category' %}</td>
+                <td class="table-col yellow">{% trans 'franchise' %}- о</td>
+                <td class="table-col blue">3200</td>
+                <td class="table-col yellow">{% trans 'franchise' %}- о</td>
+                <td class="table-col blue">3200</td>
+                <td class="table-col yellow">{% trans 'franchise' %}- о</td>
+                <td class="table-col blue">3200</td>
+                <td class="table-col yellow">{% trans 'franchise' %}- о</td>
+                <td class="table-col blue">3200</td>
+                <td class="table-col yellow">{% trans 'franchise' %}- о</td>
+                <td class="table-col blue">3200</td>
+            </tr>
+
+            <!--    A1-A2    -->
+            <tr class="table-row">
+                <td class="table-col little-text">{% trans 'Motorcycles and scooters up to 300 сс (inclusive)' %}</td>
+                <td class="table-col col-little">А1</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">352</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">309</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">229</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">237</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">145</td>
+            </tr>
+            <tr class="table-row">
+                <td class="table-col little-text">{% trans 'Motorcycles over 300 сс' %}</td>
+                <td class="table-col col-little">А2</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">703</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">599</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">458</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">444</td>
+                <td class="table-col grey">x</td>
+                <td class="table-col">290</td>
+            </tr>
+
+            <!--    B1-B5    -->
+            <tr class="table-row">
+                <td class="table-col little-text green">{% trans 'Passenger car up to 1600 сс' %}</td>
+                <td class="table-col col-little green">B1</td>
+                <td class="table-col">1422</td>
+                <td class="table-col">1034</td>
+                <td class="table-col">1109</td>
+                <td class="table-col">879</td>
+                <td class="table-col">883</td>
+                <td class="table-col">674</td>
+                <td class="table-col">805</td>
+                <td class="table-col">665</td>
+                <td class="table-col">568</td>
+                <td class="table-col">426</td>
+            </tr>
+            <tr class="table-row">
+                <td class="table-col little-text green">{% trans 'Passenger car 1600-2000 сс' %}</td>
+                <td class="table-col col-little green">B2</td>
+                <td class="table-col">1638</td>
+                <td class="table-col">1187</td>
+                <td class="table-col">1289</td>
+                <td class="table-col">1097</td>
+                <td class="table-col">1006</td>
+                <td class="table-col">774</td>
+                <td class="table-col">957</td>
+                <td class="table-col">766</td>
+                <td class="table-col">627</td>
+                <td class="table-col">471</td>
+            </tr>
+            <tr class="table-row">
+                <td class="table-col little-text green">{% trans 'Passenger car 2001-3000 сс' %}</td>
+                <td class="table-col col-little green">B3</td>
+                <td class="table-col">1696</td>
+                <td class="table-col">1229</td>
+                <td class="table-col">1393</td>
+                <td class="table-col">1080</td>
+                <td class="table-col">1042</td>
+                <td class="table-col">801</td>
+                <td class="table-col">992</td>
+                <td class="table-col">793</td>
+                <td class="table-col">664</td>
+                <td class="table-col">499</td>
+            </tr>
+        </table>
     </div>
-    <p class="under-desc">Страхові суми (ліміти відповідальності) на одного потерпілого: за шкоду, заподіяну життю і здоров'ю - 320 000,00 грн., за шкоду, заподіяну майну - 160 000,00грн.</p>
-
-    <table class="insurance-table fiz">
-        <tr class="table-row">
-            <th rowspan="4" colspan="2" class="table-col"> <p class="title-table">ТАРИФИ<br>ОСАГО</p> <p class="table-main-title-add">діють з <span>11.12.2022</span> </p> </th>
-            <td colspan="12"  class="table-row">
-                Місце реєстрації власника ТЗ
-            </td>
-        </tr>
-        <tr class="table-row">
-            <td colspan="2" class="table-col orange">
-                Київ
-            </td>
-            <td colspan="2" class="table-col orange">
-                Дніпро, Львів, Одеса, Харків, Бориспіль, Боярка, Бровари, Буча, Васильків, Вишгород, Вишневе, Ірпінь, Обухів
-            </td>
-            <td colspan="2" class="table-col orange">
-                Донецьк, Запоріжжя, Кривий Ріг
-            </td>
-            <td  colspan="2" class="table-col orange little-text">
-                Алчевськ, Бердянськ, Біла Церква, Вінниця, Горлівка, Євпаторія, Житомир, івано-Франківськ, Камʼянець-Подільський, Кам'янсыке, Керч, Кропивницький Краматорск, Кременчук, Лисичанськ, Луганськ, Луцьк, Маківка, Маріуполь, Мелігополь, Миколаїв, Нікополь, Павлоград, Полтава, Рівне, Севастополь, Сєверодонецьк, Сімферополь, Слов'янськ, Суми, Тернопіль, Ужгород, Херсон, Хмельницький, Черкаси, Чернівці, Чернігів
-            </td>
-            <td colspan="2" class="table-col orange">
-                Інші населені пункти України
-            </td>
-            <td colspan="2" class="table-col orange">
-                Бляхи
-            </td>
-        </tr>
-        <tr class="table-row">
-            <td colspan="2" class="table-col">4,80</td>
-            <td colspan="2" class="table-col">3,50</td>
-            <td colspan="2" class="table-col">2,80</td>
-            <td colspan="2" class="table-col">2,50</td>
-            <td colspan="2" class="table-col">1,60</td>
-            <td colspan="2" class="table-col">7,00</td>
-        </tr>
-        <tr class="table-row">
-            <td colspan="12"  class="table-col">Страхові платежі (12 місяців), грн.</td>
-        </tr>
-        <tr class="table-row">
-            <td colspan="2" class="table-col">Категорія ТЗ</td>
-            <td class="table-col yellow">франшиза- о</td>
-            <td class="table-col blue">3200</td>
-            <td class="table-col yellow">франшиза- о</td>
-            <td class="table-col blue">3200</td>
-            <td class="table-col yellow">франшиза- о</td>
-            <td class="table-col blue">3200</td>
-            <td class="table-col yellow">франшиза- о</td>
-            <td class="table-col blue">3200</td>
-            <td class="table-col yellow">франшиза- о</td>
-            <td class="table-col blue">3200</td>
-            <td class="table-col yellow">франшиза- о</td>
-            <td class="table-col blue">3200</td>
-        </tr>
-
-        <!--    A1-A2    -->
-        <tr class="table-row">
-            <td class="table-col little-text">Мотоцикли та моторолери до 300 куб.см (включно)</td>
-            <td class="table-col col-little">А1</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">579</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">506</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">374</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">350</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">326</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">875</td>
-        </tr>
-        <tr class="table-row">
-            <td class="table-col little-text">Мотоцикли понад 300 куб.см</td>
-            <td class="table-col col-little">А2</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">1158</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">980</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">749</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">700</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">642</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">1749</td>
-        </tr>
-
-        <!--    B1-B5    -->
-        <tr class="table-row">
-            <td class="table-col little-text green">Легковий автомобіль до 1600 куб.см</td>
-            <td class="table-col col-little green">B1</td>
-            <td class="table-col">2524</td>
-            <td class="table-col">1703</td>
-            <td class="table-col">2151</td>
-            <td class="table-col">1437</td>
-            <td class="table-col">1557</td>
-            <td class="table-col">1101</td>
-            <td class="table-col">1428</td>
-            <td class="table-col">1083</td>
-            <td class="table-col">1167</td>
-            <td class="table-col">857</td>
-            <td class="table-col">3260</td>
-            <td class="table-col">2572</td>
-        </tr>
-        <tr class="table-row">
-            <td class="table-col little-text green">Легковий автомобіль 1600-2000 куб.см</td>
-            <td class="table-col col-little green">B2</td>
-            <td class="table-col">2897</td>
-            <td class="table-col">1959</td>
-            <td class="table-col">2503</td>
-            <td class="table-col">1801</td>
-            <td class="table-col">1785</td>
-            <td class="table-col">1266</td>
-            <td class="table-col">1689</td>
-            <td class="table-col">1257</td>
-            <td class="table-col">1353</td>
-            <td class="table-col">966</td>
-            <td class="table-col">3716</td>
-            <td class="table-col">2933</td>
-        </tr>
-        <tr class="table-row">
-            <td class="table-col little-text green">Легковий автомобіль 2001-3000 куб.см</td>
-            <td class="table-col col-little green">B3</td>
-            <td class="table-col">2997</td>
-            <td class="table-col">2028</td>
-            <td class="table-col">2708</td>
-            <td class="table-col">1762</td>
-            <td class="table-col">1848</td>
-            <td class="table-col">1310</td>
-            <td class="table-col">1750</td>
-            <td class="table-col">1301</td>
-            <td class="table-col">1439</td>
-            <td class="table-col">1013</td>
-            <td class="table-col">3847</td>
-            <td class="table-col">3035</td>
-        </tr>
-        <tr class="table-row">
-            <td class="table-col little-text green">Легковий автомобіль понад 3000 куб.см</td>
-            <td class="table-col col-little green">B4</td>
-            <td class="table-col">4594</td>
-            <td class="table-col">3100</td>
-            <td class="table-col">3814</td>
-            <td class="table-col">2462</td>
-            <td class="table-col">2833</td>
-            <td class="table-col">2004</td>
-            <td class="table-col">2508</td>
-            <td class="table-col">1930</td>
-            <td class="table-col">1982</td>
-            <td class="table-col">1496</td>
-            <td class="table-col">5933</td>
-            <td class="table-col">4682</td>
-        </tr>
-        <tr class="table-row">
-            <td class="table-col little-text green">Легковий автомобіль (винятково з силовим електродвигуном, крім гібридних авто)</td>
-            <td class="table-col col-little green">B5</td>
-            <td class="table-col">2641</td>
-            <td class="table-col">1779</td>
-            <td class="table-col">2472</td>
-            <td class="table-col">1621</td>
-            <td class="table-col">1683</td>
-            <td class="table-col">1187</td>
-            <td class="table-col">1700</td>
-            <td class="table-col">1140</td>
-            <td class="table-col">1490</td>
-            <td class="table-col">1073</td>
-            <td class="table-col">2934</td>
-            <td class="table-col">2315</td>
-        </tr>
-
-        <!--    E-F-C1-C2    -->
-        <tr class="table-row">
-            <td class="table-col little-text">Причепи до вантажних автомобілів</td>
-            <td class="table-col col-little">E</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">859</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">698</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">555</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">546</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">492</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">1286</td>
-        </tr>
-        <tr class="table-row">
-            <td class="table-col little-text">Причепи до легкових автомобілів</td>
-            <td class="table-col col-little">F</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">584</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">484</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">378</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">372</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">318</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">875</td>
-        </tr>
-        <tr class="table-row">
-            <td class="table-col little-text">Вантажний автомобіль до 2 тонн (включно)</td>
-            <td class="table-col col-little">C1</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">3497</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">2949</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">2221</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">2138</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">1895</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">5145</td>
-        </tr>
-        <tr class="table-row">
-            <td class="table-col little-text">вантажний автомобіль понад 2 тонни</td>
-            <td class="table-col col-little">C2</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">4111</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">3650</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">2462</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">2331</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">2093</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">5608</td>
-        </tr>
-    </table>
-    <br><br><br><br><br>
-
-    <div class="info-fiz green">
-        <p class="header-fiz-title">Таблиця коригуючих коефіцієнтів при розрахунку страхового платежу за договором ОСЦПВВНТЗ для фізичних осіб (<span>пенсіонери</span>)</p>
-    </div>
-    <p class="under-desc">Страхові суми (ліміти відповідальності) на одного потерпілого: за шкоду, заподіяну життю і здоров'ю - 320 000,00 грн., за шкоду, заподіяну майну - 160 000,00грн.</p>
-
-    <table class="insurance-table pensioners">
-        <tr class="table-row">
-            <th rowspan="4" colspan="2" class="table-col"> <p class="title-table">ТАРИФИ<br>ОСАГО</p> <p class="table-main-title-add">діють з <span>11.12.2022</span> </p> </th>
-            <td colspan="10"  class="table-row">
-                Місце реєстрації власника ТЗ
-            </td>
-        </tr>
-        <tr class="table-row">
-            <td colspan="2" class="table-col orange">
-                Київ
-            </td>
-            <td colspan="2" class="table-col orange">
-                Дніпро, Львів, Одеса, Харків, Бориспіль, Боярка, Бровари, Буча, Васильків, Вишгород, Вишневе, Ірпінь, Обухів
-            </td>
-            <td colspan="2" class="table-col orange">
-                Донецьк, Запоріжжя, Кривий Ріг
-            </td>
-            <td  colspan="2" class="table-col orange little-text">
-                Алчевськ, Бердянськ, Біла Церква, Вінниця, Горлівка, Євпаторія, Житомир, івано-Франківськ, Камʼянець-Подільський, Кам'янсыке, Керч, Кропивницький Краматорск, Кременчук, Лисичанськ, Луганськ, Луцьк, Маківка, Маріуполь, Мелігополь, Миколаїв, Нікополь, Павлоград, Полтава, Рівне, Севастополь, Сєверодонецьк, Сімферополь, Слов'янськ, Суми, Тернопіль, Ужгород, Херсон, Хмельницький, Черкаси, Чернівці, Чернігів
-            </td>
-            <td colspan="2" class="table-col orange">
-                Інші населені пункти України
-            </td>
-        </tr>
-        <tr class="table-row">
-            <td colspan="2" class="table-col">4,80</td>
-            <td colspan="2" class="table-col">3,50</td>
-            <td colspan="2" class="table-col">2,80</td>
-            <td colspan="2" class="table-col">2,50</td>
-            <td colspan="2" class="table-col">1,60</td>
-        </tr>
-        <tr class="table-row">
-            <td colspan="10"  class="table-col">Страхові платежі (12 місяців), грн.</td>
-        </tr>
-        <tr class="table-row">
-            <td colspan="2" class="table-col">Категорія ТЗ</td>
-            <td class="table-col yellow">франшиза- о</td>
-            <td class="table-col blue">3200</td>
-            <td class="table-col yellow">франшиза- о</td>
-            <td class="table-col blue">3200</td>
-            <td class="table-col yellow">франшиза- о</td>
-            <td class="table-col blue">3200</td>
-            <td class="table-col yellow">франшиза- о</td>
-            <td class="table-col blue">3200</td>
-            <td class="table-col yellow">франшиза- о</td>
-            <td class="table-col blue">3200</td>
-        </tr>
-
-        <!--    A1-A2    -->
-        <tr class="table-row">
-            <td class="table-col little-text">Мотоцикли та моторолери до 300 куб.см (включно)</td>
-            <td class="table-col col-little">А1</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">352</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">309</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">229</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">237</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">145</td>
-        </tr>
-        <tr class="table-row">
-            <td class="table-col little-text">Мотоцикли понад 300 куб.см</td>
-            <td class="table-col col-little">А2</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">703</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">599</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">458</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">444</td>
-            <td class="table-col grey">x</td>
-            <td class="table-col">290</td>
-        </tr>
-
-        <!--    B1-B5    -->
-        <tr class="table-row">
-            <td class="table-col little-text green">Легковий автомобіль до 1600 куб.см</td>
-            <td class="table-col col-little green">B1</td>
-            <td class="table-col">1422</td>
-            <td class="table-col">1034</td>
-            <td class="table-col">1109</td>
-            <td class="table-col">879</td>
-            <td class="table-col">883</td>
-            <td class="table-col">674</td>
-            <td class="table-col">805</td>
-            <td class="table-col">665</td>
-            <td class="table-col">568</td>
-            <td class="table-col">426</td>
-        </tr>
-        <tr class="table-row">
-            <td class="table-col little-text green">Легковий автомобіль 1600-2000 куб.см</td>
-            <td class="table-col col-little green">B2</td>
-            <td class="table-col">1638</td>
-            <td class="table-col">1187</td>
-            <td class="table-col">1289</td>
-            <td class="table-col">1097</td>
-            <td class="table-col">1006</td>
-            <td class="table-col">774</td>
-            <td class="table-col">957</td>
-            <td class="table-col">766</td>
-            <td class="table-col">627</td>
-            <td class="table-col">471</td>
-        </tr>
-        <tr class="table-row">
-            <td class="table-col little-text green">Легковий автомобіль 2001-3000 куб.см</td>
-            <td class="table-col col-little green">B3</td>
-            <td class="table-col">1696</td>
-            <td class="table-col">1229</td>
-            <td class="table-col">1393</td>
-            <td class="table-col">1080</td>
-            <td class="table-col">1042</td>
-            <td class="table-col">801</td>
-            <td class="table-col">992</td>
-            <td class="table-col">793</td>
-            <td class="table-col">664</td>
-            <td class="table-col">499</td>
-        </tr>
-    </table>
-
 </div>
 {% endblock content %}
