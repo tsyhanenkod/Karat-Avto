@@ -3,6 +3,7 @@ from .models import *
 from django.utils.safestring import mark_safe
 from django import forms
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
+from django.contrib.admin.widgets import FilteredSelectMultiple
 from modeltranslation.admin import TranslationAdmin
 
 class CarAdminForm(forms.ModelForm):
@@ -11,7 +12,6 @@ class CarAdminForm(forms.ModelForm):
     class Meta:
         model = Car
         fields = 'description_uk', 'description_en'
-
 
 @admin.register(Category)
 class CategoryAdmin(TranslationAdmin):
@@ -85,6 +85,12 @@ class CarImagesInLine(admin.TabularInline):
 
 @admin.register(Car)
 class CarAdmin(admin.ModelAdmin):
+    formfield_overrides = {
+        models.ManyToManyField: {
+            'widget': FilteredSelectMultiple('Categories, Transmissions, Colors', is_stacked=False)
+        },
+    }
+
     list_display = ("id", "get_image", "mark", "model", "engine_type", "price", "year", "url", "draft")
     list_filter = ("mark", "year", "draft")
     list_display_links = ("mark", "model", "get_image")
@@ -147,6 +153,7 @@ class CarAdmin(admin.ModelAdmin):
     get_image.short_description = "Зображення"
 
 
+
 @admin.register(CarImages)
 class CarImagesAdmin(TranslationAdmin):
     list_display = ("id", "get_image", "name", "car")
@@ -167,4 +174,7 @@ class CarImagesAdmin(TranslationAdmin):
         return mark_safe(f'<img src={obj.image.url} width="92" height="60">')
 
     get_image.short_description = "Зображення"
+
+
+
 

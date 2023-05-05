@@ -33,26 +33,24 @@ class ContactsView(View):
         context = {}
 
         if request.method == 'POST':
-            name = request.POST.get('cotacts-name'),
-            email = request.POST.get('cotacts-email'),
-            tel = request.POST.get('cotacts-tel'),
-            msg = request.POST.get('cotacts-msg'),
-            check = request.POST.get('contacts-rignup'),
+            name = request.POST.get('cotacts-name')
+            email = request.POST.get('cotacts-email')
+            tel = request.POST.get('cotacts-tel')
+            msg = request.POST.get('cotacts-msg')
+            check = request.POST.get('cotacts-ringup')
 
-            print(name[0], email[0], tel[0], msg[0], check[0])
 
-            if str(check[0]) == 'on':
+            print(check)
+            if check:
                 check = 'Так'
-            elif str(check[0]) == 'None':
+            if not check:
                 check = 'Ні'
-            else:
-                check = check
 
             my_mail = f"{os.environ.get('ORDERING_MAIL')}"
 
             send_mail(
-                f'Повідомлення від {str(name[0])} з контактної форми',
-                str(f"Ім'я: {name[0]}\nE-mail: {email[0]}\nТелефон: {tel[0]}\nЗворотній дзвінок: {check}\n\nПовідомлення: \n{msg[0]}"),
+                f'Повідомлення від {name} з контактної форми',
+                str(f"Ім'я: {name}\nE-mail: {email}\nТелефон: {tel}\nЗворотній дзвінок: {check}\n\nПовідомлення: \n{msg}"),
                 'youremail@example.com',
                 [str(my_mail)],
                 fail_silently=False,

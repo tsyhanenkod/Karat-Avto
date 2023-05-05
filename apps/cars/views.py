@@ -95,7 +95,7 @@ class CarsDetailView(View):
         char = Char.objects.select_related('char_category')
         value = Values.objects.select_related('complectation').select_related('char')
         complect_transmissions = Prices.objects.all()
-        print(complects)
+
         context = {
             "car": car,
             "drive_unit": drive_unit,
@@ -136,20 +136,17 @@ class CarsDetailView(View):
             msg = request.POST.get('form-msg')
             check = request.POST.get('form-check')
 
-            print(name[0], email[0], tel[0], msg[0], check[0])
-
-            if str(check[0]) == 'on':
+            if check:
                 check = 'Так'
-            elif str(check[0]) == 'None':
+            if not check:
                 check = 'Ні'
-            else:
-                check = check
+
 
             my_mail = f"{os.environ.get('ORDERING_MAIL')}"
 
             send_mail(
-                f'Заявка на {car} від {str(name[0])}',
-                str(f"Автомобіль: {car}\nІм'я: {name[0]}\nE-mail: {email[0]}\nТелефон: {tel[0]}\nЗворотній дзвінок: {check}\n\nПовідомлення: \n{msg[0]}"),
+                f'Заявка на {car} від {str(name)}',
+                str(f"Автомобіль: {car}\nІм'я: {name}\nE-mail: {email}\nТелефон: {tel}\nЗворотній дзвінок: {check}\n\nПовідомлення: \n{msg}"),
                 'youremail@example.com',
                 [str(my_mail)],
                 fail_silently=False,

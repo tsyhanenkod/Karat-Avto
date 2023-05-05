@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib import admin
 
 
 class Category(models.Model):
@@ -114,7 +115,7 @@ class BodyType(models.Model):
 class Car(models.Model):
     mark = models.ForeignKey(CarMark, verbose_name='Марка', on_delete=models.SET_NULL, null=True)
     model = models.ForeignKey(CarModel, verbose_name='Модель', on_delete=models.SET_NULL, null=True)
-    category = models.ManyToManyField(Category, verbose_name='Категорія')
+    category = models.ManyToManyField(Category, verbose_name='Категорія', blank=True)
     year = models.PositiveSmallIntegerField('Рік випуску', default=2010)
 
     main_image = models.ImageField('Основне зображення', upload_to='cars/car_main_images/')
@@ -127,14 +128,14 @@ class Car(models.Model):
     car_speeds = models.PositiveSmallIntegerField('Кількість передач', default=5)
     engine_type = models.ForeignKey(EngineTypes, verbose_name='Тип двигуна', on_delete=models.SET_NULL, null=True)
     engine_volume = models.PositiveSmallIntegerField("Об'єм двигуна (см^3)", default=0)
-    transmission = models.ManyToManyField(Transmission, verbose_name='Коробка передач')
+    transmission = models.ManyToManyField(Transmission, verbose_name='Коробка передач', blank=True)
     power = models.PositiveSmallIntegerField('Потужність (к.с.)', default=0)
     drive_unit = models.ForeignKey(DriveUnit, verbose_name='Привід', on_delete=models.SET_NULL, null=True)
 
     body_type = models.ForeignKey(BodyType, verbose_name="Тип кузова", on_delete=models.SET_NULL, null=True)
     car_weight = models.FloatField('Масс авто', default=0)
     dimensions = models.CharField('Габарити (позначати як ДхШхВ)')
-    color = models.ManyToManyField(Colors, verbose_name='Колір')
+    color = models.ManyToManyField(Colors, verbose_name='Колір', blank=True)
 
     draft = models.BooleanField('Чернетка', default=False)
     url = models.SlugField(max_length=100)
