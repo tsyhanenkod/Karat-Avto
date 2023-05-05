@@ -403,7 +403,12 @@
                                 <td class="table-col table-col-l border-l border-b">{{car}}, <strong>{{complect}}</strong></td>
                                 <td class="table-col border-b">{{complect.drive_unit}}</td>
                                 <td class="table-col border-b">{{var.transmission}}</td>
-                                <td class="table-col border-r border-b red">{{var.price}}$</td>
+                                {% if LANGUAGE_CODE == 'en' %}
+                                <td class="table-col border-r border-b red">{{var.price}} $</td>
+                                {% elif LANGUAGE_CODE == 'uk' %}
+                                <td class="table-col border-r border-b red">{{var.price_ua}} грн.</td>
+                                {% endif %}
+
                             </tr>
 
                             {% if var.price_bf != '0' %}
@@ -411,7 +416,11 @@
                                 <td class="table-col table-col-l border-l border-b">{{car}}, <strong>{{complect}}</strong> + {% trans 'Black roof' %}</td>
                                 <td class="table-col border-b">{{complect.drive_unit}}</td>
                                 <td class="table-col border-b">{{var.transmission}}</td>
-                                <td class="table-col border-r border-b red">{{var.price_bf}}$</td>
+                                {% if LANGUAGE_CODE == 'en' %}
+                                <td class="table-col border-r border-b red">{{var.price_bf}} $</td>
+                                {% elif LANGUAGE_CODE == 'uk' %}
+                                <td class="table-col border-r border-b red">{{var.price_bf_ua}} грн.</td>
+                                {% endif %}
                             </tr>
                             {% endif %}
                             {% endif %}

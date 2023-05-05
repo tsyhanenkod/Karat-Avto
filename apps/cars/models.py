@@ -122,6 +122,7 @@ class Car(models.Model):
     description_en = models.TextField("Опис автомобіля (мінімум 500 символів)")
 
     price = models.IntegerField('Ціна ($)', default=0)
+    price_ua = models.IntegerField('Ціна (грн.)', default=0)
 
     car_speeds = models.PositiveSmallIntegerField('Кількість передач', default=5)
     engine_type = models.ForeignKey(EngineTypes, verbose_name='Тип двигуна', on_delete=models.SET_NULL, null=True)

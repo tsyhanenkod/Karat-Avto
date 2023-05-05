@@ -106,7 +106,7 @@ class CarAdmin(admin.ModelAdmin):
             "fields": (("description_uk", "description_en",),)
         }),
         ("Ціна", {
-            "fields": (("price"),)
+            "fields": (("price", "price_ua",),)
         }),
         ("Характеристики", {
             "fields": (("car_weight", "engine_type", "engine_volume", "power", ),

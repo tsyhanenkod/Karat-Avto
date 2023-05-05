@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base/main.html' %}
+{% load static %}
+{% load i18n %}
 
-</body>
-</html>
+{% block content %}
+Thabk you!
+
+<a href="{% url 'home' %}">Home</a>
+<a href="{% url 'cars' %}">Cars</a>
+{% endblock content %}

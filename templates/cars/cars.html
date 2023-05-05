@@ -1,6 +1,7 @@
 {% extends 'base/main.html' %}
 {% load static %}
 {% load i18n %}
+{% load humanize %}
 
 
 
@@ -64,7 +65,12 @@
                             </tr>
                         </table>
                     </div>
-                    <a href="/cars/{{car.url}}" class="btn btn-block btn-dark car-button"><h4 class="p-2 car-price"><small>{% trans 'Price:' %} {{car.price}}$</small></h4></a>
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% if LANGUAGE_CODE == 'en' %}
+                    <a href="/cars/{{car.url}}" class="btn btn-block btn-dark car-button"><h4 class="p-2 car-price"><small>{% trans 'Price:' %} {{car.price|intcomma:"-"}} $</small></h4></a>
+                    {% elif LANGUAGE_CODE == 'uk' %}
+                    <a href="/cars/{{car.url}}" class="btn btn-block btn-dark car-button"><h4 class="p-2 car-price"><small>{% trans 'Price:' %} {{car.price_ua|intcomma}} грн.</small></h4></a>
+                    {% endif %}
 <!--                    {% for category in car.category.all %}-->
 <!--                        <p>{{category.name}}</p>-->
 <!--                    {% endfor %}-->

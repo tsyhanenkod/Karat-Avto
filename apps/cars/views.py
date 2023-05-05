@@ -1,5 +1,4 @@
 import os
-
 from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.views.generic import DetailView, ListView, View
@@ -9,13 +8,16 @@ from django.core.mail import send_mail
 import os
 from complect.models import *
 from django.core.paginator import Paginator, EmptyPage
+from django.utils.translation import activate, get_language
 
 
 class CarsView(View):
     def get(self, request):
         car = Car.objects.filter(draft=False)
+        language = get_language()
 
         params = {
+
             'category': self.request.GET.get('category'),
             'mark': self.request.GET.get('mark'),
             'model': self.request.GET.get('model'),
@@ -29,18 +31,32 @@ class CarsView(View):
         }
 
         q_objects = Q(draft=False)
-        for key, value in params.items():
-            if value:
-                if key == 'min_year':
-                    q_objects &= Q(year__gte=value)
-                elif key == 'max_year':
-                    q_objects &= Q(year__lte=value)
-                elif key == 'min_price':
-                    q_objects &= Q(price__gte=value)
-                elif key == 'max_price':
-                    q_objects &= Q(price__lte=value)
-                else:
-                    q_objects &= Q(**{f"{key}__url": value})
+        if language == 'en':
+            for key, value in params.items():
+                if value:
+                    if key == 'min_year':
+                        q_objects &= Q(year__gte=value)
+                    elif key == 'max_year':
+                        q_objects &= Q(year__lte=value)
+                    elif key == 'min_price':
+                        q_objects &= Q(price__gte=value)
+                    elif key == 'max_price':
+                        q_objects &= Q(price__lte=value)
+                    else:
+                        q_objects &= Q(**{f"{key}__url": value})
+        elif language == 'uk':
+            for key, value in params.items():
+                if value:
+                    if key == 'min_year':
+                        q_objects &= Q(year__gte=value)
+                    elif key == 'max_year':
+                        q_objects &= Q(year__lte=value)
+                    elif key == 'min_price':
+                        q_objects &= Q(price_ua__gte=value)
+                    elif key == 'max_price':
+                        q_objects &= Q(price_ua__lte=value)
+                    else:
+                        q_objects &= Q(**{f"{key}__url": value})
 
         car = car.filter(q_objects)
         paginator = Paginator(car, 18)
@@ -76,8 +92,8 @@ class CarsDetailView(View):
 
         char_category = Charcategory.objects.all()
         complects = Complect.objects.filter(car=car)
-        char = Char.objects.all()
-        value = Values.objects.all()
+        char = Char.objects.select_related('char_category')
+        value = Values.objects.select_related('complectation').select_related('char')
         complect_transmissions = Prices.objects.all()
         print(complects)
         context = {
@@ -98,9 +114,9 @@ class CarsDetailView(View):
         price = intcomma(car.price)
 
         char_category = Charcategory.objects.all()
-        complects = Complect.objects.all()
-        char = Char.objects.all()
-        value = Values.objects.all()
+        complects = Complect.objects.filter(car=car)
+        char = Char.objects.select_related('char_category')
+        value = Values.objects.select_related('complectation').select_related('char')
         complect_transmissions = Prices.objects.all()
 
         context = {
@@ -114,11 +130,11 @@ class CarsDetailView(View):
         }
 
         if request.method == 'POST':
-            name = request.POST.get('form-name'),
-            email = request.POST.get('form-email'),
-            tel = request.POST.get('form-tel'),
-            msg = request.POST.get('form-msg'),
-            check = request.POST.get('form-check'),
+            name = request.POST.get('form-name')
+            email = request.POST.get('form-email')
+            tel = request.POST.get('form-tel')
+            msg = request.POST.get('form-msg')
+            check = request.POST.get('form-check')
 
             print(name[0], email[0], tel[0], msg[0], check[0])
 
@@ -140,9 +156,9 @@ class CarsDetailView(View):
             )
 
             # Рендеринг страницы после отправки письма
-            return render(request, 'cars/car_detail.html', context, complect_context)
+            return redirect('ready')
         else:
             # Рендеринг страницы с формой
-            return render(request, 'cars/car_detail.html', context, complect_context)
+            return redirect('ready')
 
-        return render(request, 'cars/car_detail.html', context, complect_context)
+        return redirect('ready')

@@ -58,5 +58,7 @@ class Values(models.Model):
 class Prices(models.Model):
     complectation = models.ForeignKey(Complect, verbose_name='Комплектація', on_delete=models.CASCADE)
     transmission = models.ForeignKey(Transmission, verbose_name='Коробки передач', on_delete=models.SET_NULL, null=True)
-    price = models.CharField('Ціна комплектації', max_length=100)
-    price_bf = models.CharField('Ціна комплектації + чорний дах (0 якщо не потрібно)', max_length=100, null=True, default=0)
+    price = models.CharField('Ціна комплектації ($)', max_length=100)
+    price_ua = models.CharField('Ціна комплектації (грн.)', max_length=100)
+    price_bf = models.CharField('Ціна комплектації ($) + чорний дах (0 якщо не потрібно)', max_length=100, null=True, default=0)
+    price_bf_ua = models.CharField('Ціна комплектації (грн.) + чорний дах (0 якщо не потрібно)', max_length=100, null=True, default=0)

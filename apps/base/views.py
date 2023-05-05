@@ -58,14 +58,21 @@ class ContactsView(View):
                 fail_silently=False,
             )
             # Рендеринг страницы после отправки письма
-            return render(request, 'base/contacts.html', context)
+            return redirect('ready')
         else:
             # Рендеринг страницы с формой
-            return render(request, 'base/contacts.html', context)
+            return redirect('ready')
 
-        return render(request, 'base/contacts.html', context)
+        return redirect('ready')
+
 
 class AboutView(View):
     def get(self, request):
         context = {}
         return render(request, 'base/about.html', context)
+
+
+class ReadyView(View):
+    def get(self, request):
+        context = {}
+        return render(request, 'base/ready.html', context)
