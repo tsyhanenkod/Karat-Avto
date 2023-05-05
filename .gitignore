@@ -6,3 +6,4 @@ venv
 *.pyc
 notes
 static/media
+local_settings.py
