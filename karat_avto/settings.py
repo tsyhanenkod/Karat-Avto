@@ -15,6 +15,7 @@ from pathlib import Path
 import os
 from django.utils.translation import gettext_lazy as _
 import sys
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,19 +28,22 @@ SITE_ID = 1
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+env = environ.Env()
+environ.Env.read_env(env_file=os.path.join(BASE_DIR, '.env'))
+
+SECRET_KEY = env('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
 ALLOWED_HOSTS = ['127.0.0.1']
 
-EMAIL_BACKEND = f"{os.environ.get('EMAIL_BACKEND')}"
-EMAIL_HOST = f"{os.environ.get('EMAIL_HOST')}"
-EMAIL_PORT = os.environ.get('EMAIL_PORT')
-EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
-EMAIL_HOST_USER = f"{os.environ.get('EMAIL_HOST_USER')}"
-EMAIL_HOST_PASSWORD = f"{os.environ.get('EMAIL_HOST_PASSWORD')}"
+EMAIL_BACKEND = f"{env('EMAIL_BACKEND')}"
+EMAIL_HOST = f"{env('EMAIL_HOST')}"
+EMAIL_PORT = env('EMAIL_PORT')
+EMAIL_USE_TLS = env('EMAIL_USE_TLS')
+EMAIL_HOST_USER = f"{env('EMAIL_HOST_USER')}"
+EMAIL_HOST_PASSWORD = f"{env('EMAIL_HOST_PASSWORD')}"
 # Application definition
 
 INSTALLED_APPS = [
@@ -100,12 +104,12 @@ WSGI_APPLICATION = 'karat_avto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': f"{os.environ.get('DB_ENGINE')}",
-        'NAME': f"{os.environ.get('DB_NAME')}",
-        'USER': f"{os.environ.get('DB_USER')}",
-        'PASSWORD': f"{os.environ.get('DB_PASS')}",
-        'HOST': f"{os.environ.get('DB_HOST')}",
-        'PORT': f"{os.environ.get('DB_PORT')}",
+        'ENGINE': f"{env('DB_ENGINE')}",
+        'NAME': f"{env('DB_NAME')}",
+        'USER': f"{env('DB_USER')}",
+        'PASSWORD': f"{env('DB_PASS')}",
+        'HOST': f"{env('DB_HOST')}",
+        'PORT': f"{env('DB_PORT')}",
     }
 }
 
@@ -161,7 +165,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

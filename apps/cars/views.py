@@ -9,6 +9,7 @@ import os
 from complect.models import *
 from django.core.paginator import Paginator, EmptyPage
 from django.utils.translation import activate, get_language
+import environ
 
 
 class CarsView(View):
@@ -141,8 +142,8 @@ class CarsDetailView(View):
             if not check:
                 check = 'Ні'
 
-
-            my_mail = f"{os.environ.get('ORDERING_MAIL')}"
+            env = environ.Env()
+            my_mail = f"{env('ORDERING_MAIL')}"
 
             send_mail(
                 f'Заявка на {car} від {str(name)}',

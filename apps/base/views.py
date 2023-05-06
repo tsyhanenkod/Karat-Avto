@@ -2,6 +2,10 @@ import os
 from django.shortcuts import render, redirect
 from django.views import View
 from django.core.mail import send_mail
+import environ
+
+env = environ.Env()
+
 
 
 class HomeView(View):
@@ -18,8 +22,8 @@ class HomeView(View):
 
 class ContactsView(View):
     def get(self, request):
-        API_KYIV = f"{os.environ.get('KYIV_GOOGLEMAPS_API')}"
-        API_VISHGOROD = f"{os.environ.get('VISHGOROD_GOOGLEMAPS_API')}"
+        API_KYIV = f"{env('KYIV_GOOGLEMAPS_API')}"
+        API_VISHGOROD = f"{env('VISHGOROD_GOOGLEMAPS_API')}"
 
         context = {
             'apikyiv': API_KYIV,
@@ -46,7 +50,7 @@ class ContactsView(View):
             if not check:
                 check = 'Ні'
 
-            my_mail = f"{os.environ.get('ORDERING_MAIL')}"
+            my_mail = f"{env('ORDERING_MAIL')}"
 
             send_mail(
                 f'Повідомлення від {name} з контактної форми',
