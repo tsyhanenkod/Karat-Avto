@@ -1,6 +1,7 @@
 {% extends 'base/main.html' %}
 {% load static %}
 {% load i18n %}
+{% load humanize %}
 
     <!--    CONTENT    -->
     {% block content %}
@@ -26,7 +27,12 @@
                     </div>
                     <div class="col-lg-5 car-info-block">
                         <h1 class="car-title">{{car.mark}} {{car.model}}</h1>
-                        <h3 class="car-price">{% trans 'Price:' %} {{car.price}}$</h3>
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% if LANGUAGE_CODE == 'en' %}
+                        <h3 class="car-price">{% trans 'Price:' %} {{car.price|intcomma}} $</h3>
+                        {% elif LANGUAGE_CODE == 'uk' %}
+                        <h3 class="car-price">{% trans 'Price:' %} {{car.price_ua|intcomma}} грн.</h3>
+                        {% endif %}
                         <p class="price-descrition">
                             <span>{% trans 'WARNING' %}!</span> {% trans 'In connection with changes in the dollar exchange rate, check the prices with the managers' %}
                         </p>
@@ -57,7 +63,7 @@
                                 <td>
                                     <div class="table-content">
                                         <img class="table-img" src="{% static 'cars/icons/car-engine.png' %}" alt="">
-                                        <p class="car-char">{{car.engine_volume}} {% trans 'sm3' %}</p>
+                                        <p class="car-char">{{car.engine_volume}} {% trans 'cc' %}</p>
                                     </div>
                                 </td>
                             </tr>
@@ -184,7 +190,7 @@
                                 <hr>
                                 <div class="row p-2">
                                     <div class="col-6 char-item-text">{% trans 'Engine capacity' %}:</div>
-                                    <div class="col-6 char-item-text">{{car.engine_volume}} {% trans 'sm3' %}</div>
+                                    <div class="col-6 char-item-text">{{car.engine_volume}} {% trans 'cc' %}</div>
                                 </div>
                                 <hr>
                                 <div class="row p-2">

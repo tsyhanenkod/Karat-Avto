@@ -19,7 +19,7 @@
                         <div class="desc-block">
                             <p class="product-description">{{product.description_en|safe}}</p>
                         </div>
-                        <a href="#" class="contact">{% trans 'Contacts us' %}</a>
+                        <a href="/contacts/" class="contact">{% trans 'Contacts us' %}</a>
                     </div>
                 {% elif LANGUAGE_CODE == 'uk' %}
                     <div class="block-info">
@@ -27,7 +27,7 @@
                         <div class="desc-block">
                             <p class="product-description">{{product.description_uk|safe}}</p>
                         </div>
-                        <a href="#" class="contact">{% trans 'Contacts us' %}</a>
+                        <a href="/contacts/" class="contact">{% trans 'Contacts us' %}</a>
                     </div>
                 {% endif %}
         </div>

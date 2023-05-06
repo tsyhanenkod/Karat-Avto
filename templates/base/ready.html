@@ -3,8 +3,28 @@
 {% load i18n %}
 
 {% block content %}
-Thabk you!
+<link rel="stylesheet" href="{% static 'base/css/ready.css' %}">
 
-<a href="{% url 'home' %}">Home</a>
-<a href="{% url 'cars' %}">Cars</a>
+<div class="container">
+    <div class="block-info">
+        <div class="block-inner">
+            <img src="{% static 'base/icons/ready.png' %}" alt="" class="ready">
+            <h3 class="ready-title">{% trans 'Thank you for order!' %}</h3>
+            <p class="ready-desc">{% trans 'Our managers will contact you shortly.' %}</p>
+
+            <div class="row buttons">
+                <div class="col-6 p-1">
+                    <div class="ready-btn">
+                        <a class="ready-button" href="{% url 'home' %}">{% trans 'Home' %}</a>
+                    </div>
+                </div>
+                <div class="col-6 p-1">
+                    <div class="ready-btn">
+                        <a class="ready-button" href="{% url 'cars' %}">{% trans 'Cars' %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
