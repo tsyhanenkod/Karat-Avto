@@ -437,9 +437,9 @@
                                 <td class="table-col border-b">{{complect.drive_unit}}</td>
                                 <td class="table-col border-b">{{var.transmission}}</td>
                                 {% if LANGUAGE_CODE == 'en' %}
-                                <td class="table-col border-r border-b red">{{var.price}} $</td>
+                                <td class="table-col border-r border-b red">{{var.price|intcomma}} $</td>
                                 {% elif LANGUAGE_CODE == 'uk' %}
-                                <td class="table-col border-r border-b red">{{var.price_ua}} грн.</td>
+                                <td class="table-col border-r border-b red">{{var.price_ua|intcomma}} грн.</td>
                                 {% endif %}
 
                             </tr>
@@ -450,9 +450,9 @@
                                 <td class="table-col border-b">{{complect.drive_unit}}</td>
                                 <td class="table-col border-b">{{var.transmission}}</td>
                                 {% if LANGUAGE_CODE == 'en' %}
-                                    <td class="table-col border-r border-b red">{{var.price_bf}} $</td>
+                                    <td class="table-col border-r border-b red">{{var.price_bf|intcomma}} $</td>
                                 {% elif LANGUAGE_CODE == 'uk' %}
-                                    <td class="table-col border-r border-b red">{{var.price_bf_ua}} грн.</td>
+                                    <td class="table-col border-r border-b red">{{var.price_bf_ua|intcomma}} грн.</td>
                                 {% endif %}
                             </tr>
                             {% endif %}

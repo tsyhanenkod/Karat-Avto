@@ -240,6 +240,7 @@ hr{
 @media (max-width: 991px) {
     .container{
         padding: 0px 10px;
+        width: 100%;
     }
 
     .nav-link{

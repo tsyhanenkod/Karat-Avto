@@ -1,6 +1,6 @@
 .reregister{
     margin-top: 30px;
-    height: 92vh;
+    height: 85vh;
 }
 
 .rereg-title{
@@ -11,4 +11,21 @@
 
 .rereg-list{
     margin-left: 30px;
+}
+
+
+
+/* MEDIA */
+@media(max-width: 676px){
+    .rereg-main-title{
+        font-size: 22px;
+    }
+
+    .rereg-title{
+        font-size: 14px;
+    }
+
+    .rereg-list{
+        font-size: 12px;
+    }
 }

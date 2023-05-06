@@ -1,5 +1,6 @@
 .insurance-main-title{
     margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .insurance-table{
@@ -84,3 +85,103 @@
 }
 
 
+
+
+
+/* MEDIA */
+@media(max-width: 991px){
+    .insurance-main-title{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .header-fiz-title{
+        font-size: 16px;
+    }
+    .under-desc{
+        font-size: 14px;
+    }
+
+    .insurance-table {
+        font-size: 12px;
+    }
+
+    .title-table{
+        font-size: 24px;
+    }
+
+    .little-text{
+        font-size: 10px;
+    }
+}
+
+@media(max-width: 710px){
+    .header-fiz-title{
+        font-size: 14px;
+    }
+    .under-desc{
+        font-size: 12px;
+    }
+
+    .insurance-table {
+        font-size: 10px;
+    }
+
+    .title-table{
+        font-size: 18px;
+    }
+
+    .little-text{
+        font-size: 8px;
+    }
+
+    .br{
+        display: none;
+    }
+
+    .pensioners{
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width: 600px){
+    .header-fiz-title{
+        font-size: 12px;
+    }
+    .under-desc{
+        font-size: 10px;
+    }
+
+    .insurance-table {
+        font-size: 8px;
+    }
+
+    .title-table{
+        font-size: 14px;
+    }
+
+    .little-text{
+        font-size: 6px;
+    }
+}
+
+@media(max-width: 490px){
+    .header-fiz-title{
+        font-size: 10px;
+    }
+    .under-desc{
+        font-size: 10px;
+    }
+
+    .insurance-table {
+        font-size: 8px;
+    }
+
+    .title-table{
+        font-size: 10px;
+    }
+
+    .little-text{
+        font-size: 6px;
+    }
+}

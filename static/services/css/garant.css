@@ -6,3 +6,15 @@
     height: 92vh;
 }
 
+
+/* MEDIA */
+@media(max-width: 676px){
+    .garant-main-title{
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .description{
+        font-size: 12px;
+    }
+}

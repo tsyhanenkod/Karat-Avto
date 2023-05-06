@@ -500,11 +500,11 @@ msgstr "Всі категорії"
 #: templates/services/car_on_commission.html:12
 #: templates/services/car_on_commission.html:21
 msgid "Car on commission"
-msgstr "Зберігання авто на комісі:"
+msgstr "Зберігання авто на комісі"
 
 #: templates/services/car_on_commission.html:16
 msgid "About the \"Car on commission\" service"
-msgstr "Зберігання авто на комісі:"
+msgstr "Про послугу \"Авто на комісію\""
 
 #: templates/services/car_on_commission.html:19
 msgid ""

@@ -60,3 +60,43 @@
     height: 25px;
     width: 75px;
 }
+
+
+
+/* MEDIA */
+@media(max-width: 676px){
+    .credit{
+        margin-top: 5px;
+    }
+
+    .credit-title{
+        font-size: 16px;
+    }
+
+    .credit-description, .credit-list-item{
+        font-size: 12px;
+    }
+
+    .oschad{
+        font-size: 16px;
+    }
+
+    .credit-table{
+        font-size: 12px;
+        padding: 2px;
+    }
+}
+
+@media(max-width: 420px){
+    .credit-table{
+        font-size: 8px;
+    }
+
+    .oschad{
+        font-size: 12px;
+    }
+
+    .credit-title{
+        font-size: 12px;
+    }
+}

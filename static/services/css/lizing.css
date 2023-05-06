@@ -36,3 +36,61 @@
     color: #C8C8C8;
     background-color: #680017;
 }
+
+
+
+
+/* MEDIA */
+@media(max-width: 1080px){
+    .lizing-button{
+        padding: 10px 30px;
+    }
+
+    .lizing-btn{
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+}
+
+@media(max-width: 830px){
+    .lizing-button{
+        padding: 10px 20px;
+        font-size: 18px;
+        max-width: 75%;
+    }
+
+    .lizing-btn{
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+
+    .lizing-main-title{
+        margin-top: 20px;
+        font-size: 24px;
+    }
+}
+
+@media(max-width: 676px){
+    .lizing-button{
+        padding: 5px 10px;
+        font-size: 16px;
+    }
+
+    .lizing-title{
+        font-size: 14px;
+    }
+
+    .lizing-list{
+        font-size: 12px;
+    }
+
+    .lizing-btn{
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+
+    .lizing-main-title{
+        margin-top: 20px;
+        font-size: 24px;
+    }
+}
