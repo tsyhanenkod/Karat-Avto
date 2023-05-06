@@ -4,20 +4,19 @@
 
 <footer class="footer">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-12 footer-block">
-                <div class="footer-block-inner">
-                    <h5 class="footer-title">{% trans 'Information' %}</h5>
+        <div class="footer_inner">
+            <div class="block_footer">
+                <div class="footer_block_content">
+                    <h5 class="footer_title">{% trans 'Information' %}</h5>
                     <div class="footer-links">
                         <a class="footer-link" href="/about/">{% trans 'About' %}</a>
                         <a class="footer-link" href="/contacts/">{% trans 'Contacts' %}</a>
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-12 footer-block">
-                <div class="footer-block-inner">
-                    <h5 class="footer-title">{% trans 'Cars' %}</h5>
+            <div class="block_footer">
+                <div class="footer_block_content">
+                    <h5 class="footer_title">{% trans 'Cars' %}</h5>
                     <div class="footer-links">
                         {% for car_category in car_category.all %}
                             <a class="footer-link" href="/cars/?category={{car_category.url}}">{{car_category}}</a>
@@ -26,10 +25,9 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-12 footer-block">
-                <div class="footer-block-inner">
-                    <h5 class="footer-title">{% trans 'Services' %}</h5>
+            <div class="block_footer">
+                <div class="footer_block_content">
+                    <h5 class="footer_title">{% trans 'Services' %}</h5>
                     <div class="footer-links">
                         {% for service in service.all %}
                             <a class="footer-link" href="/services/{{service.url}}/">{{service}}</a>
@@ -38,10 +36,9 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-12 footer-block">
-                <div class="footer-block-inner">
-                    <h5 class="footer-title">{% trans 'Contacts' %}</h5>
+            <div class="block_footer">
+                <div class="footer_block_content">
+                    <h5 class="footer_title">{% trans 'Contacts' %}</h5>
                     <div class="footer-links">
                         <a class="footer-link" href="#">karatavto@ukr.net</a>
                         <br>

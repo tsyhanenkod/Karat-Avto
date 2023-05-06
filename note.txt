@@ -1,0 +1,93 @@
+<nav class="navbar">
+    <div class="container-fluid container">
+        <a class="navbar-brand link-light" href="{% static 'base/css/header.css' %}">
+            <img class='logo-img' src="{% static 'base/logo.png' %}" alt="">
+        </a>
+
+        <div class="col-6-lg nav">
+            <ul class="nav justify-content-end nav-list">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle link-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {% trans 'Cars' %}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item dropdown-link" href="/cars/">{% trans 'All categories' %}</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        {% for car_category in car_category.all %}
+                            <li><a class="dropdown-item dropdown-link" href="/cars/?category={{car_category.url}}">{{car_category}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="nav-item dropdown" >
+                    <a class="nav-link dropdown-toggle link-light" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {% trans 'Services' %}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item dropdown-link" href="/services/">{% trans 'All services' %}</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        {% for service in service.all %}
+                            <li><a class="dropdown-item dropdown-link" href="/services/{{service.url}}/">{{service}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-light"  href="/about">{% trans 'About' %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-light" href="/contacts">{% trans 'Contacts' %}</a>
+                </li>
+            </ul>
+            <ul class="nav justify-content-end">
+                <li class="nav-items lang-block">
+                    <img src="{% static  'base/icons/lang.png' %}" alt="" class="lang-icon">
+                    <form action="{% url 'set_language' %}" id="language-form"  method="post">{% csrf_token %}
+                        <input name="next" type="hidden" value="{{ redirect_to }}">
+                        <select name="language" class="language-select">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% get_available_languages as LANGUAGES %}
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {% for language in languages %}
+                                <option class="lang-item" value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
+                                        selected{% endif %}>
+                                    {{ language.name_local|slice:3  }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </form>
+                </li>
+            </ul>
+            <button class="burger" id="toggle-menu">
+                <img src="{% static 'base/icons/burger.png' %}" alt="" class="burger-icon">
+            </button>
+        </div>
+
+        <div id="menu">
+            <div class="menu-header">
+                <button class="close" id="close">
+                    <img src="{% static 'base/icons/close.png' %}" alt="" class="close-img">
+                </button>
+            </div>
+
+            <ul class="menu-links">
+                <h5 class="menu-title">{% trans 'Cars' %}</h5>
+                {% for car_category in car_category.all %}
+                <li class="nav-items "><a class="nav-link link-light" href="/cars/?category={{car_category.url}}">{{car_category}}</a></li>
+                {% endfor %}
+            </ul>
+            <ul class="menu-links">
+                <h5 class="menu-title">{% trans 'Services' %}</h5>
+                {% for service in service.all %}
+                    <li class="nav-items"><a class="nav-link link-light" href="/services/{{service.url}}/">{{service}}</a></li>
+                {% endfor %}
+            </ul>
+            <ul class="menu-links">
+                <h5 class="menu-title">{% trans 'Information' %}</h5>
+                <li class="nav-items "><a class="nav-link link-light" href="#">{% trans 'About' %}</a></li>
+                <li class="nav-items "><a class="nav-link link-light" href="#">{% trans 'Contacts' %}</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script type="text/javascript" src="{% static 'base/js/menu.js' %}"></script>
+<script type="text/javascript" src="{% static 'base/js/languages.js' %}"></script>

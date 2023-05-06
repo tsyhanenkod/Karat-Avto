@@ -1,296 +1,43 @@
-h1, h2, h3, h4, h5, h6, a, p, tr, td, li, ul{
-    margin: 0;
-    padding: 0;
-}
-
-hr{
-    margin: 5px 0px;
-}
-
-/* -- NAV BAR -- */
 .container{
-    max-width: 1300px;
-    padding: 0 15px;
+    max-width: 1280px;
+    padding: 0 10px;
 }
 
-.navbar{
-    background-color: #900020
-}
-
-.nav-list{
-    color:white; margin-right: 40px
-}
-
-.nav-link{
-    color: white;
-}
-
-.dropdown-menu{
-    background-color: #900020
-}
-
-.dropdown-item{
-    color: white;
-}
-
-.dropdown-link:hover{
-    color: white;
-}
-
-.dropdown-item:hover{
-    background-color: #680017;
-}
-
-.nav-link:hover{
-    color: white;
-}
-
-.link-light:hover{
-    color: #C8C8C8;
-}
-
-.car-button{
-    background-color: #900020;
-    border: none;
-    border-radius: 0 0 0.375rem 0.375rem;
-}
-
-.car-button:hover{
-    background-color: #680017;
-    color: #C8C8C8;
-}
-
-.lang-set{
-    align-items: center;
-    margin: 0;
-}
-
-#language-form{
-    background-color: #900020;
-}
-
-.lang-block{
-    display: flex;
-    align-items: center;
-}
-
-.lang-block:hover{
-    background-color: #900020;
-}
-
-.lang-icon{
-    width: 20px;
-    height: 20px;
-    margin-right: 3px;
-}
-
-.language-select{
-    background-color: #900020;
-    color: white;
-    border: none;
-    transition: background-color .3s;
-}
-
-.lang-option:after{
-    border: none;
-}
-
-.lang-option:focus{
-    border: none;
-}
-
-
-.lang-option{
-    border: none;
-}
-
-
-/* TITLES */
-
-.block-title{
+.main-title{
     color: #900020;
+    font-size: 32px;
     font-weight: 300;
     text-align: center;
-    margin-bottom: 20px;
     margin-top: 30px;
+    margin-bottom: 20px;
 }
 
-.light-text{
-    font-weight: 400;
-}
-
-
-
-/* LOGO */
-
-.logo-img{
-    max-height: 35px;
-    width: 100%;
-}
-
-
-
-
-/* BANNER */
-.banner{
-    margin-bottom: 25px;
-    width: 100%;
-    height: 320px;
-    background-color: #F2F2F2;
-}
-
-
-
-/* MENU */
-.burger {
-    background-color: #900020;
-    border: none;
-    display: none;
-    padding: 0;
-}
-
-#toggle-menu{
-    padding: 5px 10px;
-}
-
-.burger-icon{
-    width: 30px;
-    height: 30px;
-}
-
-.close img{
-
-}
-
-#menu {
-    position: fixed;
-    top: 0;
-    right: -200px;
-    width: 200px;
-    height: 100%;
-    background-color: #900020;
-    transition: all 0.3s ease-in-out;
-    z-index: 2;
-    padding: 10px;
-    padding-top: 10px;
-}
-
-.menu-header{
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.close{
-    background-color: #900020;
-    border: none;
-}
-
-.menu-links{
-    margin-top: 50px;
-    margin-left: 15px;
-    list-style: none;
-    padding-right: 10px;
-}
-
-.nav-items{
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
-}
-
-.menu-title{
-    font-size: 16px;
+.char-title{
     color: white;
-    margin-bottom: 3px;
-    margin-left: 10px;
+    background-color: #900020;
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding: 2px;
 }
 
-.close-img{
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    right: 15px;
-    top: 15px;
-}
 
-.menu-lang{
-    display: flex;
-    margin-left: 15px;
-    align-items: center;
-}
 
 
 
 
 /* MEDIA */
-@media (max-width: 1300px){
-    .container{
-        padding: 0 15px;
+@media only screen and (max-width: 676px){
+    .main-title{
+        font-size: 24px;
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
 
-    .logo-img{
-        max-height: 30px;
-        width: 100%;
-        margin-left: 5px;
-    }
-
-}
-
-@media (max-width: 991px) {
-    .container{
-        padding: 0px 10px;
-        width: 100%;
-    }
-
-    .nav-link{
-        padding: 5px 10px;
-    }
-
-    .lang-item{
-        padding: 5px 10px;
-    }
-
-    .block-title{
-        margin-top: 15px;
+    .char-title{
+        color: white;
+        background-color: #900020;
+        font-size: 16px;
         margin-bottom: 5px;
+        padding: 2px;
     }
 }
-
-
-@media (max-width: 768px) {
-    .container{
-        padding: 0px 5px;
-    }
-
-    .nav-item{
-        display: none;
-    }
-
-    .burger{
-        display: inline-block;
-        padding: 10px 20px;
-    }
-}
-
-@media (max-width: 450px){
-    .menu-header{
-        height: 50px;
-    }
-
-    .menu-title{
-        margin-bottom: 5px;
-    }
-
-    .menu-links{
-        margin-top: 0;
-        margin-bottom: 15px;
-    }
-
-    .nav-link{
-        padding: 0;
-        padding-bottom: 2px;
-        padding-left: 10px;
-    }
-}
-

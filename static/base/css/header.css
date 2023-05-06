@@ -1,0 +1,254 @@
+.header{
+    background-color: #900020;
+    padding: 10px 0;
+}
+
+.header_inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* LOGO */
+.logo-img{
+    height: 30px;
+    width: auto;
+}
+
+
+
+/* NAV BAR */
+.nav{
+    display: flex;
+    align-items: center;
+
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+
+}
+
+
+
+/* DROPDOWN */
+.dropbtn {
+    background-color: #900020;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+
+    transition: all .3s;
+}
+
+.dropbtn:hover{
+    color: #C8C8C8;
+}
+
+.drpdwn_img{
+    height: 10px;
+    width: 13px;
+    margin-left: 2px;
+    padding-bottom: 2px;
+}
+
+.dropdown {
+    position: relative;
+    display: block;
+}
+
+.drop-link{
+    text-decoration: none;
+    color: white;
+    padding: 2px 10px;
+    font-size: 14px;
+
+    transition: all .3s;
+}
+
+.drop-link:hover{
+    background-color: #680017;
+    color: white;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 200px;
+    background-color: #900020;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 5;
+}
+
+.drop-line{
+    margin: 2px 0;
+    padding: 0;
+}
+
+.drop-list{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.nav-link {
+    color: white;
+    padding: 2px 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-link:hover {
+    background-color: #900020
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    color: #C8C8C8;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #900020;
+}
+
+
+
+
+/* LANGUAGE FORM */
+.languages{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.lang-icon{
+    width: 20px;
+    height: 20px;
+}
+
+.language-select{
+    background-color: #900020;
+    color: white;
+    border: none;
+}
+
+
+
+/* BURGER MENU */
+.burger{
+    display: none;
+    background-color: #900020;
+    border: none;
+}
+
+.burger-icon{
+    height: 30px;
+    width: 25px;
+}
+
+
+
+
+/* MENU RIGHT */
+.burger {
+    background-color: #900020;
+    border: none;
+    display: none;
+    padding: 0;
+}
+
+#toggle-menu{
+    padding: 5px 10px;
+}
+
+.burger-icon{
+    width: 30px;
+    height: 30px;
+}
+
+.close img{
+
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100%;
+    background-color: #900020;
+    transition: all 0.3s ease-in-out;
+    z-index: 6;
+    padding: 10px;
+    padding-top: 10px;
+}
+
+.menu-header{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.close{
+    background-color: #900020;
+    border: none;
+}
+
+.menu-links{
+    margin-top: 50px;
+    list-style: none;
+    padding-right: 10px;
+    margin-bottom: 0;
+}
+
+.menu-links + .menu-links{
+    margin-top: 20px;
+}
+
+.nav-items{
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+.menu-title{
+    font-size: 14px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.close-img{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 15px;
+    top: 15px;
+}
+
+.menu-lang{
+    display: flex;
+    margin-left: 15px;
+    align-items: center;
+}
+
+
+
+
+/* MEDIA */
+@media only screen and (max-width: 676px){
+    .burger{
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    .dropbtn{
+        display: none;
+    }
+}

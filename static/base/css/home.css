@@ -1,168 +1,124 @@
-.block-row{
-    height: 120px;
-    width: 100%;
-    margin: 0;
-    text-align: left;
-    margin-bottom: 5px;
-    padding: 0;
-    position: relative;
-    object-fit: cover;
-    overflow: hidden;
+.block_cars{
     display: flex;
+    flex-wrap: wrap;
+}
+
+.block-image{
+    position: absolute;
+    object-fit: cover;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    scale: 1.5;
+    top: -30px;
+    opacity: .9;
+
+    transition: all .3s;
+}
+
+.cars-block-choice{
+    position: absolute;
+    height: 40px;
+    background-color: rgba(0,0,0,.5);
+    z-index: 3;
+    color: white;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    transition: all .3s;
+}
+
+.block-title{
+    margin: 0;
+    font-weight: 300;
+}
+
+.block_first{
+    position: relative;
+    overflow: hidden;
+    min-height: 370px;
+
+    flex: 1 0 50%;
+    padding: 20px;
+    box-sizing: border-box;
+
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.block-cars{
-    margin-top: 40px;
-}
-
-
-
-
-.block-cars{
-    margin-bottom: 50px;
-}
-
-.car-category{
+.block_second{
     position: relative;
-    color: white;
-    display: block;
-    height: 350px;
-    width: 100%;
-    background-color: #646464;
+    overflow: hidden;
+    min-height: 370px;
+
+    flex: 1 0 50%;
+    padding: 20px;
+    box-sizing: border-box;
+
+    margin: 0 auto;
     display: flex;
     justify-content: center;
-    align-items: end;
-    padding: 0;
-    overflow: hidden;
+    align-items: center;
 }
 
-.category-img{
-    object-fit: cover;
-    height: 100%;
-    width: auto ;
-    scale: 1.4;
-    align-content: center;
-    align-items: end;
-
-}
-
-.car-text{
-    text-align: center;
-    position: absolute;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    padding: 5px;
-    font-weight: 300;
-    transition: all .7s;
-}
-
-.category-img{
-    object-fit: cover;
-    top: -30px;
-    height: auto;
-    width: 105%;
-    position: absolute;
-    z-index: 0;
-    opacity: .8;
-    transition: all .7s;
-}
-
-.category-img:hover{
-    scale: 1.5;
+.block_first:hover .block-image{
+    scale: 1.55;
     opacity: 1;
 }
 
-.category-link:hover .car-text{
-    background-color: rgba(0, 0, 0, 0.7);;
+.block_first:hover .cars-block-choice{
+    background-color: rgba(0,0,0,.7);
+}
+
+.block_second:hover .block-image{
+    scale: 1.55;
+    opacity: 1;
+}
+
+.block_second:hover .cars-block-choice{
+    background-color: rgba(0,0,0,.7);
 }
 
 
-.col-lg{
-    padding: 0;
-}
 
 
-
-
-/* NEDIA */
-@media (max-width: 1230px){
-    .car-category{
-        max-height: 300px;
+/* MEDIA */
+@media only screen and (max-width: 991px){
+    .block_first,
+    .block_second {
+        min-height: 300px;
     }
 }
 
-@media (max-width: 1075px){
-    .car-category{
-        max-height: 260px;
+@media only screen and (max-width: 676px){
+    .block_first,
+    .block_second {
+        flex: 1 0 100%;
+        width: 100%;
+        min-height: 250px;
     }
 }
 
-@media (max-width: 991px){
-    .car-category{
-        max-height: 250px;
-    }
-
-    .car-text{
-        font-size: 24px;
+@media only screen and (max-width: 550px){
+    .block_first,
+    .block_second {
+        flex: 1 0 100%;
+        min-height: 200px;
     }
 }
 
-@media (max-width: 900px){
-    .car-category{
-        max-height: 230px;
+@media only screen and (max-width: 450px){
+    .block-title{
+        font-size: 18px;
+    }
+
+    .cars-block-choice{
+        height: 30px;
     }
 }
-
-@media (max-width: 840px){
-    .car-category{
-        max-height: 200px;
-    }
-}
-
-@media (max-width: 767px){
-    .car-category{
-        max-height: 500px;
-    }
-}
-
-@media (max-width: 615px){
-    .car-category{
-        max-height: 320px;
-    }
-}
-
-@media (max-width: 560px){
-    .car-category{
-        max-height: 280px;
-    }
-
-    .block-cars{
-        margin: 20px 0;
-    }
-}
-
-@media (max-width: 500px){
-    .car-category{
-        max-height: 250px;
-    }
-}
-
-@media (max-width: 450px){
-    .car-category{
-        max-height: 200px;
-    }
-
-    .car-text{
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 380px){
-    .car-category{
-        max-height: 160px;
-    }
-}
-
-
