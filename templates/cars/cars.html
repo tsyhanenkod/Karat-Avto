@@ -9,80 +9,76 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'cars/css/cars.css' %}">
 
-        <!--  MAIN BANNER  -->
-        {% include 'include/banner.html' %}
+    <!--  MAIN BANNER  -->
+    {% include 'include/banner.html' %}
 
-<div class="container">
+
     <!--  SEARCH FILTERS  -->
     {% include 'include/filters.html' %}
 
     <!--  CAR LIST  -->
-    <div class="row mb-3 p-1">
-        {% for car in page_obj %}
-        {% if car %}
+    <div class="car-list">
+        <div class="container">
+            <div class="car-list-inner">
+                {% for car in page_obj %}
+                {% if car %}
+                <div class="car-card">
+                    <a href="{{ car.url }}" class="car-link">
+                        <div class="card-body">
+                            <div class="card-image">
+                                <img class="card-img-top" src="{{car.main_image.url}}" alt="">
+                            </div>
+                            <div class="card-info">
+                                <h3 class="car-title">{{car.mark}} {{car.model}}</h3>
+                                <table class="chars">
+                                    <tr>
+                                        <td class="char">
+                                            <div class="div char-in">
+                                                <img class="char-img" src="{% static 'cars/icons/car-fuel.png' %}" alt="">
+                                                <p class="car-char">{{car.engine_type}}</p>
+                                            </div>
+                                        </td>
+                                        <td class="char">
+                                            <div class="div char-in">
+                                                <img class="table-img" src="{% static 'cars/icons/car-transmission.png' %}" alt="">
+                                                {% for transmission in car.transmission.all %}
+                                                <p class="car-char">{{transmission.name }}</p>
+                                                {% endfor %}
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="char">
+                                            <div class="div char-in">
+                                                <img class="table-img" src="{% static 'cars/icons/car-year.png' %}" alt="">
+                                                <p class="car-char">{{car.year}}</p>
+                                            </div>
+                                        </td>
+                                        <td class="char">
+                                            <div class="div char-in">
+                                                <img class="table-img" src="{% static 'cars/icons/car-engine.png' %}" alt="">
+                                                <p class="car-char">{{car.engine_volume}} {% trans 'cc' %}</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% if LANGUAGE_CODE == 'en' %}
+                            <button class="card-btn">{% trans 'Price:' %} {{car.price|intcomma:"-"}} $</button>
+                            {% elif LANGUAGE_CODE == 'uk' %}
+                            <button class="card-btn">{% trans 'Price:' %} {{car.price_ua|intcomma}} грн.</button>
+                            {% endif %}
 
-        <div class="col-lg-4 col-md-6 col-ms" style="padding: 0;">
-            <a class="cover-link" href="{{ car.url }}">
-                <div class="card m-2">
-                    <div class="card-img-top-cover">
-                        <div class="image-cover">
-                            <img class="card-img-top" src="{{car.main_image.url}}" alt="">
                         </div>
-                    </div>
-                    <div class="card body" style="border:none;">
-                        <h3 class="car-title">{{car.mark}} {{car.model}}</h3>
-                        <h4></h4>
-                        <table>
-                            <tr>
-                                <td>
-                                    <div class="table-content">
-                                        <img class="table-img" src="{% static 'cars/icons/car-fuel.png' %}" alt="">
-                                        <p class="car-char">{{car.engine_type}}</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="table-content">
-                                        <img class="table-img" src="{% static 'cars/icons/car-transmission.png' %}" alt="">
-                                        {% for transmission in car.transmission.all %}
-                                        <p class="car-char">{{transmission.name }} </p>
-                                        {% endfor %}
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="table-content">
-                                        <img class="table-img" src="{% static 'cars/icons/car-year.png' %}" alt="">
-                                        <p class="car-char">{{car.year}}</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="table-content">
-                                        <img class="table-img" src="{% static 'cars/icons/car-engine.png' %}" alt="">
-                                        <p class="car-char">{{car.engine_volume}} {% trans 'cc' %}</p>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    {% get_current_language as LANGUAGE_CODE %}
-                    {% if LANGUAGE_CODE == 'en' %}
-                    <a href="/cars/{{car.url}}" class="btn btn-block btn-dark car-button"><h4 class="p-2 car-price"><small>{% trans 'Price:' %} {{car.price|intcomma:"-"}} $</small></h4></a>
-                    {% elif LANGUAGE_CODE == 'uk' %}
-                    <a href="/cars/{{car.url}}" class="btn btn-block btn-dark car-button"><h4 class="p-2 car-price"><small>{% trans 'Price:' %} {{car.price_ua|intcomma}} грн.</small></h4></a>
-                    {% endif %}
-<!--                    {% for category in car.category.all %}-->
-<!--                        <p>{{category.name}}</p>-->
-<!--                    {% endfor %}-->
+                    </a>
                 </div>
-            </a>
+                {% endif %}
+                {% endfor %}
+            </div>
         </div>
-
-        {% else %}
-        <h1 style="text-align: center; height: 50vh;">{% trans 'Cars not found' %}</h1>
-        {% endif %}
-        {% endfor %}
     </div>
+
 
 
     <div class="pagination">
@@ -115,13 +111,5 @@
         </div>
     </div>
 </div>
-
-
-
-    <!--    PAGINATION BLOCK     -->
-
-
-
-<!--<script type="text/javascript" src="{% static 'cars/js/pagination.js' %}"></script>-->
 
 {% endblock content %}

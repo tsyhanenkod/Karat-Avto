@@ -1,4 +1,3 @@
-// BLOCK FILTERS OPEN - CLOSE
 let coll = document.getElementsByClassName('filter-btn')
 for(let i = 0; i < coll.length; i++){
     coll[i].addEventListener('click', function (){
@@ -11,4 +10,3 @@ for(let i = 0; i < coll.length; i++){
         }
     })
 }
-

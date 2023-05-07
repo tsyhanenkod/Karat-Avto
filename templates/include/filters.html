@@ -1,139 +1,116 @@
 {% load static %}
 {% load i18n %}
 <link rel="stylesheet" href="{% static 'cars/css/filters.css' %}">
-<div class="filters ">
-    <button class="filter-btn">{% trans 'Search filters' %}</button>
 
-    <form method="GET" action="." role="form" class="all-filters">
-        <div class="row pt-4">
-            <div class="col-lg col-md col-sm select-filters">
-                <!--    Line 1    -->
-                <div class="row flex-row flex-wrap">
-                    <div class="col-lg-3 col-md-6">
-                        <ul class="filter-fields">
-                            <li class="filter-use">
-                                <!--  CAR MARK  -->
-                                <label class="label_class" for="mark">{% trans 'Brand:' %}</label>
-                                <select id="brand-select" class="filter-links" name="mark" >
-                                    <option class="filter-option main-option"></option>
-                                    {% for car_mark in car_mark.all %}
-                                        <option class="filter-option" value="{{car_mark.url}}">{{car_mark}}</option>
-                                    {% endfor %}
-                                </select>
-                            </li>
-                        </ul>
+<div class="container">
+    <div class="filters">
+        <button class="filter-btn">{% trans 'Search filters' %}</button>
+
+        <form method="GET" action="." role="form" class="all-filters">
+            <div class="form-inner">
+                <div class="filters-line">
+                    <div class="filter-option">
+                        <div class="filter-option-inner">
+                            <label class="label_class" for="mark">{% trans 'Brand:' %}</label>
+                            <select id="brand-select" class="filter-links" name="mark" >
+                                <option class="filter-option main-option"></option>
+                                {% for car_mark in car_mark.all %}
+                                    <option class="filter-option" value="{{car_mark.url}}">{{car_mark}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <ul class="filter-fields">
-                            <li class="filter-use">
-                                <label class="label_class" for="model">{% trans 'Model:' %}</label>
-                                <select id="model-select" class="filter-links" name="model">
-                                    <option class="filter-option main-option"></option>
-                                    {% for car_model in car_model.all %}
-                                        <option class="filter-option" value="{{car_model.url}}">{{car_model}}</option>
-                                    {% endfor %}
-                                </select>
-                            </li>
-                        </ul>
+                    <div class="filter-option">
+                        <div class="filter-option-inner">
+                            <label class="label_class" for="model">{% trans 'Model:' %}</label>
+                            <select id="model-select" class="filter-links" name="model">
+                                <option class="filter-option main-option"></option>
+                                {% for car_model in car_model.all %}
+                                    <option class="filter-option" value="{{car_model.url}}">{{car_model}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <ul class="filter-fields">
-                            <li class="filter-use">
-                                <label class="label_class" for="category">{% trans 'Category:' %}</label>
-                                <select class="filter-links" name="category">
-                                    <option class="filter-option main-option"></option>
-                                    {% for category in car_category.all %}
-                                        <option class="filter-option" value="{{category.url}}">{{category}}</option>
-                                    {% endfor %}
-                                </select>
-                            </li>
-                        </ul>
+                    <div class="filter-option">
+                        <div class="filter-option-inner">
+                            <label class="label_class" for="category">{% trans 'Category:' %}</label>
+                            <select class="filter-links" name="category">
+                                <option class="filter-option main-option"></option>
+                                {% for category in car_category.all %}
+                                    <option class="filter-option" value="{{category.url}}">{{category}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <ul class="filter-fields">
-                            <li class="filter-use">
-                                <label class="label_class" for="enginet">{% trans 'Engine:' %}</label>
-                                <select class="filter-links" name="enginet">
-                                    <option class="filter-option main-option" name="car_engine_type"></option>
-                                    {% for car_engine_type in car_engine_type.all %}
-                                        <option class="filter-option" value="{{car_engine_type.url}}">{{car_engine_type}}</option>
-                                    {% endfor %}
-                                </select>
-                            </li>
-                        </ul>
+                    <div class="filter-option">
+                        <div class="filter-option-inner">
+                            <label class="label_class" for="enginet">{% trans 'Engine:' %}</label>
+                            <select class="filter-links" name="enginet">
+                                <option class="filter-option main-option" name="car_engine_type"></option>
+                                {% for car_engine_type in car_engine_type.all %}
+                                    <option class="filter-option" value="{{car_engine_type.url}}">{{car_engine_type}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
                     </div>
                 </div>
-
-                <!--    Line 2    -->
-                <div class="row flex-row flex-wrap">
-                    <div class="col-lg-3 col-md-6">
-                        <ul class="filter-fields">
-                            <li class="filter-use">
-                                <label class="label_class" for="transmission">{% trans 'Transmis:' %}</label>
-                                <select class="filter-links" name="transmission">
-                                    <option class="filter-option main-option"></option>
-                                    {% for car_transmission in car_transmission.all %}
-                                        <option class="filter-option" value="{{car_transmission.url}}">{{car_transmission}}</option>
-                                    {% endfor %}
-                                </select>
-
-                            </li>
-                        </ul>
+                <div class="filters-line">
+                    <div class="filter-option">
+                        <div class="filter-option-inner">
+                            <label class="label_class" for="transmission">{% trans 'Transmis:' %}</label>
+                            <select class="filter-links" name="transmission">
+                                <option class="filter-option main-option"></option>
+                                {% for car_transmission in car_transmission.all %}
+                                    <option class="filter-option" value="{{car_transmission.url}}">{{car_transmission}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <ul class="filter-fields">
-                            <li class="filter-use">
-                                <label class="label_class" for="color">{% trans 'Color:' %}</label>
-                                <select class="filter-links" name="color">
-                                    <option class="filter-option main-option"></option>
-                                    {% for car_color in car_color.all %}
-                                        <option class="filter-option" value="{{car_color.url}}">{{car_color}}</option>
-                                    {% endfor %}
-                                </select>
-                            </li>
-                        </ul>
+                    <div class="filter-option">
+                        <div class="filter-option-inner">
+                            <label class="label_class" for="color">{% trans 'Color:' %}</label>
+                            <select class="filter-links" name="color">
+                                <option class="filter-option main-option"></option>
+                                {% for car_color in car_color.all %}
+                                    <option class="filter-option" value="{{car_color.url}}">{{car_color}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <ul class="filter-fields">
-                            <li class="filter-use">
-                                <label class="label_class price-label" for="">{% trans 'Price:' %}</label>
-                                <input class="filter-links input-data" type="number" name="min_price">
+                    <div class="filter-option">
+                        <div class="filter-option-inner">
+                            <label class="label_class price-label" for="">{% trans 'Year:' %}</label>
+                            <div class="filter-links filter-links-input">
+                                <input class="input-data" type="number" name="min_year" placeholder="{% trans 'from' %}">
                                 <p class="between-value"> - </p>
-                                <input class="filter-links input-data" type="number" name="max_price">
-                            </li>
-                        </ul>
+                                <input class="input-data" type="number" name="max_year" placeholder="{% trans 'to' %}">
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <ul class="filter-fields">
-                            <li class="filter-use">
-                                <label class="label_class year-label" for="min_year">{% trans 'Year:' %}</label>
-                                <input class="filter-links input-data" type="number" name="min_year">
+                    <div class="filter-option">
+                        <div class="filter-option-inner">
+                            <label class="label_class price-label" for="">{% trans 'Price:' %}</label>
+                            <div class="filter-links filter-links-input">
+                                <input class="input-data" type="number" name="min_price" placeholder="{% trans 'from' %}">
                                 <p class="between-value"> - </p>
-                                <input class="filter-links input-data" type="number" name="max_year">
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-
-
-                <!--    Buttons    -->
-                <div class="row">
-                    <div class="col-lg-1 col-6">
-                        <button type="reset" class="cancel-btn">
-                            <img class="cancel-img" src="{% static 'cars/icons/cancel.png' %}" alt="">
-                        </button>
-                    </div>
-                    <div class="col-lg-11 col-6">
-                        <button type="submit" class="search-btn">
-                            <h4 class="light-text">{% trans 'Search' %}</h4>
-                        </button>
+                                <input class="input-data" type="number" name="max_price" placeholder="{% trans 'to' %}">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-    </form>
+            <div class="form-buttons">
+                <div class="close-button">
+                    <button type="reset" class="cancel-btn">
+                        <img class="cancel-img" src="{% static 'cars/icons/cancel.png' %}" alt="">
+                    </button>
+                </div>
+                <div class="search-button">
+                    <button type="submit" class="search-btn">{% trans 'Search' %}</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 
 <script type="text/javascript" src="{% static 'cars/js/car-filters.js' %}"></script>

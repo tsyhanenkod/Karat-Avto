@@ -10,6 +10,7 @@
 
 .lizing-list{
     margin-left: 30px;
+    padding: 0;
 }
 
 .lizing-btn{
@@ -82,6 +83,7 @@
 
     .lizing-list{
         font-size: 12px;
+        margin-left: 10px;
     }
 
     .lizing-btn{

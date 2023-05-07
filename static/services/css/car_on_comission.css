@@ -3,6 +3,14 @@
     margin-bottom: 50px;
 }
 
+.car_on_com p{
+    margin-bottom: 0;
+}
+
+.ul-com{
+    margin-bottom: 0;
+}
+
 .car_on_com-title{
     color: white;
     background-color: #900020;
@@ -16,7 +24,7 @@
 }
 
 .ul-com{
-    padding-left: 20px;
+    padding-left: 0px;
 }
 
 

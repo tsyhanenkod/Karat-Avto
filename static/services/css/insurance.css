@@ -5,7 +5,6 @@
 
 .insurance-table{
     border: 1px solid black;
-    width: 100%;
     text-align: center;
     padding: 5px;
  }
@@ -13,17 +12,15 @@
  .table-col{
     border: 1px solid black;
     text-align: center;
-    padding: 5px;
-     width: 2%;
-     padding: 1px;
+    padding: 1px;
+    vertical-align: middle;
 }
 
 .table-row{
     border: 1px solid black;
-    width: 20%;
     text-align: center;
-    padding: 5px;
     padding: 1px;
+    vertical-align: middle;
 }
 
 .title-table{
@@ -170,18 +167,44 @@
         font-size: 10px;
     }
     .under-desc{
-        font-size: 10px;
-    }
-
-    .insurance-table {
         font-size: 8px;
     }
 
+    .insurance-table {
+        font-size: 6px;
+    }
+
     .title-table{
-        font-size: 10px;
+        font-size: 8px;
+        margin-bottom: 2px;
+    }
+
+    .table-main-title-add{
+        font-size: 4px;
     }
 
     .little-text{
         font-size: 6px;
+    }
+}
+
+@media(max-width: 390px){
+    .header-fiz-title{
+        font-size: 10px;
+    }
+    .under-desc{
+        font-size: 8px;
+    }
+
+    .insurance-table {
+        font-size: 4px;
+    }
+
+    .title-table{
+        font-size: 6px;
+    }
+
+    .little-text{
+        font-size: 4px;
     }
 }

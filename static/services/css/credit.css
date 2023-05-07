@@ -1,5 +1,6 @@
 .credit{
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .credit-title{
@@ -9,11 +10,21 @@
 }
 
 .credit-list{
-    margin-left: 30px;
+    margin-left: 10px;
+    padding: 0;
+}
+
+.oschad{
+    margin-top: 20px;
+}
+
+.oschad-logo, .globus-logo{
+    margin-right: 5px;
 }
 
 .credit-description{
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-bottom: 10px;
 }
 .description-link{
     color: #900020;
@@ -22,43 +33,46 @@
 
 /* OSCHAD TABLE */
 .credit-table{
-    border: 1px solid black;
     width: 100%;
-    text-align: center;
-    padding: 5px;
-    margin-bottom: 10px;
+    border: 1px solid black;
 }
 
-.table-col{
+.t-border{
     border: 1px solid black;
-    width: 10%;
     text-align: center;
-    padding: 5px;
+    vertical-align: middle;
+}
+
+.t-border span{
+    color: red;
 }
 
 .table-info span{
     color: red;
 }
 
-.table-col span{
-    color: red;
+.table-info{
+    margin: 0;
+    padding-top: 2px;
 }
 
-.table-row{
-    border: 1px solid black;
-    width: 20%;
-    text-align: center;
-    padding: 5px;
-}
+
+
+
+
 
 .oschad-logo{
     height: 25px;
-    width: 55px;
+    width: auto;
 }
 
 .globus-logo{
     height: 25px;
-    width: 75px;
+    width: auto;
+}
+
+.credit-block{
+    margin-top: 10px;
 }
 
 
@@ -85,6 +99,11 @@
         font-size: 12px;
         padding: 2px;
     }
+
+    .table-info{
+        font-size: 12px;
+    }
+
 }
 
 @media(max-width: 420px){
@@ -98,5 +117,15 @@
 
     .credit-title{
         font-size: 12px;
+    }
+
+    .oschad-logo{
+    height: 15px;
+    width: auto;
+}
+
+    .globus-logo{
+        height: 15px;
+        width: auto;
     }
 }

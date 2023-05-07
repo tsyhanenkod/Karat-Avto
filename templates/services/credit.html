@@ -9,17 +9,15 @@
 
 <div class="container">
     <div class="credit">
-        <h2 class="block-title credit-main-title">{% trans 'Lending' %}</h2>
+        <h2 class="main-title">{% trans 'Lending' %}</h2>
 
-        <div class="credit-block p-1">
+        <div class="credit-block">
             <h6 class="credit-title p-1">{% trans 'Our advantages' %}:</h6>
             <ul class="credit-list">
                 <li class="credit-list-item">{% trans 'Minimum down payment from 30%' %}</li>
                 <li class="credit-list-item">{% trans 'Fixed rate in hryvnia from 0.01% per annum' %}!</li>
                 <li class="credit-list-item">{% trans 'In advance, we provide the contract and calculation options for study' %}</li>
             </ul>
-            <hr>
-            <br>
         </div>
 
         <div class="credit-block p-1">
@@ -27,17 +25,13 @@
             <p class="credit-description">
                 <strong>{% trans 'Lending' %}</strong> - {% trans 'you are the owner of the car. The bank is financing the purchase, and the car is a mortgaged property in this bank. At the request of the bank, you will need to insure the car, i.e. issue CASCO.' %}
             </p>
-            <br>
             <p class="credit-description">
                 <strong>{% trans 'Leasing' %}</strong> - {% trans 'it is a long-term lease with the right to buy. During the entire lease term, the owner will be the leasing company. When buying a car for leasing, you will use not only the financing of the leasing company, but also the support service. Leasing payments include all necessary costs both during registration and during the entire lease term - CASCO and civil law insurance, registration, etc.' %}
                 <a href="/services/lizing" class="description-link">{% trans 'Learn more about leasing' %}</a>
             </p>
-            <br>
             <p class="credit-description">
                 {% trans 'There are many financial organizations on the market (banks, leasing companies, social organizations, etc.). Some of them are scammers. If you are offered a car at a low price, do not require a certificate of income, mandatory insurance, then you may have turned to a "dubious" company. At your request, we will provide you with all contracts that will need to be signed on the agreement, detailed comparative calculations. Cooperating with us, you will not have to assume any obligations without first studying all the terms of the contract.' %}
             </p>
-            <hr>
-            <br>
         </div>
 
         <div class="credit-block p-1">
@@ -45,233 +39,213 @@
             <p class="credit-description">
                 {% trans 'Fixed rate - the bank will not unilaterally change the interest rate, as is possible with a floating rate; No monthly fees - interest is charged only on the balance; Affordable CASCO with the lowest possible tariff (possible with a breakdown of payment even with a loan). Absence of excessive costs during registration - additional insurances and commissions.' %}
             </p>
-            <br>
             <p class="credit-description">
                 {% trans 'Each bank has several credit products - standard and jointly developed for certain car brands (promotional conditions). Sometimes an attractive loan product with a reduced annual interest rate in the final result, after calculating all one-time costs and payments, becomes less profitable than a standard bank product. The profitability of the product is affected by the term of the loan and the down payment.' %}
             </p>
 
             <!--    Oschad People    -->
-            <br>
-            <br>
             <h4 class="oschad"><img class="oschad-logo" src="{% static 'services/icons/oschad.png' %}" alt="">{% trans 'OschadBank lending conditions for individuals' %}</h4>
-            <br>
 
             <table class="credit-table">
-                <tr class="table-row">
-                    <th class="table-col" rowspan="3">{% trans 'Credit term' %}</th>
+                <tr>
+                    <td class="t-border" rowspan="3">{% trans 'Credit term' %}</td>
+                    <td class="t-border" rowspan="3">{% trans 'One-time bank commission' %}</td>
                 </tr>
-                <tr class="table-row">
-                    <th class="table-col" rowspan="2">{% trans 'One-time bank commission' %}</th>
-                    <td colspan="5" class="table-col">{% trans 'The interest rate depends on the term of the loan and the initial payment, % per annum' %}</td>
+                <tr>
+                    <td class="t-border" colspan="5">{% trans 'The interest rate depends on the term of the loan and the initial payment, % per annum' %}</td>
                 </tr>
-                <tr class="table-row">
-                    <td class="table-col">30%</td>
-                    <td class="table-col">40%</td>
-                    <td class="table-col">50%</td>
-                    <td class="table-col">60%</td>
-                    <td class="table-col">70%</td>
+                <tr>
+                    <td class="t-border">30%</td>
+                    <td class="t-border">40%</td>
+                    <td class="t-border">50%</td>
+                    <td class="t-border">60%</td>
+                    <td class="t-border">70%</td>
                 </tr>
-                <tr class="table-row">
-                    <td class="table-col">12 {% trans 'mo' %}.</td>
-                    <td rowspan="5" class="table-col">0.00%</td>
-                    <td class="table-col">6,49%</td>
-                    <td class="table-col">4,49%</td>
-                    <td class="table-col">1,49%</td>
-                    <td class="table-col">0,01%</td>
-                    <td class="table-col">0,01%</td>
+                <tr>
+                    <td class="t-border">12 {% trans 'mo' %}.</td>
+                    <td class="t-border" rowspan="5" >0.00%</td>
+                    <td class="t-border">6,49%</td>
+                    <td class="t-border">4,49%</td>
+                    <td class="t-border">1,49%</td>
+                    <td class="t-border">0,01%</td>
+                    <td class="t-border">0,01%</td>
+
                 </tr>
-                <tr class="table-row">
-                    <td class="table-col">24 {% trans 'mo' %}.</td>
-                    <td class="table-col">8,99%</td>
-                    <td class="table-col">7,49%</td>
-                    <td class="table-col">5,49%</td>
-                    <td class="table-col">2,49%</td>
-                    <td class="table-col">0,01%</td>
+                <tr>
+                    <td class="t-border">24 {% trans 'mo' %}.</td>
+                    <td class="t-border">8,99%</td>
+                    <td class="t-border">7,49%</td>
+                    <td class="t-border">5,49%</td>
+                    <td class="t-border">2,49%</td>
+                    <td class="t-border">0,01%</td>
                 </tr>
-                <tr class="table-row">
-                    <td class="table-col">25-36 {% trans 'mo' %}.</td>
-                    <td class="table-col">10,49%</td>
-                    <td class="table-col">8,99%</td>
-                    <td class="table-col">7,49%</td>
-                    <td class="table-col">4,49%</td>
-                    <td class="table-col">0,01%</td>
+                <tr>
+                    <td class="t-border">25-36 {% trans 'mo' %}.</td>
+                    <td class="t-border">10,49%</td>
+                    <td class="t-border">8,99%</td>
+                    <td class="t-border">7,49%</td>
+                    <td class="t-border">4,49%</td>
+                    <td class="t-border">0,01%</td>
                 </tr>
-                <tr class="table-row">
-                    <td class="table-col">37-60 {% trans 'mo' %}.</td>
-                    <td class="table-col">11,49%</td>
-                    <td class="table-col">10,99%</td>
-                    <td class="table-col">8,99%</td>
-                    <td class="table-col">6,99%</td>
-                    <td class="table-col">2,49%</td>
+                <tr>
+                    <td class="t-border">37-60 {% trans 'mo' %}.</td>
+                    <td class="t-border">11,49%</td>
+                    <td class="t-border">10,99%</td>
+                    <td class="t-border">8,99%</td>
+                    <td class="t-border">6,99%</td>
+                    <td class="t-border">2,49%</td>
                 </tr>
-                <tr class="table-row">
-                    <td class="table-col">61-84 {% trans 'mo' %}.</td>
-                    <td class="table-col">12,49%</td>
-                    <td class="table-col">11,99%</td>
-                    <td class="table-col">10,49%</td>
-                    <td class="table-col">8,49%</td>
-                    <td class="table-col">4,49%</td>
+                <tr>
+                    <td class="t-border">61-84 {% trans 'mo' %}.</td>
+                    <td class="t-border">12,49%</td>
+                    <td class="t-border">11,99%</td>
+                    <td class="t-border">10,49%</td>
+                    <td class="t-border">8,49%</td>
+                    <td class="t-border">4,49%</td>
                 </tr>
             </table>
 
             <!--    Oschad Business    -->
-            <br>
-            <br>
             <h4 class="oschad"><img class="oschad-logo" src="{% static 'services/icons/oschad.png' %}" alt="">{% trans 'OschadBank lending conditions for business' %}</h4>
-            <br>
 
             <table class="credit-table">
-                <tr class="table-row">
-                    <th class="table-col" rowspan="3">{% trans 'Credit term' %}</th>
+                <tr>
+                    <td class="t-border" rowspan="3">{% trans 'Credit term' %}</td>
                 </tr>
-                <tr class="table-row">
-                    <td colspan="5" class="table-col">{% trans 'The interest rate depends on the term of the loan and the initial payment, % per annum' %}</td>
+                <tr>
+                    <td class="t-border" colspan="5">{% trans 'The interest rate depends on the term of the loan and the initial payment, % per annum' %}</td>
                 </tr>
-                <tr class="table-row">
-                    <td class="table-col">30%</td>
-                    <td class="table-col">40%</td>
-                    <td class="table-col">50%</td>
-                    <td class="table-col">60%</td>
-                    <td class="table-col">70%</td>
+                <tr>
+                    <td class="t-border">30%</td>
+                    <td class="t-border">40%</td>
+                    <td class="t-border">50%</td>
+                    <td class="t-border">60%</td>
+                    <td class="t-border">70%</td>
                 </tr>
-                <tr class="table-row">
-                    <td class="table-col">12 {% trans 'mo' %}.</td>
-                    <td class="table-col">2,99%</td>
-                    <td class="table-col">2,99%</td>
-                    <td class="table-col">1,99%</td>
-                    <td class="table-col">0,01%</td>
-                    <td class="table-col">0,01%<span>*</span></td>
+                <tr>
+                    <td class="t-border">12 {% trans 'mo' %}.</td>
+                    <td class="t-border">2,99%</td>
+                    <td class="t-border">2,99%</td>
+                    <td class="t-border">1,99%</td>
+                    <td class="t-border">0,01%</td>
+                    <td class="t-border">0,01%<span>*</span></td>
                 </tr>
-                <tr class="table-row">
-                    <td class="table-col">24 {% trans 'mo' %}.</td>
-                    <td class="table-col">3,99%</td>
-                    <td class="table-col">3,39%</td>
-                    <td class="table-col">3,99%</td>
-                    <td class="table-col">0,01%</td>
-                    <td class="table-col">0,01%</td>
+                <tr>
+                    <td class="t-border">24 {% trans 'mo' %}.</td>
+                    <td class="t-border">3,99%</td>
+                    <td class="t-border">3,39%</td>
+                    <td class="t-border">3,99%</td>
+                    <td class="t-border">0,01%</td>
+                    <td class="t-border">0,01%</td>
                 </tr>
-                <tr class="table-row">
-                    <td class="table-col">36 {% trans 'mo' %}.</td>
-                    <td class="table-col">5,99%</td>
-                    <td class="table-col">5,99%</td>
-                    <td class="table-col">4,99%</td>
-                    <td class="table-col">0,01%<span>**</span></td>
-                    <td class="table-col">0,01%</td>
+                <tr>
+                    <td class="t-border">36 {% trans 'mo' %}.</td>
+                    <td class="t-border">5,99%</td>
+                    <td class="t-border">5,99%</td>
+                    <td class="t-border">4,99%</td>
+                    <td class="t-border">0,01%<span>**</span></td>
+                    <td class="t-border">0,01%</td>
                 </tr>
-                <tr class="table-row">
-                    <td class="table-col">48 {% trans 'mo' %}.</td>
-                    <td class="table-col">6,99%</td>
-                    <td class="table-col">6,99%</td>
-                    <td class="table-col">5,99%</td>
-                    <td class="table-col">3,99%</td>
-                    <td class="table-col">2,99%</td>
+                <tr>
+                    <td class="t-border">48 {% trans 'mo' %}.</td>
+                    <td class="t-border">6,99%</td>
+                    <td class="t-border">6,99%</td>
+                    <td class="t-border">5,99%</td>
+                    <td class="t-border">3,99%</td>
+                    <td class="t-border">2,99%</td>
                 </tr>
-                <tr class="table-row">
-                    <td class="table-col">60 {% trans 'mo' %}.</td>
-                    <td class="table-col">6,99%</td>
-                    <td class="table-col">6,99%</td>
-                    <td class="table-col">5,99%</td>
-                    <td class="table-col">3,99%</td>
-                    <td class="table-col">2,99%</td>
+                <tr>
+                    <td class="t-border">60 {% trans 'mo' %}.</td>
+                    <td class="t-border">6,99%</td>
+                    <td class="t-border">6,99%</td>
+                    <td class="t-border">5,99%</td>
+                    <td class="t-border">3,99%</td>
+                    <td class="t-border">2,99%</td>
                 </tr>
             </table>
             <p class="table-info"><span>*</span>{% trans 'one-time fee is' %} 0.00% {% trans 'of the loan amount' %}</p>
             <p class="table-info"><span>**</span>{% trans 'one-time fee is' %} 2.50% {% trans 'of the loan amount' %}</p>
 
             <!--    Globus Bank People    -->
-            <br>
-            <br>
             <h4 class="oschad"><img class="globus-logo" src="{% static 'services/icons/globusbank.png' %}" alt="">{% trans 'Globus Bank lending conditions' %}</h4>
-            <br>
 
             <table class="credit-table">
-                <tr class="table-row">
-                    <th class="table-col" rowspan="3">{% trans 'Credit term' %}</th>
+                <tr>
+                    <td class="t-border" rowspan="3">{% trans 'Credit term' %}</td>
+                    <td class="t-border" rowspan="3">{% trans 'One-time bank commission' %}</td>
                 </tr>
-                <tr class="table-row">
-                    <th class="table-col" rowspan="2">{% trans 'One-time bank commission' %}</th>
-                    <td colspan="5" class="table-col">{% trans 'The interest rate depends on the term of the loan and the initial payment, % per annum' %}</td>
+                <tr>
+                    <td class="t-border" colspan="5">{% trans 'The interest rate depends on the term of the loan and the initial payment, % per annum' %}</td>
                 </tr>
-                <tr class="table-row">
-                    <td class="table-col">30%</td>
-                    <td class="table-col">40%</td>
-                    <td class="table-col">50%</td>
-                    <td class="table-col">60%</td>
-                    <td class="table-col">70%</td>
+                <tr>
+                    <td class="t-border">30%</td>
+                    <td class="t-border">40%</td>
+                    <td class="t-border">50%</td>
+                    <td class="t-border">60%</td>
+                    <td class="t-border">70%</td>
                 </tr>
-                <tr class="table-row">
-                    <td class="table-col">12 {% trans 'mo' %}.</td>
-                    <td rowspan="5" class="table-col">2.50%</td>
-                    <td class="table-col">11,99%</td>
-                    <td class="table-col">10,49%</td>
-                    <td class="table-col">8,99%</td>
-                    <td class="table-col">6,99%</td>
-                    <td class="table-col">2,99%</td>
+                <tr>
+                    <td class="t-border">12 {% trans 'mo' %}.</td>
+                    <td rowspan="5" class="t-border">2.50%</td>
+                    <td class="t-border">11,99%</td>
+                    <td class="t-border">10,49%</td>
+                    <td class="t-border">8,99%</td>
+                    <td class="t-border">6,99%</td>
+                    <td class="t-border">2,99%</td>
                 </tr>
-                <tr class="table-row">
-                    <td class="table-col">24 {% trans 'mo' %}.</td>
-                    <td class="table-col">14,49%</td>
-                    <td class="table-col">13,49%</td>
-                    <td class="table-col">11,99%</td>
-                    <td class="table-col">9,49%</td>
-                    <td class="table-col">5,99%</td>
+                <tr>
+                    <td class="t-border">24 {% trans 'mo' %}.</td>
+                    <td class="t-border">14,49%</td>
+                    <td class="t-border">13,49%</td>
+                    <td class="t-border">11,99%</td>
+                    <td class="t-border">9,49%</td>
+                    <td class="t-border">5,99%</td>
                 </tr>
-                <tr class="table-row">
-                    <td class="table-col">36 {% trans 'mo' %}.</td>
-                    <td class="table-col">15,49%</td>
-                    <td class="table-col">14,49%</td>
-                    <td class="table-col">12,99%</td>
-                    <td class="table-col">10,99%</td>
-                    <td class="table-col">7,99%</td>
+                <tr>
+                    <td class="t-border">36 {% trans 'mo' %}.</td>
+                    <td class="t-border">15,49%</td>
+                    <td class="t-border">14,49%</td>
+                    <td class="t-border">12,99%</td>
+                    <td class="t-border">10,99%</td>
+                    <td class="t-border">7,99%</td>
                 </tr>
-                <tr class="table-row">
-                    <td class="table-col">48 {% trans 'mo' %}.</td>
-                    <td class="table-col">15,99%</td>
-                    <td class="table-col">14,99%</td>
-                    <td class="table-col">13,99%</td>
-                    <td class="table-col">12,49%</td>
-                    <td class="table-col">8,99%</td>
+                <tr>
+                    <td class="t-border">48 {% trans 'mo' %}.</td>
+                    <td class="t-border">15,99%</td>
+                    <td class="t-border">14,99%</td>
+                    <td class="t-border">13,99%</td>
+                    <td class="t-border">12,49%</td>
+                    <td class="t-border">8,99%</td>
                 </tr>
-                <tr class="table-row">
-                    <td class="table-col">60 {% trans 'mo' %}.</td>
-                    <td class="table-col">16,49%</td>
-                    <td class="table-col">15,99%</td>
-                    <td class="table-col">14,99%</td>
-                    <td class="table-col">12,99%</td>
-                    <td class="table-col">9,99%</td>
+                <tr>
+                    <td class="t-border">60 {% trans 'mo' %}.</td>
+                    <td class="t-border">16,49%</td>
+                    <td class="t-border">15,99%</td>
+                    <td class="t-border">14,99%</td>
+                    <td class="t-border">12,99%</td>
+                    <td class="t-border">9,99%</td>
                 </tr>
             </table>
-
-            <br>
-            <br>
         </div>
 
-        <div class="credit-block p-1">
+        <div class="credit-block">
             <h6 class="credit-title p-1">{% trans 'Documents required for the loan' %}:</h6>
             <p class="credit-description">
                 - {% trans 'Passport' %} <br>
                 - {% trans 'TIN' %} <br>
                 - {% trans 'Certificate of income' %}
             </p>
-            <br>
             <p class="credit-description">
                 {% trans 'If the Borrower is married, then the same package of documents' %} <br>
                 {% trans 'for husband / wife + marriage certificate' %}.
             </p>
-            <br>
             <p class="credit-description">
                 {% trans 'A negative credit history, a minimum certificate of income is not always a problem for purchasing a car on credit' %}.
             </p>
-            <br>
             <p class="credit-description">
                 {% trans 'You can get more detailed information by calling' %}  <br>
                 {% trans 'A unique offer for lending new and used cars. Comprehensive approach' %}.
             </p>
-            <br>
-            <hr>
-            <br>
-            <br>
-            <br>
         </div>
     </div>
 </div>

@@ -1,70 +1,94 @@
-/* -- CAR LIST  -- */
-
-.block-car-information{
-    margin-top: 30px;
+/* CAR LIST */
+.car-card{
+    border-radius: 5px;
 }
-.card{
-    background-color: #F2F2F2;
-    border:none;
+.car-list{
+    margin-top: 20px;
 }
 
-.body{
-    padding: 15px;
-}
-
-.car-title{
-    padding-bottom: 24px;
-}
-
-.card-img-top-cover{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    height: 240px;
-    width: 100%;
-    align-items: center;
-}
-
-.image-cover{
-    height: 240px;
-    width: 100%;
-}
-
-.card-img-top{
-    object-fit: cover;
-    transition: all .75s;
-    height: 240px;
-    width: 100%;
-}
-
-.card-img-top:hover{
-    filter: brightness(0.8);
-    scale: 1.025;
-}
-
-.cover-link{
+.car-link{
+    color: black;
     text-decoration: none;
 }
 
-.table-img{
-    height: 25px;
-    width: 25px;
-    margin-right: 5px;
+.card-info{
+    padding: 10px 10px;
 }
 
-.table-content{
+.car-title{
+    margin-top: 10px;
+}
+
+.chars{
+    width: 100%;
+    margin: 20px 0;
+}
+
+.char-in{
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    padding: 5px;
 }
 
 .car-char{
+    margin: 0;
+    padding-top: 2px;
     margin-left: 3px;
 }
 
+.char-img{
+    width: 25px;
+    height: 25px;
+    margin-right: 2px;
+}
 
 
+.card-btn{
+    background-color: #900020;
+    color: white;
+    border: none;
+    padding: 10px 0;
+    width: 100%;
+    border-radius: 0 0 5px 5px;
+    font-size: 22px;
+    font-weight: 500;
+    transition: all .5s;
+}
+
+.car-list-inner{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Изначально 3 столбца */
+    grid-gap: 10px;
+}
+
+.card-image{
+    border-radius: 5px 5px 0 0;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+.card-img-top{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: all .5s;
+}
+
+.card-body{
+    background-color: #F0F0F0;
+}
+
+.car-card:hover .card-btn{
+    background-color: #680017;
+    color: #C8C8C8;
+}
+.car-card:hover .card-img-top{
+    scale: 1.02;
+}
 
 
 /* PAGINATION */
@@ -84,6 +108,8 @@
 
 .pagination-list{
     display: flex;
+    margin-bottom: 0;
+    padding: 0;
 }
 
 .pagination-item{
@@ -139,150 +165,80 @@
 
 
 /* MEDIA */
-/* MEDIA */
-@media (max-width: 1200px){
-    .card-img-top-cover, .image-cover{
-        height: 220px;
-    }
-
-    .card-img-top{
+@media only screen and (max-width: 1200px){
+    .card-image{
         height: 220px;
     }
 }
 
-@media (max-width: 1090px){
-    .card-img-top-cover, .image-cover{
+@media only screen and (max-width: 1050px){
+    .card-image{
         height: 200px;
     }
 
-    .card-img-top{
-        height: 200px;
+    .chars{
+        margin: 5px 0;
     }
 }
 
-@media (max-width: 991px){
-    .card-img-top-cover, .image-cover{
-        height: 270px;
+@media only screen and (max-width: 991px){
+    .car-list-inner{
+        grid-template-columns: repeat(2, 1fr);
     }
-
-    .card-img-top{
+    .card-image{
         height: 270px;
     }
 }
 
-@media (max-width: 890px){
-    .card-img-top-cover, .image-cover{
-        height: 250px;
-    }
-
-    .card-img-top{
-        height: 250px;
-    }
-}
-
-@media (max-width: 800px){
-    .card-img-top-cover, .image-cover{
-        height: 220px;
-    }
-
-    .card-img-top{
+@media only screen and (max-width: 850px){
+    .card-image{
         height: 220px;
     }
 }
 
-@media (max-width: 767px){
-    .card-img-top-cover, .image-cover{
-        height: 400px;
-    }
-
-    .card-img-top{
-        height: 400px;
-    }
-
-    .car-char{
-        font-size: 18px;
-    }
-
-    .car-button{
-        padding: 0;
-    }
-
-    .car-title{
-        margin-top: 10px;
-        font-size: 24px;
-        padding-bottom: 15px;
-    }
-
-    .car-price{
-        font-size: 24px;
-    }
-
-    .table-img{
-        height: 20px;
-        width: 20px;
+@media only screen and (max-width: 700px){
+    .card-image{
+        height: 180px;
     }
 }
 
-@media (max-width: 650px){
-    .card-img-top-cover, .image-cover{
+@media only screen and (max-width: 600px){
+    .car-list-inner{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card-image{
         height: 300px;
     }
 
-    .card-img-top{
-        height: 300px;
-    }
-
-    .body{
-        padding: 10px;
-    }
-
-    .car-char{
-        margin-bottom: 5px;
-    }
-}
-
-@media (max-width: 470px){
-    .card-img-top-cover, .image-cover{
-        height: 250px;
-    }
-
-    .card-img-top{
-        height: 250px;
-    }
-
     .car-title{
-        font-size: 18px;
+        font-size: 24px;
+        margin: 5px 0;
     }
 
-    .car-price{
-        font-size: 18px;
+    .card-btn{
+        font-size: 20px;
     }
 
-    .table-content{
-        margin-bottom: 5px;
-    }
-
-    .car-char{
-        font-size: 14px;
+    .pagination{
+        margin-bottom: 20px;
     }
 }
 
-@media (max-width: 400px){
-    .card-img-top-cover, .image-cover{
-        height: 200px;
-    }
-
-    .card-img-top{
-        height: 200px;
+@media only screen and (max-width: 480px){
+    .card-image{
+        height: 250px;
     }
 }
 
-@media (max-width: 340px){
-    .card-img-top-cover, .image-cover{
-        height: 190px;
+@media only screen and (max-width: 400px){
+    .card-image{
+        height: 210px;
     }
+}
 
-    .card-img-top{
-        height: 190px;
+@media only screen and (max-width: 350px){
+    .card-image{
+        height: 180px;
     }
 }

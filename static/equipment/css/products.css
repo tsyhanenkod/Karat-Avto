@@ -70,6 +70,11 @@
     transition: all .3s;
 }
 
+.contact:hover{
+    background-color: #680017;
+    color: #C8C8C8;
+}
+
 .product-order-btn:hover{
     background-color: #680017;
     color: #F2F2F2;
