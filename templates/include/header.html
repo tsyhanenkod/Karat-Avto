@@ -13,7 +13,7 @@
                     <a class="dropbtn">{% trans 'Cars' %}<img src="{% static 'base/icons/arrow-down.png' %}" alt="" class="drpdwn_img"></a>
                     <div class="dropdown-content">
                         <div class="drop-list">
-                            <a class="drop-link" href="#">{% trans 'All categories' %}</a>
+                            <a class="drop-link" href="/cars/">{% trans 'All categories' %}</a>
                             <hr class="drop-line">
                             {% for car_category in car_category.all %}
                             <a class="drop-link" href="/cars/?category={{car_category.url}}">{{car_category}}</a>
@@ -25,10 +25,10 @@
                     <a class="dropbtn">{% trans 'Services' %}<img src="{% static 'base/icons/arrow-down.png' %}" alt="" class="drpdwn_img"></a>
                     <div class="dropdown-content">
                         <div class="drop-list">
-                            <a class="drop-link" href="#">{% trans 'All services' %}</a>
+                            <a class="drop-link" href="/services/">{% trans 'All services' %}</a>
                             <hr class="drop-line">
                             {% for service in service.all %}
-                            <a class="drop-link" href="#">{{service}}</a>
+                            <a class="drop-link" href="/services/{{service.url}}">{{service}}</a>
                             {% endfor %}
                         </div>
                     </div>
@@ -67,7 +67,7 @@
 
                 <ul class="menu-links">
                     <h5 class="menu-title">{% trans 'Cars' %}</h5>
-                    <li class="nav-items "><a class="nav-link link-light" href="{% url 'cars' %}">{% trans 'All cars' %}</a></li>
+                    <li class="nav-items "><a class="nav-link link-light" href="{% url 'cars' %}">{% trans 'All categories' %}</a></li>
                     <hr class="drop-line">
                     {% for car_category in car_category.all %}
                     <li class="nav-items "><a class="nav-link link-light" href="/cars/?category={{car_category.url}}">{{car_category}}</a></li>
@@ -83,8 +83,8 @@
                 </ul>
                 <ul class="menu-links">
                     <h5 class="menu-title">{% trans 'Information' %}</h5>
-                    <li class="nav-items "><a class="nav-link link-light" href="#">{% trans 'About' %}</a></li>
-                    <li class="nav-items "><a class="nav-link link-light" href="#">{% trans 'Contacts' %}</a></li>
+                    <li class="nav-items "><a class="nav-link link-light" href="{% url 'about' %}">{% trans 'About' %}</a></li>
+                    <li class="nav-items "><a class="nav-link link-light" href="{% url 'contacts' %}">{% trans 'Contacts' %}</a></li>
                 </ul>
             </div>
 

@@ -1,103 +1,116 @@
 /* -- CONTACTS PAGE -- */
-.contacts-title{
-    margin-top: 30px;
+.maps-block{
+    margin-bottom: 20px;
 }
 
-.dep-title{
-    margin-bottom: 15px;
+.maps-block-inner{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 
+.maps-info, .maps{
+    flex: 1 0 50%;
+}
 .contacts-table{
     width: 100%;
 }
 
 .table-row{
-    margin: 2px 0;
-    vertical-align: top;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
 }
 
-/* GOOGLE MAPS */
-/*.api-maps{*/
-/*    display: flex;*/
-/*}*/
-
-.address-info{
-
-}
 
 #map-kyiv, #map-vishgorod {
-    height: 250px;
+    height: 100%;
     width: 100%;
 }
 
-.maps{
-    margin-top: 10px;
+
+/* MESSAGE FORM */
+.block-message-form{
+    max-width: 100%;
+    align-items: center;
 }
 
-/* message form */
-.block-message-form{
-    align-content: center;
+.messagee-inner{
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-top: 80px;
 }
 
 .message-form{
-    padding: 0 200px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 100px;
+    width: 700px;
 }
 
 .form-group{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.form-check-label{
+    margin-bottom: 2px;
 }
 
 .form-button{
+    width: 100%;
     background-color: #900020;
     color: white;
-    transition: all .3s;
     border: none;
-    padding: 10px 0;
-}
-
-.form-button:hover{
-    background-color: #680017;
-    color: #C8C8C8;
+    border-radius: 5px;
+    margin: 20px 0;
+    padding: 5px 0;
+    font-size: 18px;
 }
 
 
 
 /* MEDIA */
-
-@media (max-width: 991px){
-    .dep-title{
-        font-size: 18px;
-    }
-
-    .contacts-table{
-        font-size: 14px;
-    }
-
-    .block-message-form{
-        margin-top: 30px;
-    }
-
+@media only screen and (max-width: 750px){
     .message-form{
-        padding: 0 40px;
-        margin-bottom: 40px;
-    }
-
-    .form-control{
-        font-size: 14px;
-    }
-
-    .message-label{
+        width: 100%;
         font-size: 14px;
     }
 }
 
-@media (max-width: 400px) {
-    .message-form{
-        padding: 0 10px;
+@media only screen and (max-width: 676px){
+    .maps-info{
+        flex: 1 0 100%;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .maps{
+        height: 250px;
+        flex: 1 0 100%;
+        width: 100%;
+    }
+
+    .dep-title{
+        font-size: 18px;
+    }
+
+    .table-row{
+        margin-bottom: 0px;
+        font-size: 14px;
+    }
+
+    .maps-block-inner{
+        margin-bottom: 10px;
+    }
+
+    .form-button{
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .dep-title{
+        font-size: 14px;
+    }
+
+    .table-row, .message-label, .form-control{
+        font-size: 12px;
     }
 }
