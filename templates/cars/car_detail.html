@@ -143,21 +143,193 @@
                 </div>
 
                 <div class="tab-content" id="nav-tabContent">
+
+                    <!-- CAR DESCRIPTION -->
                     {% if LANGUAGE_CODE == 'en' %}
                         <div class="tab-pane fade show active" id="pills-desc1" role="tabpanel" aria-labelledby="pills-home-tab1">{{car.description_en|safe}}</div>
                     {% else %}
                         <div class="tab-pane fade show active" id="pills-desc2" role="tabpanel" aria-labelledby="pills-home-tab2">{{car.description_uk|safe}}</div>
                     {% endif %}
+
+                    <!-- CAR CHARS -->
                     <div class="tab-pane fade" id="pills-chars" role="tabpanel" aria-labelledby="nav-profile-tab">
-                        2
+                        <div class="char-title">{% trans 'General' %}:</div>
+                        <table class="char-table-block">
+                            <tr>
+                                <td class="char-line">{% trans 'Brand' %}:</td>
+                                <td class="char-line">{{car.mark}}</td>
+                            </tr>
+                            <tr>
+                                <td class="char-line">{% trans 'Model' %}:</td>
+                                <td class="char-line">{{car.model}}</td>
+                            </tr>
+                            <tr>
+                                <td class="char-line">{% trans 'Year' %}:</td>
+                                <td class="char-line">{{car.year}}</td>
+                            </tr>
+                            <tr>
+                                <td class="char-line">{% trans 'Categories' %}:</td>
+                                <td class="char-line">
+                                    {% for category in car.category.all %}
+                                        <p class="char-item-text">{{category}}</p>
+                                    {% endfor %}
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="char-title">{% trans 'Engine & Transmission' %}:</div>
+                        <table class="char-table-block">
+                            <tr>
+                                <td class="char-line">{% trans 'Engine type' %}:</td>
+                                <td class="char-line">{{car.engine_type}}</td>
+                            </tr>
+                            <tr>
+                                <td class="char-line">{% trans 'Engine capacity' %}:</td>
+                                <td class="char-line">{{car.engine_volume}} {% trans 'cc' %}</td>
+                            </tr>
+                            <tr>
+                                <td class="char-line">{% trans 'Power' %}:</td>
+                                <td class="char-line">{{car.power}} {% trans 'hp' %}</td>
+                            </tr>
+                            <tr>
+                                <td class="char-line">{% trans 'Transmission' %}:</td>
+                                <td class="char-line">
+                                    {% for transmission in car.transmission.all %}
+                                        <p class="char-item-text">{{transmission}}</p>
+                                    {% endfor %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="char-line">{% trans 'Gears' %}:</td>
+                                <td class="char-line">{{car.car_speeds}}</td>
+                            </tr>
+                            <tr>
+                                <td class="char-line">{% trans 'Drive unit' %}:</td>
+                                <td class="char-line">{{car.drive_unit}}</td>
+                            </tr>
+                        </table>
+
+                        <div class="char-title">{% trans 'Car body' %}:</div>
+                        <table class="char-table-block">
+                            <tr>
+                                <td class="char-line">{% trans 'Type' %}:</td>
+                                <td class="char-line">{{car.body_type}}</td>
+                            </tr>
+                            <tr>
+                                <td class="char-line">{% trans 'Dimensions (LxWxH)' %}:</td>
+                                <td class="char-line">{{car.dimensions}}</td>
+                            </tr>
+                            <tr>
+                                <td class="char-line">{% trans 'Mass' %}:</td>
+                                <td class="char-line">{{car.car_weight}} {% trans 'kg' %}</td>
+                            </tr>
+                            <tr>
+                                <td class="char-line">{% trans 'Colors' %}:</td>
+                                <td class="char-line">
+                                    {% for color in car.color.all %}
+                                        <div class="color-char">
+                                            <div class="color-preview" style="background-color: #{{color.hex}};"></div>
+                                            <p class="char-item-text">{{color}}</p>
+                                        </div>
+                                    {% endfor %}
+                                </td>
+                            </tr>
+                        </table>
                     </div>
 
                     {% if complects %}
+                        <!-- CAR COMPLECTS -->
                         <div class="tab-pane fade" id="pills-complects" role="tabpanel" aria-labelledby="nav-contact-tab">
-                            3
+                            {% if complects %}
+                            <table class="complects">
+                                <tr>
+                                    <td></td>
+                                    {% for complect in complects.all %}
+                                    {% if complect.car == car %}
+                                    <td class="complect-name">{{complect}}</td>
+                                    {% endif %}
+                                    {% endfor %}
+                                </tr>
+                                {% for category in char_category.all %}
+                                {% if category in complects.first.char_category.all %}
+                                <tr>
+                                    <td class="char-line-complects" colspan="3">{{category}}</td>
+                                </tr>
+                                {% for char in char.all %}
+                                    {% if char.char_category == category %}
+                                    {% for complect in complects.all %}
+                                    {% if char in complect.char.all.distinct %}
+                                    {% ifchanged char %}
+                                    <tr class="border-b">
+                                        <td class="char-line-char light-b">{{char.name}}</td>
+                                        {% for complect in complects.all %}
+                                        {% for value in value.all %}
+                                        {% if value.char == char and value.complectation == complect %}
+                                            <td class="complect-value light-b">
+                                                {% if value.value == True %}
+                                                <img class="value-img" src="{% static 'cars/icons//yes.png' %}" alt="">
+                                                {% else %}
+                                                <img class="value-img" src="{% static 'cars/icons/no.png' %}" alt="">
+                                                {% endif %}
+                                            </td>
+                                        {% endif %}
+                                        {% endfor %}
+                                        {% endfor %}
+                                    </tr>
+                                    {% endifchanged %}
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                                {% endfor %}
+
+                            </table>
+                            {% endif %}
                         </div>
+
+                        <!-- CAR PRICES -->
                         <div class="tab-pane fade" id="pills-price" role="tabpanel" aria-labelledby="nav-price-tab">
-                            4
+                            <table class="prices">
+                                <tr class="table-row">
+                                    <td class="table-col border-l border-t">{% trans 'Complete set' %}</td>
+                                    <td class="table-col border-t">{% trans 'Drive unit' %}</td>
+                                    <td class="table-col border-t">{% trans 'Transmission' %}</td>
+                                    <td class="table-col border-r border-t">{% trans 'Price' %}</td>
+                                </tr>
+                                {% for complect in complects.all %}
+                                {% if complect.car == car %}
+                                {% for var in complect_transmissions %}
+                                {% if var.complectation == complect %}
+                                <tr class="table-row">
+                                    <td class="table-col table-col-l border-l border-b">{{car}}, <strong>{{complect}}</strong></td>
+                                    <td class="table-col border-b">{{complect.drive_unit}}</td>
+                                    <td class="table-col border-b">{{var.transmission}}</td>
+                                    {% if LANGUAGE_CODE == 'en' %}
+                                    <td class="table-col border-r border-b red">{{var.price|intcomma}} $</td>
+                                    {% elif LANGUAGE_CODE == 'uk' %}
+                                    <td class="table-col border-r border-b red">{{var.price_ua|intcomma}} грн.</td>
+                                    {% endif %}
+
+                                </tr>
+
+                                {% if var.price_bf != '0' %}
+                                <tr class="table-row">
+                                    <td class="table-col table-col-l border-l border-b">{{car}}, <strong>{{complect}}</strong> + {% trans 'Black roof' %}</td>
+                                    <td class="table-col border-b">{{complect.drive_unit}}</td>
+                                    <td class="table-col border-b">{{var.transmission}}</td>
+                                    {% if LANGUAGE_CODE == 'en' %}
+                                        <td class="table-col border-r border-b red">{{var.price_bf|intcomma}} $</td>
+                                    {% elif LANGUAGE_CODE == 'uk' %}
+                                        <td class="table-col border-r border-b red">{{var.price_bf_ua|intcomma}} грн.</td>
+                                    {% endif %}
+                                </tr>
+                                {% endif %}
+                                {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                                {% endfor %}
+                            </table>
                         </div>
                     {% endif %}
                 </div>

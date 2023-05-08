@@ -312,7 +312,7 @@
 
 /* TABS */
 .tabs-block{
-    margin: 20px 0;
+    margin: 30px 0;
     padding: 0;
 }
 
@@ -330,9 +330,113 @@
 
 .tab-content{
     margin-top: 20px;
+    padding: 0;
+}
+
+/* TABS CHARS */
+.char-title{
+    padding: 0px 10px;
+    margin: 0;
+    font-size: 18px;
+}
+
+.char-table-block{
+    width: 100%;
+}
+
+.char-table-block tr{
+    border-bottom: 1px solid grey;
+}
+
+.char-line{
+    width: 50%;
+    padding: 5px 10px;
+}
+
+.char-item-text{
+    margin: 0;
+}
+
+.color-char{
+    display: flex;
+    align-items: center;
 }
 
 
+/* TABS COMPLECTS */
+.complects{
+    width: 100%;
+    text-align: center;
+}
+
+.char-line-char{
+    text-align: left;
+    padding: 5px 0;
+}
+
+.complect-name{
+    padding: 10px 10px;
+    font-weight: 700;
+}
+
+.complect-value{
+    padding: 0 10px;
+}
+
+.char-line-complects{
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #900020;
+    color: white;
+}
+
+.value-img{
+    width: 15px;
+    height: 15px;
+}
+
+.light-b{
+    border-bottom: 1px solid #C8C8C8;
+}
+
+
+/* TABS PRICES */
+.prices{
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.table-col{
+    width: 5%;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid black;
+}
+.table-col-l{
+    text-align: left;
+}
+
+.border-l{
+    border-left: none;
+}
+
+.border-r{
+    border-right: none;
+}
+
+.border-t{
+    border-top: none;
+}
+
+.border-b{
+    border-bottom: none;
+}
+
+.red{
+    color: #900020;
+}
 
 
 
@@ -408,6 +512,41 @@
         padding: 5px 15px;
         font-size: 16px;
     }
+
+    /*  COMPLECTS  */
+    .char-line-complects{
+        font-size: 14px ;
+    }
+
+    .complect-name{
+        font-size: 14px;
+        padding: 5px 5px;
+    }
+
+    .char-line-char{
+        font-size: 12px;
+    }
+
+    .value-img{
+        height: 12px;
+        width: 12px;
+    }
+
+    .complect-value{
+        padding: 0 5px;
+    }
+
+    .char-title{
+        font-size: 14px;
+    }
+
+    .char-line{
+        font-size: 12px;
+    }
+
+    p{
+        font-size: 14px;
+    }
 }
 
 @media only screen and (max-width: 500px){
@@ -464,6 +603,15 @@
 
     .tab-link{
         padding: 2px 5px;
+    }
+
+    .complect-name{
+        font-size: 12px;
+        padding: 3px 3px;
+    }
+
+    .complect-value{
+        padding: 0 3px;
     }
 }
 
