@@ -53,13 +53,14 @@
 .filter-links{
     flex: 1 0 65%;
     border-radius: 3px;
-    border: none;
+    border: 1px solid #C8C8C8;
     height: 30px;
 }
 
 .filter-links-input{
     display: flex;
     justify-content: space-between;
+    border: none;
 }
 
 .input-data{

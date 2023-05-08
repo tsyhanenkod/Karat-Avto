@@ -9,7 +9,7 @@
     padding: 5px;
  }
 
- .table-col{
+.table-col{
     border: 1px solid black;
     text-align: center;
     padding: 1px;
@@ -206,5 +206,9 @@
 
     .little-text{
         font-size: 4px;
+    }
+
+    .table-col{
+        padding: 1px;
     }
 }

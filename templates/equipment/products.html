@@ -7,38 +7,38 @@
 <link rel="stylesheet" href="{% static 'equipment/css/products.css' %}">
 
 <div class="container">
-    <h2 class="main-title">{% trans 'Additional equipment' %}</h2>
-    {% for product in products.all %}
+    <div class="equip">
+        <h2 class="main-title">{% trans 'Additional equipment' %}</h2>
 
-    <div class="row flex-row flex-wrap product p-1">
-        <div class="col-lg-5 order-2 order-lg-1">
+        {% for product in products.all %}
+        <div class="equip-block">
+            <div class="equip-info">
                 {% get_current_language as LANGUAGE_CODE %}
                 {% if LANGUAGE_CODE == 'en' %}
-                    <div class="block-info">
-                        <h3 class="product-title">{{product.name_en}}</h3>
-                        <div class="desc-block">
-                            <p class="product-description">{{product.description_en|safe}}</p>
-                        </div>
-                        <a href="/contacts/" class="contact">{% trans 'Contacts us' %}</a>
+                <div class="text-info-block">
+                    <h3 class="product-title">{{product.name_en}}</h3>
+                    <div class="product-description">
+                        {{product.description_en|safe}}
                     </div>
+                </div>
+                <a href="/contacts/" class="contact">{% trans 'Contacts us' %}</a>
                 {% elif LANGUAGE_CODE == 'uk' %}
-                    <div class="block-info">
-                        <h3 class="product-title">{{product.name_uk}}</h3>
-                        <div class="desc-block">
-                            <p class="product-description">{{product.description_uk|safe}}</p>
-                        </div>
-                        <a href="/contacts/" class="contact">{% trans 'Contacts us' %}</a>
+                <div class="text-info-block">
+                    <h3 class="product-title">{{product.name_uk}}</h3>
+                    <div class="product-description">
+                        {{product.description_uk|safe}}
                     </div>
+                </div>
+                <a href="/contacts/" class="contact">{% trans 'Contacts us' %}</a>
                 {% endif %}
-        </div>
-        <div class="col-lg-7 order-1 order-lg-2">
-            <div class="image-wrapper">
+            </div>
+
+            <div class="equip-image">
                 <img src="{{product.product_image.url}}" alt="" class="product-img">
             </div>
         </div>
+        {% endfor %}
     </div>
-    <hr class="between">
-    {% endfor %}
 </div>
 
 {% endblock content %}
